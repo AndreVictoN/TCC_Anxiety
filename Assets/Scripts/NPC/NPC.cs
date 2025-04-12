@@ -101,18 +101,18 @@ public class NPC : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-         if(collision.CompareTag("Player"))
-         {
-             playerIsClose = true;
-         }
+        if(collision.CompareTag("Player"))
+        {
+            playerIsClose = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-         if(collision.CompareTag("Player"))
-         {
-             playerIsClose = false;
-             ResetText();
-         }
+        if(collision.CompareTag("Player"))
+        {
+            playerIsClose = false;
+            ResetText();
+        }
     }
 }

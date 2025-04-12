@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("NPC"))
+        if(collision.gameObject.CompareTag("NPC") || collision.gameObject.CompareTag("Door"))
         {
             rb.linearVelocity = Vector2.zero;
         }
