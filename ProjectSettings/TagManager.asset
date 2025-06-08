@@ -9,6 +9,7 @@ TagManager:
   - Stairs
   - NPC_Image
   - NPC_Name
+  - Enemy
   layers:
   - Default
   - TransparentFX

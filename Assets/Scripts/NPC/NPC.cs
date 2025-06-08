@@ -1,12 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
+    [Header("GeneralSettings")]
+    public Color defaultColor;
+    public Vector3 defaultPosition;
+
     [Header("Dialogue")]
     public GameObject dialoguePanel;
     public GameObject continueButton;
@@ -15,19 +21,117 @@ public class NPC : MonoBehaviour
     public List<String> dialogue = new List<String>();
     public float wordSpeed;
 
+    [Header("Battle")]
+    public BattleManager battleManager;
+    public SpriteRenderer spriteRenderer;
+    public GameObject enemy;
+    public float attackTime = 0.3f;
+    public float fadeTime = 0.5f;
+
     //Privates
+    private Coroutine _currentCoroutine;
+    private Tween _currentTween;
     private bool _playerIsClose;
+    private bool _isBattling;
+    private String _npcName;
+    private bool _isMoving;
     private bool _isTyping;
     private int _i;
 
+    void Awake()
+    {
+        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+        defaultColor = spriteRenderer.color;
+        _npcName = this.gameObject.name;
+    }
+
     void Start()
     {
-        ResetText();
+        if(SceneManager.GetActiveScene().name != "BattleScene")
+        {
+            ResetText();
+        }else{
+            defaultPosition = getPosition();
+            this.gameObject.transform.position = defaultPosition;
+        }
+    }
+
+    private Vector3 getPosition()
+    {
+        return _npcName switch
+        {
+            "Estella" => new Vector3(2.5f, -3.11f, 0),
+            "Rebecca" => new Vector3(4.5f, -3.11f, 0),
+            "Ezequiel" => new Vector3(-4.5f, -3.11f, 0),
+            "Yuri" => new Vector3(-2.5f, -3.11f, 0),
+            _ => this.gameObject.transform.position,
+        };
     }
 
     void Update()
     {
-        UpdateNPC();
+        if(SceneManager.GetActiveScene().name != "BattleScene")
+        {
+            UpdateNPC();
+        }else
+        {
+            _isBattling = true;
+            BattleManagement();
+        }
+    }
+
+    public void BattleManagement()
+    {
+        if(!_isBattling) return;
+
+        _currentTween = battleManager.GoToDefaultPosition(this.gameObject, _isMoving, _currentTween, defaultPosition, attackTime);
+    }
+
+    void OnMouseOver()
+    {
+        _currentCoroutine = battleManager.FadeToColor(CheckColorAspectByNPC(), _currentCoroutine, spriteRenderer, fadeTime);
+
+        if(Input.GetMouseButtonDown(0) && this.gameObject.transform.position == defaultPosition)
+        {
+            Vector2 position = enemy.transform.position;
+            position.y -= 0.8f;
+            Movement(position);
+        }
+    }
+
+    private Color CheckColorAspectByNPC()
+    {
+        Color colorToFade = spriteRenderer.color;
+
+        switch(_npcName)
+        {
+            case "Estella":
+                colorToFade.r += 0.2f;
+                break;
+            case "Rebecca":
+                colorToFade.g += 0.7f;
+                break;
+            case "Ezequiel":
+                colorToFade.b -= 0.7f;
+                break;
+            case "Yuri":
+                colorToFade.b -= 1f;
+                break;
+        }
+
+        return colorToFade;
+    }
+
+    public void Movement(Vector2 position)
+    {
+        _isMoving = true;
+        _currentTween?.Kill();
+        _currentTween = transform.DOLocalMove(position, attackTime).SetEase(Ease.InQuad).OnComplete(() => _isMoving = false);
+    }
+
+    void OnMouseExit()
+    {
+        _currentCoroutine = battleManager.FadeToColor(defaultColor, _currentCoroutine, spriteRenderer, fadeTime);
     }
 
     public virtual void UpdateNPC()
