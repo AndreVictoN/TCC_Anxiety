@@ -10,6 +10,7 @@ TagManager:
   - NPC_Image
   - NPC_Name
   - Enemy
+  - Card
   layers:
   - Default
   - TransparentFX

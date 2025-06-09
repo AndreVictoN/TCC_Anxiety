@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     public float attackTime = 0.5f;
     public Vector3 defaultPosition;
 
-    //Privates
+    #region Privates
     private Vector2 _moveDirection;
     private Vector3 _positionBeforeFloor;
     private bool _canMove = true;
@@ -42,12 +42,13 @@ public class PlayerController : MonoBehaviour
     private bool _isMoving = false;
     private Coroutine _currentCoroutine;
     private Tween _currentTween;
+    #endregion
 
     void Awake()
     {
         if(SceneManager.GetActiveScene().name == battleScene)
         {
-            defaultPosition = new Vector3(0, -3.11f, 0);
+            defaultPosition = new Vector3(-3.7f, 1.3f, 0);
             this.gameObject.transform.position = defaultPosition;
         }else{
             this.gameObject.transform.position = new Vector3(0, 0, 0);
@@ -82,11 +83,10 @@ public class PlayerController : MonoBehaviour
         colorToFade.b += 1f;
         _currentCoroutine = battleManager.FadeToColor(colorToFade, _currentCoroutine, spriteRenderer, fadeTime);
 
-        if(Input.GetMouseButtonDown(0) && this.gameObject.transform.position == defaultPosition)
+        if(Input.GetMouseButtonDown(0))
         {
-            Vector2 position = enemy.transform.position;
-            position.y -= 0.8f;
-            PlayerMovement(position);
+            Vector2 enemyPosition = enemy.transform.position;
+            PlayerMovement(enemyPosition);
         }
     }
 

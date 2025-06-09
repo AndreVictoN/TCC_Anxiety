@@ -1,0 +1,2795 @@
+fileFormatVersion: 2
+guid: b5170f0a0ceca7a499af830bc100f803
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5878333103502117954
+    second: upheavtt Atlas_0
+  - first:
+      213: -5354913640325334432
+    second: upheavtt Atlas_1
+  - first:
+      213: -6695989326060197824
+    second: upheavtt Atlas_2
+  - first:
+      213: 1059897654722612147
+    second: upheavtt Atlas_3
+  - first:
+      213: -817571349704386481
+    second: upheavtt Atlas_4
+  - first:
+      213: 2729571800284011239
+    second: upheavtt Atlas_5
+  - first:
+      213: 7625882028440472649
+    second: upheavtt Atlas_6
+  - first:
+      213: -8910273396815731202
+    second: upheavtt Atlas_7
+  - first:
+      213: -6485910243065347254
+    second: upheavtt Atlas_8
+  - first:
+      213: -7865993026463098397
+    second: upheavtt Atlas_9
+  - first:
+      213: 2970895658331808017
+    second: upheavtt Atlas_10
+  - first:
+      213: -559013161433860371
+    second: upheavtt Atlas_11
+  - first:
+      213: 2140709147414176534
+    second: upheavtt Atlas_12
+  - first:
+      213: 3227535663749765323
+    second: upheavtt Atlas_13
+  - first:
+      213: 3058099645792003673
+    second: upheavtt Atlas_14
+  - first:
+      213: 1743728300586563348
+    second: upheavtt Atlas_15
+  - first:
+      213: -5971789304457854293
+    second: upheavtt Atlas_16
+  - first:
+      213: -3338338356458685539
+    second: upheavtt Atlas_17
+  - first:
+      213: -3712383064061481990
+    second: upheavtt Atlas_18
+  - first:
+      213: 7325754782543058599
+    second: upheavtt Atlas_19
+  - first:
+      213: -446586704469888795
+    second: upheavtt Atlas_20
+  - first:
+      213: 5780276281163536148
+    second: upheavtt Atlas_21
+  - first:
+      213: -9133025614812664118
+    second: upheavtt Atlas_22
+  - first:
+      213: 6574674242472823941
+    second: upheavtt Atlas_23
+  - first:
+      213: -1202530576064223658
+    second: upheavtt Atlas_24
+  - first:
+      213: -6677597266057177657
+    second: upheavtt Atlas_25
+  - first:
+      213: -691786632414155132
+    second: upheavtt Atlas_26
+  - first:
+      213: 4783189646615304193
+    second: upheavtt Atlas_27
+  - first:
+      213: -1238619455787267998
+    second: upheavtt Atlas_28
+  - first:
+      213: -7327121391980141202
+    second: upheavtt Atlas_29
+  - first:
+      213: 4894938470737128419
+    second: upheavtt Atlas_30
+  - first:
+      213: 2938796095536721434
+    second: upheavtt Atlas_31
+  - first:
+      213: 2494302403735033690
+    second: upheavtt Atlas_32
+  - first:
+      213: -6330355807626165229
+    second: upheavtt Atlas_33
+  - first:
+      213: -3859850614717421331
+    second: upheavtt Atlas_34
+  - first:
+      213: -3507982794451669827
+    second: upheavtt Atlas_35
+  - first:
+      213: 7839890646606783656
+    second: upheavtt Atlas_36
+  - first:
+      213: 1967234014500705044
+    second: upheavtt Atlas_37
+  - first:
+      213: 7664664022131260629
+    second: upheavtt Atlas_38
+  - first:
+      213: 8534757865972966939
+    second: upheavtt Atlas_39
+  - first:
+      213: -9195361646275932963
+    second: upheavtt Atlas_40
+  - first:
+      213: 1479582420968654473
+    second: upheavtt Atlas_41
+  - first:
+      213: 2506239915255072742
+    second: upheavtt Atlas_42
+  - first:
+      213: 3730065293148621229
+    second: upheavtt Atlas_43
+  - first:
+      213: -5908852777207489412
+    second: upheavtt Atlas_44
+  - first:
+      213: -8678456018982621877
+    second: upheavtt Atlas_45
+  - first:
+      213: 6623521677164273931
+    second: upheavtt Atlas_46
+  - first:
+      213: -7745023073109176052
+    second: upheavtt Atlas_47
+  - first:
+      213: 4209596963292971001
+    second: upheavtt Atlas_48
+  - first:
+      213: -3112111102805392229
+    second: upheavtt Atlas_49
+  - first:
+      213: -4659300839647970531
+    second: upheavtt Atlas_50
+  - first:
+      213: 4554889957604172559
+    second: upheavtt Atlas_51
+  - first:
+      213: -2868741656834312694
+    second: upheavtt Atlas_52
+  - first:
+      213: 5798962170150610976
+    second: upheavtt Atlas_53
+  - first:
+      213: -3736990623198017803
+    second: upheavtt Atlas_54
+  - first:
+      213: -7107461430416622133
+    second: upheavtt Atlas_55
+  - first:
+      213: 4625276468098130645
+    second: upheavtt Atlas_56
+  - first:
+      213: -3415073919026507924
+    second: upheavtt Atlas_57
+  - first:
+      213: -4985861590320863677
+    second: upheavtt Atlas_58
+  - first:
+      213: -3178370843726759906
+    second: upheavtt Atlas_59
+  - first:
+      213: -5067382043271258360
+    second: upheavtt Atlas_60
+  - first:
+      213: 6165626253188661013
+    second: upheavtt Atlas_61
+  - first:
+      213: -4977190030717149138
+    second: upheavtt Atlas_62
+  - first:
+      213: -2651871260076928065
+    second: upheavtt Atlas_63
+  - first:
+      213: -4148153618701924948
+    second: upheavtt Atlas_64
+  - first:
+      213: 2823413857649011724
+    second: upheavtt Atlas_65
+  - first:
+      213: -2661105149641464119
+    second: upheavtt Atlas_66
+  - first:
+      213: 5971825119999750539
+    second: upheavtt Atlas_67
+  - first:
+      213: 3170018938885325851
+    second: upheavtt Atlas_68
+  - first:
+      213: 272787156067573206
+    second: upheavtt Atlas_69
+  - first:
+      213: -6735550787316087019
+    second: upheavtt Atlas_70
+  - first:
+      213: 8357254755102188633
+    second: upheavtt Atlas_71
+  - first:
+      213: 274515309601047389
+    second: upheavtt Atlas_72
+  - first:
+      213: -5284620408051430595
+    second: upheavtt Atlas_73
+  - first:
+      213: 4529582572509144591
+    second: upheavtt Atlas_74
+  - first:
+      213: -7564092130544488628
+    second: upheavtt Atlas_75
+  - first:
+      213: -4860037368161686778
+    second: upheavtt Atlas_76
+  - first:
+      213: 1894470936249403690
+    second: upheavtt Atlas_77
+  - first:
+      213: -575042424411800842
+    second: upheavtt Atlas_78
+  - first:
+      213: 6666101659562582061
+    second: upheavtt Atlas_79
+  - first:
+      213: 4008049080050953793
+    second: upheavtt Atlas_80
+  - first:
+      213: -2220166167000607354
+    second: upheavtt Atlas_81
+  - first:
+      213: 7915339384388997901
+    second: upheavtt Atlas_82
+  - first:
+      213: -2493764553883874654
+    second: upheavtt Atlas_83
+  - first:
+      213: 3228517086265524557
+    second: upheavtt Atlas_84
+  - first:
+      213: -6741933197020356938
+    second: upheavtt Atlas_85
+  - first:
+      213: 2114485910194789506
+    second: upheavtt Atlas_86
+  - first:
+      213: 5997182122918851579
+    second: upheavtt Atlas_87
+  - first:
+      213: 4454331142169008462
+    second: upheavtt Atlas_88
+  - first:
+      213: -5146342945193887545
+    second: upheavtt Atlas_89
+  - first:
+      213: 170641469093195425
+    second: upheavtt Atlas_90
+  - first:
+      213: -4142883658488731099
+    second: upheavtt Atlas_91
+  - first:
+      213: 6051554967743835889
+    second: upheavtt Atlas_92
+  - first:
+      213: -7692039890489301501
+    second: upheavtt Atlas_93
+  - first:
+      213: 178166669802800606
+    second: upheavtt Atlas_94
+  - first:
+      213: 1862978921565813190
+    second: upheavtt Atlas_95
+  - first:
+      213: 5241839307320678620
+    second: upheavtt Atlas_96
+  - first:
+      213: -1947596333612815808
+    second: upheavtt Atlas_97
+  - first:
+      213: 2387172037475352670
+    second: upheavtt Atlas_98
+  - first:
+      213: -6762739131529799630
+    second: upheavtt Atlas_99
+  - first:
+      213: -8538199356852162968
+    second: upheavtt Atlas_100
+  - first:
+      213: -8623396231589327749
+    second: upheavtt Atlas_101
+  - first:
+      213: -6566473740489729248
+    second: upheavtt Atlas_102
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: upheavtt Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 497
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb33656ef27fb6ea0800000000000000
+      internalID: -5878333103502117954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 497
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06ab3896a668fa5b0800000000000000
+      internalID: -5354913640325334432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 497
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 048ef505f211313a0800000000000000
+      internalID: -6695989326060197824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 497
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bbc2082d4385be00800000000000000
+      internalID: 1059897654722612147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 489
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f48555a603767a4f0800000000000000
+      internalID: -817571349704386481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 489
+        width: 45
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ea1ad8271361e520800000000000000
+      internalID: 2729571800284011239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 481
+        width: 45
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94cca3c1d4394d960800000000000000
+      internalID: 7625882028440472649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 470
+        width: 37
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef56f23ed89585480800000000000000
+      internalID: -8910273396815731202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 464
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43c50d6ffa6df5a0800000000000000
+      internalID: -6485910243065347254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 464
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e997fba40166d290800000000000000
+      internalID: -7865993026463098397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 464
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1112e9b5cddba3920800000000000000
+      internalID: 2970895658331808017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 446
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de677ffcd7cfd38f0800000000000000
+      internalID: -559013161433860371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 438
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6132d0ba0a355bd10800000000000000
+      internalID: 2140709147414176534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 430
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc895b106928acc20800000000000000
+      internalID: 3227535663749765323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 470
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9562e23ec6d807a20800000000000000
+      internalID: 3058099645792003673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 425
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 417f14596a7f23810800000000000000
+      internalID: 1743728300586563348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 387
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba2005a7441ff1da0800000000000000
+      internalID: -5971789304457854293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 419
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9bf73bb3f6dba1d0800000000000000
+      internalID: -3338338356458685539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 419
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afb6074b547fa7cc0800000000000000
+      internalID: -3712383064061481990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 413
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a61915492f4aa560800000000000000
+      internalID: 7325754782543058599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 413
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e0f8a622c76dc9f0800000000000000
+      internalID: -446586704469888795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 413
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4175e5a07aaa73050800000000000000
+      internalID: 5780276281163536148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 387
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace2c889799f04180800000000000000
+      internalID: -9133025614812664118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 379
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58cc080b36fed3b50800000000000000
+      internalID: 6574674242472823941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 368
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6566526ffc0cf4fe0800000000000000
+      internalID: -1202530576064223658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 368
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5da8b7aa86453a0800000000000000
+      internalID: -6677597266057177657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_26
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 362
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e279a19b74666f0800000000000000
+      internalID: -691786632414155132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_27
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 362
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 108d4d324ad416240800000000000000
+      internalID: 4783189646615304193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_28
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 362
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26889edda2a8fcee0800000000000000
+      internalID: -1238619455787267998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_29
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 362
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e65abdc2ae5d05a90800000000000000
+      internalID: -7327121391980141202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_30
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 362
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb2ea9ca905ee340800000000000000
+      internalID: 4894938470737128419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_31
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 328
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e65cd7a73b8c820800000000000000
+      internalID: 2938796095536721434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_32
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 328
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a57970122da8d9220800000000000000
+      internalID: 2494302403735033690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_33
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 317
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3148c90ceee0628a0800000000000000
+      internalID: -6330355807626165229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_34
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 317
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de8e1b7f05e0f6ac0800000000000000
+      internalID: -3859850614717421331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_35
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 311
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbca68a0c34215fc0800000000000000
+      internalID: -3507982794451669827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_36
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 311
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a4a7ec6103eccc60800000000000000
+      internalID: 7839890646606783656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_37
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 311
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4135160d9e40d4b10800000000000000
+      internalID: 1967234014500705044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_38
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 311
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dcb9d9a15b5e5a60800000000000000
+      internalID: 7664664022131260629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_39
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 311
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b162a4d5f0d817670800000000000000
+      internalID: 8534757865972966939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_40
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 311
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddcc8744d43836080800000000000000
+      internalID: -9195361646275932963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_41
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 269
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986cfb96f58888410800000000000000
+      internalID: 1479582420968654473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_42
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 296
+        width: 45
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e70fae9ce3f7c220800000000000000
+      internalID: 2506239915255072742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_43
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 296
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da903231f9ad3c330800000000000000
+      internalID: 3730065293148621229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_44
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 296
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7c9770a4b98ffda0800000000000000
+      internalID: -5908852777207489412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_45
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 296
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4da0bd2b3eef8780800000000000000
+      internalID: -8678456018982621877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_46
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 260
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01e9795fd97beb50800000000000000
+      internalID: 6623521677164273931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_47
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 260
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c019f16cc86248490800000000000000
+      internalID: -7745023073109176052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_48
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 260
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fff3ac722e7b6a30800000000000000
+      internalID: 4209596963292971001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_49
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 260
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b944cbfc07f8fc4d0800000000000000
+      internalID: -3112111102805392229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_50
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 260
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b7a178296d65fb0800000000000000
+      internalID: -4659300839647970531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_51
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 260
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f03adf99848363f30800000000000000
+      internalID: 4554889957604172559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_52
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 210
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a06760099ae2038d0800000000000000
+      internalID: -2868741656834312694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_53
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 245
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02861c99e5d0a7050800000000000000
+      internalID: 5798962170150610976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_54
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 245
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6015fd3da832cc0800000000000000
+      internalID: -3736990623198017803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_55
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 209
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd3a396c793d5d90800000000000000
+      internalID: -7107461430416622133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_56
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 209
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d266f42178403040800000000000000
+      internalID: 4625276468098130645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_57
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 209
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f49be4d583b90d0800000000000000
+      internalID: -3415073919026507924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_58
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 209
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34629a1cc49aecab0800000000000000
+      internalID: -4985861590320863677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_59
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 209
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18353fae8824e3d0800000000000000
+      internalID: -3178370843726759906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_60
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 209
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80f9f9931ea0da9b0800000000000000
+      internalID: -5067382043271258360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_61
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 151
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ff12f0964b09550800000000000000
+      internalID: 6165626253188661013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_62
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 194
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e202d7f89087deab0800000000000000
+      internalID: -4977190030717149138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_63
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 194
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb31c01a329a23bd0800000000000000
+      internalID: -2651871260076928065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_64
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 158
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca5458bf24cce66c0800000000000000
+      internalID: -4148153618701924948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_65
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 158
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ca517c1f7ce2720800000000000000
+      internalID: 2823413857649011724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_66
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 158
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c668ad27fad11bd0800000000000000
+      internalID: -2661105149641464119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_67
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 158
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81f65a7e4f20e250800000000000000
+      internalID: 5971825119999750539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_68
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 158
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b14458fed6b2efb20800000000000000
+      internalID: 3170018938885325851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_69
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 158
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd52b0297229c300800000000000000
+      internalID: 272787156067573206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_70
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 143
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5170c63de348682a0800000000000000
+      internalID: -6735550787316087019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_71
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 154
+        width: 45
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9546f4fcbeeeaf370800000000000000
+      internalID: 8357254755102188633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_72
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 143
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d534d2a38364fc300800000000000000
+      internalID: 274515309601047389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_73
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 107
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3b805decb149a6b0800000000000000
+      internalID: -5284620408051430595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_74
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 107
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f062537d95f4cde30800000000000000
+      internalID: 4529582572509144591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_75
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 107
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4f61969842f60790800000000000000
+      internalID: -7564092130544488628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_76
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 107
+        width: 18
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b299363cdad8cb0800000000000000
+      internalID: -4860037368161686778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_77
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 107
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29827877438a4a10800000000000000
+      internalID: 1894470936249403690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_78
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 107
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fab72236f90508f0800000000000000
+      internalID: -575042424411800842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_79
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 92
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20aede0420c28c50800000000000000
+      internalID: 6666101659562582061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_80
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 92
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ea4ca17637f9730800000000000000
+      internalID: 4008049080050953793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_81
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 92
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 685969152a26031e0800000000000000
+      internalID: -2220166167000607354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_82
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 86
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d035a2b9b3fe8dd60800000000000000
+      internalID: 7915339384388997901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_83
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 56
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa8a4cc95e546dd0800000000000000
+      internalID: -2493764553883874654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_84
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 67
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d41c22e3f2ffdcc20800000000000000
+      internalID: 3228517086265524557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_85
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 56
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be10344a77df62a0800000000000000
+      internalID: -6741933197020356938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_86
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 56
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c9ab77bb9285d10800000000000000
+      internalID: 2114485910194789506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_87
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 56
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf3b6e9cd554a3350800000000000000
+      internalID: 5997182122918851579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_88
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 56
+        width: 45
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4991f0e296f0dd30800000000000000
+      internalID: 4454331142169008462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_89
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 41
+        width: 53
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c8716b9b548498b0800000000000000
+      internalID: -5146342945193887545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_90
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 72
+        width: 45
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae2045138d3e5200800000000000000
+      internalID: 170641469093195425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_91
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 56
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a220633458186c0800000000000000
+      internalID: -4142883658488731099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_92
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 56
+        width: 45
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe2f1f3e217bf350800000000000000
+      internalID: 6051554967743835889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_93
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 56
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30620494972604590800000000000000
+      internalID: -7692039890489301501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_94
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 56
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed5096864a9f87200800000000000000
+      internalID: 178166669802800606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_95
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 56
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c978fb6571aad910800000000000000
+      internalID: 1862978921565813190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_96
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 5
+        width: 53
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd8578ad311ceb840800000000000000
+      internalID: 5241839307320678620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_97
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 5
+        width: 53
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04aa721147fb8f4e0800000000000000
+      internalID: -1947596333612815808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_98
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 5
+        width: 53
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e50c67ff150f02120800000000000000
+      internalID: 2387172037475352670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_99
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 5
+        width: 53
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2385884279ce522a0800000000000000
+      internalID: -6762739131529799630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_100
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 5
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86eab591ce8328980800000000000000
+      internalID: -8538199356852162968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_101
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 5
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c0daae0da835880800000000000000
+      internalID: -8623396231589327749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upheavtt Atlas_102
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 5
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bdd277ce23fd4a0800000000000000
+      internalID: -6566473740489729248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      upheavtt Atlas_0: -5878333103502117954
+      upheavtt Atlas_1: -5354913640325334432
+      upheavtt Atlas_10: 2970895658331808017
+      upheavtt Atlas_100: -8538199356852162968
+      upheavtt Atlas_101: -8623396231589327749
+      upheavtt Atlas_102: -6566473740489729248
+      upheavtt Atlas_11: -559013161433860371
+      upheavtt Atlas_12: 2140709147414176534
+      upheavtt Atlas_13: 3227535663749765323
+      upheavtt Atlas_14: 3058099645792003673
+      upheavtt Atlas_15: 1743728300586563348
+      upheavtt Atlas_16: -5971789304457854293
+      upheavtt Atlas_17: -3338338356458685539
+      upheavtt Atlas_18: -3712383064061481990
+      upheavtt Atlas_19: 7325754782543058599
+      upheavtt Atlas_2: -6695989326060197824
+      upheavtt Atlas_20: -446586704469888795
+      upheavtt Atlas_21: 5780276281163536148
+      upheavtt Atlas_22: -9133025614812664118
+      upheavtt Atlas_23: 6574674242472823941
+      upheavtt Atlas_24: -1202530576064223658
+      upheavtt Atlas_25: -6677597266057177657
+      upheavtt Atlas_26: -691786632414155132
+      upheavtt Atlas_27: 4783189646615304193
+      upheavtt Atlas_28: -1238619455787267998
+      upheavtt Atlas_29: -7327121391980141202
+      upheavtt Atlas_3: 1059897654722612147
+      upheavtt Atlas_30: 4894938470737128419
+      upheavtt Atlas_31: 2938796095536721434
+      upheavtt Atlas_32: 2494302403735033690
+      upheavtt Atlas_33: -6330355807626165229
+      upheavtt Atlas_34: -3859850614717421331
+      upheavtt Atlas_35: -3507982794451669827
+      upheavtt Atlas_36: 7839890646606783656
+      upheavtt Atlas_37: 1967234014500705044
+      upheavtt Atlas_38: 7664664022131260629
+      upheavtt Atlas_39: 8534757865972966939
+      upheavtt Atlas_4: -817571349704386481
+      upheavtt Atlas_40: -9195361646275932963
+      upheavtt Atlas_41: 1479582420968654473
+      upheavtt Atlas_42: 2506239915255072742
+      upheavtt Atlas_43: 3730065293148621229
+      upheavtt Atlas_44: -5908852777207489412
+      upheavtt Atlas_45: -8678456018982621877
+      upheavtt Atlas_46: 6623521677164273931
+      upheavtt Atlas_47: -7745023073109176052
+      upheavtt Atlas_48: 4209596963292971001
+      upheavtt Atlas_49: -3112111102805392229
+      upheavtt Atlas_5: 2729571800284011239
+      upheavtt Atlas_50: -4659300839647970531
+      upheavtt Atlas_51: 4554889957604172559
+      upheavtt Atlas_52: -2868741656834312694
+      upheavtt Atlas_53: 5798962170150610976
+      upheavtt Atlas_54: -3736990623198017803
+      upheavtt Atlas_55: -7107461430416622133
+      upheavtt Atlas_56: 4625276468098130645
+      upheavtt Atlas_57: -3415073919026507924
+      upheavtt Atlas_58: -4985861590320863677
+      upheavtt Atlas_59: -3178370843726759906
+      upheavtt Atlas_6: 7625882028440472649
+      upheavtt Atlas_60: -5067382043271258360
+      upheavtt Atlas_61: 6165626253188661013
+      upheavtt Atlas_62: -4977190030717149138
+      upheavtt Atlas_63: -2651871260076928065
+      upheavtt Atlas_64: -4148153618701924948
+      upheavtt Atlas_65: 2823413857649011724
+      upheavtt Atlas_66: -2661105149641464119
+      upheavtt Atlas_67: 5971825119999750539
+      upheavtt Atlas_68: 3170018938885325851
+      upheavtt Atlas_69: 272787156067573206
+      upheavtt Atlas_7: -8910273396815731202
+      upheavtt Atlas_70: -6735550787316087019
+      upheavtt Atlas_71: 8357254755102188633
+      upheavtt Atlas_72: 274515309601047389
+      upheavtt Atlas_73: -5284620408051430595
+      upheavtt Atlas_74: 4529582572509144591
+      upheavtt Atlas_75: -7564092130544488628
+      upheavtt Atlas_76: -4860037368161686778
+      upheavtt Atlas_77: 1894470936249403690
+      upheavtt Atlas_78: -575042424411800842
+      upheavtt Atlas_79: 6666101659562582061
+      upheavtt Atlas_8: -6485910243065347254
+      upheavtt Atlas_80: 4008049080050953793
+      upheavtt Atlas_81: -2220166167000607354
+      upheavtt Atlas_82: 7915339384388997901
+      upheavtt Atlas_83: -2493764553883874654
+      upheavtt Atlas_84: 3228517086265524557
+      upheavtt Atlas_85: -6741933197020356938
+      upheavtt Atlas_86: 2114485910194789506
+      upheavtt Atlas_87: 5997182122918851579
+      upheavtt Atlas_88: 4454331142169008462
+      upheavtt Atlas_89: -5146342945193887545
+      upheavtt Atlas_9: -7865993026463098397
+      upheavtt Atlas_90: 170641469093195425
+      upheavtt Atlas_91: -4142883658488731099
+      upheavtt Atlas_92: 6051554967743835889
+      upheavtt Atlas_93: -7692039890489301501
+      upheavtt Atlas_94: 178166669802800606
+      upheavtt Atlas_95: 1862978921565813190
+      upheavtt Atlas_96: 5241839307320678620
+      upheavtt Atlas_97: -1947596333612815808
+      upheavtt Atlas_98: 2387172037475352670
+      upheavtt Atlas_99: -6762739131529799630
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

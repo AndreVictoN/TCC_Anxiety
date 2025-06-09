@@ -28,7 +28,7 @@ public class NPC : MonoBehaviour
     public float attackTime = 0.3f;
     public float fadeTime = 0.5f;
 
-    //Privates
+    #region Privates
     private Coroutine _currentCoroutine;
     private Tween _currentTween;
     private bool _playerIsClose;
@@ -37,6 +37,7 @@ public class NPC : MonoBehaviour
     private bool _isMoving;
     private bool _isTyping;
     private int _i;
+    #endregion
 
     void Awake()
     {
@@ -60,10 +61,10 @@ public class NPC : MonoBehaviour
     {
         return _npcName switch
         {
-            "Estella" => new Vector3(2.5f, -3.11f, 0),
-            "Rebecca" => new Vector3(4.5f, -3.11f, 0),
-            "Ezequiel" => new Vector3(-4.5f, -3.11f, 0),
-            "Yuri" => new Vector3(-2.5f, -3.11f, 0),
+            "Estella" => new Vector3(-5.3f, 0.01f, 0),
+            "Rebecca" => new Vector3(-6.9f, 3.7f, 0),
+            "Ezequiel" => new Vector3(-5.3f, 2.5f, 0),
+            "Yuri" => new Vector3(-6.9f, -1.1f, 0),
             _ => this.gameObject.transform.position,
         };
     }
@@ -91,11 +92,10 @@ public class NPC : MonoBehaviour
     {
         _currentCoroutine = battleManager.FadeToColor(CheckColorAspectByNPC(), _currentCoroutine, spriteRenderer, fadeTime);
 
-        if(Input.GetMouseButtonDown(0) && this.gameObject.transform.position == defaultPosition)
+        if(Input.GetMouseButtonDown(0))
         {
-            Vector2 position = enemy.transform.position;
-            position.y -= 0.8f;
-            Movement(position);
+            Vector2 enemyPosition = enemy.transform.position;
+            Movement(enemyPosition);
         }
     }
 
@@ -181,6 +181,8 @@ public class NPC : MonoBehaviour
 
     public virtual void ResetText()
     {
+        if(_isBattling) return;
+
         dialogueText.text = "";
         _i = 0;
 
