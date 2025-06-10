@@ -92,11 +92,11 @@ public class NPC : MonoBehaviour
     {
         _currentCoroutine = battleManager.FadeToColor(CheckColorAspectByNPC(), _currentCoroutine, spriteRenderer, fadeTime);
 
-        if(Input.GetMouseButtonDown(0))
+        /*if(Input.GetMouseButtonDown(0))
         {
             Vector2 enemyPosition = enemy.transform.position;
             Movement(enemyPosition);
-        }
+        }*/
     }
 
     private Color CheckColorAspectByNPC()
@@ -122,11 +122,12 @@ public class NPC : MonoBehaviour
         return colorToFade;
     }
 
-    public void Movement(Vector2 position)
+    public void Movement()
     {
+        Vector2 enemyPosition = enemy.transform.position;
         _isMoving = true;
         _currentTween?.Kill();
-        _currentTween = transform.DOLocalMove(position, attackTime).SetEase(Ease.InQuad).OnComplete(() => _isMoving = false);
+        _currentTween = transform.DOLocalMove(enemyPosition, attackTime).SetEase(Ease.InQuad).OnComplete(() => _isMoving = false);
     }
 
     void OnMouseExit()

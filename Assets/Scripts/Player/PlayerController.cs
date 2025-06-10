@@ -83,18 +83,19 @@ public class PlayerController : MonoBehaviour
         colorToFade.b += 1f;
         _currentCoroutine = battleManager.FadeToColor(colorToFade, _currentCoroutine, spriteRenderer, fadeTime);
 
-        if(Input.GetMouseButtonDown(0))
+        /*if(Input.GetMouseButtonDown(0))
         {
             Vector2 enemyPosition = enemy.transform.position;
             PlayerMovement(enemyPosition);
-        }
+        }*/
     }
 
-    public void PlayerMovement(Vector2 position)
+    public void PlayerMovement()
     {
+        Vector2 enemyPosition = enemy.transform.position;
         _isMoving = true;
         _currentTween?.Kill();
-        _currentTween = transform.DOLocalMove(position, attackTime).SetEase(Ease.InQuad).OnComplete(() => _isMoving = false);
+        _currentTween = transform.DOLocalMove(enemyPosition, attackTime).SetEase(Ease.InQuad).OnComplete(() => _isMoving = false);
     }
 
     void OnMouseExit()

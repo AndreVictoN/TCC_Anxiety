@@ -1,0 +1,1755 @@
+fileFormatVersion: 2
+guid: 8e9d31e4d9edb5c4986b66cd81caf39d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2511393847989839298
+    second: Anxietynewfont-Regular Atlas_0
+  - first:
+      213: 4729243093312836611
+    second: Anxietynewfont-Regular Atlas_1
+  - first:
+      213: 5863713423513321424
+    second: Anxietynewfont-Regular Atlas_2
+  - first:
+      213: 1126936062060753191
+    second: Anxietynewfont-Regular Atlas_3
+  - first:
+      213: -7593457642926424863
+    second: Anxietynewfont-Regular Atlas_4
+  - first:
+      213: -3524276277667466855
+    second: Anxietynewfont-Regular Atlas_5
+  - first:
+      213: -3224510469915176717
+    second: Anxietynewfont-Regular Atlas_6
+  - first:
+      213: -6463326514831555226
+    second: Anxietynewfont-Regular Atlas_7
+  - first:
+      213: 2336871205817699149
+    second: Anxietynewfont-Regular Atlas_8
+  - first:
+      213: 6827576946467683446
+    second: Anxietynewfont-Regular Atlas_9
+  - first:
+      213: -6142468800250566731
+    second: Anxietynewfont-Regular Atlas_10
+  - first:
+      213: 6041380980268452081
+    second: Anxietynewfont-Regular Atlas_11
+  - first:
+      213: 2660815793375922104
+    second: Anxietynewfont-Regular Atlas_12
+  - first:
+      213: 5259074949539958562
+    second: Anxietynewfont-Regular Atlas_13
+  - first:
+      213: 3714863213350617387
+    second: Anxietynewfont-Regular Atlas_14
+  - first:
+      213: 2826431835459188929
+    second: Anxietynewfont-Regular Atlas_15
+  - first:
+      213: -365892366622858982
+    second: Anxietynewfont-Regular Atlas_16
+  - first:
+      213: 7392480174664847131
+    second: Anxietynewfont-Regular Atlas_17
+  - first:
+      213: -6532090229323761178
+    second: Anxietynewfont-Regular Atlas_18
+  - first:
+      213: -2736337256916912585
+    second: Anxietynewfont-Regular Atlas_19
+  - first:
+      213: 2757185502136444214
+    second: Anxietynewfont-Regular Atlas_20
+  - first:
+      213: -6657776515168493550
+    second: Anxietynewfont-Regular Atlas_21
+  - first:
+      213: -3306736478472182495
+    second: Anxietynewfont-Regular Atlas_22
+  - first:
+      213: -8570244411202492893
+    second: Anxietynewfont-Regular Atlas_23
+  - first:
+      213: -2350480664261043986
+    second: Anxietynewfont-Regular Atlas_24
+  - first:
+      213: 1469466891124349041
+    second: Anxietynewfont-Regular Atlas_25
+  - first:
+      213: 430265339980266226
+    second: Anxietynewfont-Regular Atlas_26
+  - first:
+      213: 1043346120256266623
+    second: Anxietynewfont-Regular Atlas_27
+  - first:
+      213: -4495819821542587165
+    second: Anxietynewfont-Regular Atlas_28
+  - first:
+      213: -2147926285902470521
+    second: Anxietynewfont-Regular Atlas_29
+  - first:
+      213: 8450679096556771356
+    second: Anxietynewfont-Regular Atlas_30
+  - first:
+      213: 2999321556266425172
+    second: Anxietynewfont-Regular Atlas_31
+  - first:
+      213: 41926891763073220
+    second: Anxietynewfont-Regular Atlas_32
+  - first:
+      213: -7389678623052943075
+    second: Anxietynewfont-Regular Atlas_33
+  - first:
+      213: 6721796086106518783
+    second: Anxietynewfont-Regular Atlas_34
+  - first:
+      213: -2337173358032645387
+    second: Anxietynewfont-Regular Atlas_35
+  - first:
+      213: -1280015645961598272
+    second: Anxietynewfont-Regular Atlas_36
+  - first:
+      213: -450719071834214635
+    second: Anxietynewfont-Regular Atlas_37
+  - first:
+      213: 6383196766917717764
+    second: Anxietynewfont-Regular Atlas_38
+  - first:
+      213: 6013619153459306740
+    second: Anxietynewfont-Regular Atlas_39
+  - first:
+      213: -3021064373300384912
+    second: Anxietynewfont-Regular Atlas_40
+  - first:
+      213: -153804144083803733
+    second: Anxietynewfont-Regular Atlas_41
+  - first:
+      213: -570574974121030701
+    second: Anxietynewfont-Regular Atlas_42
+  - first:
+      213: -9060202995492726830
+    second: Anxietynewfont-Regular Atlas_43
+  - first:
+      213: 6401035743544501559
+    second: Anxietynewfont-Regular Atlas_44
+  - first:
+      213: 3855758477151341037
+    second: Anxietynewfont-Regular Atlas_45
+  - first:
+      213: -7323751856359394280
+    second: Anxietynewfont-Regular Atlas_46
+  - first:
+      213: 6456121686594650402
+    second: Anxietynewfont-Regular Atlas_47
+  - first:
+      213: -6941757922803098424
+    second: Anxietynewfont-Regular Atlas_48
+  - first:
+      213: 8021637045455766426
+    second: Anxietynewfont-Regular Atlas_49
+  - first:
+      213: 8910220719135620495
+    second: Anxietynewfont-Regular Atlas_50
+  - first:
+      213: 7881788380180080296
+    second: Anxietynewfont-Regular Atlas_51
+  - first:
+      213: 4649692860468620577
+    second: Anxietynewfont-Regular Atlas_52
+  - first:
+      213: -4526075704050292270
+    second: Anxietynewfont-Regular Atlas_53
+  - first:
+      213: 7977748578575214600
+    second: Anxietynewfont-Regular Atlas_54
+  - first:
+      213: 372913271040657618
+    second: Anxietynewfont-Regular Atlas_55
+  - first:
+      213: 4514370167005435078
+    second: Anxietynewfont-Regular Atlas_56
+  - first:
+      213: 303569003910884105
+    second: Anxietynewfont-Regular Atlas_57
+  - first:
+      213: 767088436692183058
+    second: Anxietynewfont-Regular Atlas_58
+  - first:
+      213: -4154927030310483807
+    second: Anxietynewfont-Regular Atlas_59
+  - first:
+      213: 8459886921396511294
+    second: Anxietynewfont-Regular Atlas_60
+  - first:
+      213: -810901025289522379
+    second: Anxietynewfont-Regular Atlas_61
+  - first:
+      213: 8228992273116283009
+    second: Anxietynewfont-Regular Atlas_62
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 480
+        width: 45
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5298816634ad220800000000000000
+      internalID: 2511393847989839298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 465
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30491696985a1a140800000000000000
+      internalID: 4729243093312836611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 477
+        width: 45
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df73399a48106150800000000000000
+      internalID: 5863713423513321424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 464
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72175bfa06ea3af00800000000000000
+      internalID: 1126936062060753191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 469
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec3560718e9e9690800000000000000
+      internalID: -7593457642926424863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 443
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9917b4bd561471fc0800000000000000
+      internalID: -3524276277667466855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 401
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f09d22dfcc3043d0800000000000000
+      internalID: -3224510469915176717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 387
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6650a1867c6ad46a0800000000000000
+      internalID: -6463326514831555226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 399
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b4a9cfafb3e6020800000000000000
+      internalID: 2336871205817699149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 386
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c3ada0f0d60ce50800000000000000
+      internalID: 6827576946467683446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 427
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b7252d9b2191caa0800000000000000
+      internalID: -6142468800250566731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 443
+        width: 45
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f8c3b13efb47d350800000000000000
+      internalID: 6041380980268452081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 391
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b7cbe0dddd1de420800000000000000
+      internalID: 2660815793375922104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 385
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f0c768dccfbf840800000000000000
+      internalID: 5259074949539958562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 365
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b210eec0968dd8330800000000000000
+      internalID: 3714863213350617387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 365
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c8766e77c0893720800000000000000
+      internalID: 2826431835459188929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 322
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a11ea65c4d61ceaf0800000000000000
+      internalID: -365892366622858982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 309
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f04044d8d579660800000000000000
+      internalID: 7392480174664847131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 321
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e97b508b8a5955a0800000000000000
+      internalID: -6532090229323761178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 308
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 736fcc733c3960ad0800000000000000
+      internalID: -2736337256916912585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 319
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63523b22b9d734620800000000000000
+      internalID: 2757185502136444214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 318
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210a17ba883da93a0800000000000000
+      internalID: -6657776515168493550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 297
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 125e6d251bc1c12d0800000000000000
+      internalID: -3306736478472182495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 297
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 326aff77d10601980800000000000000
+      internalID: -8570244411202492893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 345
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee8db4b0a4a616fd0800000000000000
+      internalID: -2350480664261043986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 243
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1781aa61a58946410800000000000000
+      internalID: 1469466891124349041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_26
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 242
+        width: 45
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fabfac0c0c98f500800000000000000
+      internalID: 430265339980266226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_27
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 241
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7128abb4c5ba7e00800000000000000
+      internalID: 1043346120256266623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_28
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 240
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e44bc231b3ab91c0800000000000000
+      internalID: -4495819821542587165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_29
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 298
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7822f055c680132e0800000000000000
+      internalID: -2147926285902470521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_30
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 230
+        width: 45
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18d51d5dd7d64570800000000000000
+      internalID: 8450679096556771356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_31
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 229
+        width: 45
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b9e68701bbf9920800000000000000
+      internalID: 2999321556266425172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_32
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 219
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c003123944f49000800000000000000
+      internalID: 41926891763073220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_33
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 219
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11b1acc176927990800000000000000
+      internalID: -7389678623052943075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_34
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 256
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff47dfc3ded984d50800000000000000
+      internalID: 6721796086106518783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_35
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 164
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f215f7b631b09fd0800000000000000
+      internalID: -2337173358032645387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_36
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 163
+        width: 45
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca44834d887c3ee0800000000000000
+      internalID: -1280015645961598272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_37
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 162
+        width: 45
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51fe3d56469beb9f0800000000000000
+      internalID: -450719071834214635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_38
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 162
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40f6d8fc3aba59850800000000000000
+      internalID: 6383196766917717764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_39
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 220
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f06d6032caa47350800000000000000
+      internalID: 6013619153459306740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 163
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07ba7d175f50316d0800000000000000
+      internalID: -3021064373300384912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_41
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 162
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1e6e222f39dddf0800000000000000
+      internalID: -153804144083803733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_42
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 152
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dbc9c58519e418f0800000000000000
+      internalID: -570574974121030701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_43
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 152
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7d9bce061b34280800000000000000
+      internalID: -9060202995492726830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_44
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 142
+        width: 25
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7356c88381c05d850800000000000000
+      internalID: 6401035743544501559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_45
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 85
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de98e4208e7628530800000000000000
+      internalID: 3855758477151341037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_46
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 85
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81437925d7ecc5a90800000000000000
+      internalID: -7323751856359394280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_47
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 85
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2218b2cc770c89950800000000000000
+      internalID: 6456121686594650402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_48
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 84
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cc519eb2fbe9af90800000000000000
+      internalID: -6941757922803098424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_49
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 84
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9341837464925f60800000000000000
+      internalID: 8021637045455766426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_50
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 84
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d7762298677ab70800000000000000
+      internalID: 8910220719135620495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_51
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 84
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a66f63b5ccb16d60800000000000000
+      internalID: 7881788380180080296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_52
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 84
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12de6ee7507078040800000000000000
+      internalID: 4649692860468620577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_53
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 84
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d96e8990262031c0800000000000000
+      internalID: -4526075704050292270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_54
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 6
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8086a557018a6be60800000000000000
+      internalID: 7977748578575214600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_55
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 6
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d8486ce4aadc2500800000000000000
+      internalID: 372913271040657618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_56
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 6
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c4dafcafb346ae30800000000000000
+      internalID: 4514370167005435078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_57
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 6
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b6de2966e763400800000000000000
+      internalID: 303569003910884105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_58
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 6
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218e8547ede35aa00800000000000000
+      internalID: 767088436692183058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_59
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 6
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a8cca231ebb656c0800000000000000
+      internalID: -4154927030310483807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_60
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 6
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e32efc5255e876570800000000000000
+      internalID: 8459886921396511294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_61
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 6
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5333e9750d91fb4f0800000000000000
+      internalID: -810901025289522379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anxietynewfont-Regular Atlas_62
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 6
+        width: 35
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180c7829fd0433270800000000000000
+      internalID: 8228992273116283009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Anxietynewfont-Regular Atlas_0: 2511393847989839298
+      Anxietynewfont-Regular Atlas_1: 4729243093312836611
+      Anxietynewfont-Regular Atlas_10: -6142468800250566731
+      Anxietynewfont-Regular Atlas_11: 6041380980268452081
+      Anxietynewfont-Regular Atlas_12: 2660815793375922104
+      Anxietynewfont-Regular Atlas_13: 5259074949539958562
+      Anxietynewfont-Regular Atlas_14: 3714863213350617387
+      Anxietynewfont-Regular Atlas_15: 2826431835459188929
+      Anxietynewfont-Regular Atlas_16: -365892366622858982
+      Anxietynewfont-Regular Atlas_17: 7392480174664847131
+      Anxietynewfont-Regular Atlas_18: -6532090229323761178
+      Anxietynewfont-Regular Atlas_19: -2736337256916912585
+      Anxietynewfont-Regular Atlas_2: 5863713423513321424
+      Anxietynewfont-Regular Atlas_20: 2757185502136444214
+      Anxietynewfont-Regular Atlas_21: -6657776515168493550
+      Anxietynewfont-Regular Atlas_22: -3306736478472182495
+      Anxietynewfont-Regular Atlas_23: -8570244411202492893
+      Anxietynewfont-Regular Atlas_24: -2350480664261043986
+      Anxietynewfont-Regular Atlas_25: 1469466891124349041
+      Anxietynewfont-Regular Atlas_26: 430265339980266226
+      Anxietynewfont-Regular Atlas_27: 1043346120256266623
+      Anxietynewfont-Regular Atlas_28: -4495819821542587165
+      Anxietynewfont-Regular Atlas_29: -2147926285902470521
+      Anxietynewfont-Regular Atlas_3: 1126936062060753191
+      Anxietynewfont-Regular Atlas_30: 8450679096556771356
+      Anxietynewfont-Regular Atlas_31: 2999321556266425172
+      Anxietynewfont-Regular Atlas_32: 41926891763073220
+      Anxietynewfont-Regular Atlas_33: -7389678623052943075
+      Anxietynewfont-Regular Atlas_34: 6721796086106518783
+      Anxietynewfont-Regular Atlas_35: -2337173358032645387
+      Anxietynewfont-Regular Atlas_36: -1280015645961598272
+      Anxietynewfont-Regular Atlas_37: -450719071834214635
+      Anxietynewfont-Regular Atlas_38: 6383196766917717764
+      Anxietynewfont-Regular Atlas_39: 6013619153459306740
+      Anxietynewfont-Regular Atlas_4: -7593457642926424863
+      Anxietynewfont-Regular Atlas_40: -3021064373300384912
+      Anxietynewfont-Regular Atlas_41: -153804144083803733
+      Anxietynewfont-Regular Atlas_42: -570574974121030701
+      Anxietynewfont-Regular Atlas_43: -9060202995492726830
+      Anxietynewfont-Regular Atlas_44: 6401035743544501559
+      Anxietynewfont-Regular Atlas_45: 3855758477151341037
+      Anxietynewfont-Regular Atlas_46: -7323751856359394280
+      Anxietynewfont-Regular Atlas_47: 6456121686594650402
+      Anxietynewfont-Regular Atlas_48: -6941757922803098424
+      Anxietynewfont-Regular Atlas_49: 8021637045455766426
+      Anxietynewfont-Regular Atlas_5: -3524276277667466855
+      Anxietynewfont-Regular Atlas_50: 8910220719135620495
+      Anxietynewfont-Regular Atlas_51: 7881788380180080296
+      Anxietynewfont-Regular Atlas_52: 4649692860468620577
+      Anxietynewfont-Regular Atlas_53: -4526075704050292270
+      Anxietynewfont-Regular Atlas_54: 7977748578575214600
+      Anxietynewfont-Regular Atlas_55: 372913271040657618
+      Anxietynewfont-Regular Atlas_56: 4514370167005435078
+      Anxietynewfont-Regular Atlas_57: 303569003910884105
+      Anxietynewfont-Regular Atlas_58: 767088436692183058
+      Anxietynewfont-Regular Atlas_59: -4154927030310483807
+      Anxietynewfont-Regular Atlas_6: -3224510469915176717
+      Anxietynewfont-Regular Atlas_60: 8459886921396511294
+      Anxietynewfont-Regular Atlas_61: -810901025289522379
+      Anxietynewfont-Regular Atlas_62: 8228992273116283009
+      Anxietynewfont-Regular Atlas_7: -6463326514831555226
+      Anxietynewfont-Regular Atlas_8: 2336871205817699149
+      Anxietynewfont-Regular Atlas_9: 6827576946467683446
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

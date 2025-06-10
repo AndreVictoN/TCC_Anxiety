@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d40a275e48bf06543b26101c1243fb7f
+guid: 49199aa4d1ba98a48b6f5495f373eaa2
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Upheaval TT (BRK)
+  - Anxietyspecialchars
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

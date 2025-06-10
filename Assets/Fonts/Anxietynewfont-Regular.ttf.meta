@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dde4115dc0a373340b5bf323660f9585
+guid: ba16c7a779ad1794bb3d5b7a488d8d48
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Anxietyfont
+  - Anxietynewfont
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
