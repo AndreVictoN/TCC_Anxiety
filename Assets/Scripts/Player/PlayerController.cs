@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public InputActionReference move;
     public Animator animator;
+    public Animator battleAnimator;
 
     #region tags to compare
     [Header("ScenesToLoad")]
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
     private Coroutine _currentCoroutine;
     private Tween _currentTween;
     private string _walkingDown;
+    private Vector2 _lastMoveDirection = Vector2.down;
     #endregion
 
     void Awake()
@@ -63,7 +65,6 @@ public class PlayerController : MonoBehaviour
 
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         defaultColor = spriteRenderer.color;
-        animator = this.gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -73,6 +74,9 @@ public class PlayerController : MonoBehaviour
             _isBattleScene = true;
 
             _currentTween = battleManager.GoToDefaultPosition(this.gameObject, _isMovingBattle, _currentTween, defaultPosition, attackTime);
+        }else
+        {
+            _isBattleScene = false;
         }
 
         _canMove = !_isBattleScene;
@@ -89,6 +93,13 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Horizontal", _moveDirection.x);
             animator.SetFloat("Vertical", _moveDirection.y);
             animator.SetFloat("Speed", _moveDirection.sqrMagnitude);
+
+            if(_moveDirection.sqrMagnitude > 0.01f)
+            {
+                _lastMoveDirection = _moveDirection;
+                animator.SetFloat("LastHorizontal", _moveDirection.x);
+                animator.SetFloat("LastVertical", _moveDirection.y);
+            }
         }
     }
 
@@ -113,6 +124,13 @@ public class PlayerController : MonoBehaviour
         _isMovingBattle = true;
         _currentTween?.Kill();
         _currentTween = transform.DOLocalMove(enemyPosition, attackTime).SetEase(Ease.InQuad).OnComplete(() => _isMovingBattle = false);
+    }
+
+    public void AnimateAttack()
+    {
+        if(!_isBattleScene) return;
+
+        battleAnimator.SetTrigger("Attack");
     }
 
     void OnMouseExit()
