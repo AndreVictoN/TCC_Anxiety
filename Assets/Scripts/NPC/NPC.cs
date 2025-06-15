@@ -90,6 +90,7 @@ public class NPC : MonoBehaviour
 
     void OnMouseOver()
     {
+        if(SceneManager.GetActiveScene().name != "BattleScene") return;
         _currentCoroutine = battleManager.FadeToColor(CheckColorAspectByNPC(), _currentCoroutine, spriteRenderer, fadeTime);
 
         /*if(Input.GetMouseButtonDown(0))
@@ -132,6 +133,7 @@ public class NPC : MonoBehaviour
 
     void OnMouseExit()
     {
+        if(SceneManager.GetActiveScene().name != "BattleScene") return;
         _currentCoroutine = battleManager.FadeToColor(defaultColor, _currentCoroutine, spriteRenderer, fadeTime);
     }
 

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float moveSpeed = 5f;
     public InputActionReference move;
+    public Animator animator;
 
     #region tags to compare
     [Header("ScenesToLoad")]
@@ -39,9 +40,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 _positionBeforeFloor;
     private bool _canMove = true;
     private bool _isBattleScene = false;
-    private bool _isMoving = false;
+    private bool _isMovingBattle = false;
     private Coroutine _currentCoroutine;
     private Tween _currentTween;
+    private string _walkingDown;
     #endregion
 
     void Awake()
@@ -61,6 +63,7 @@ public class PlayerController : MonoBehaviour
 
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         defaultColor = spriteRenderer.color;
+        animator = this.gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -69,16 +72,30 @@ public class PlayerController : MonoBehaviour
         {
             _isBattleScene = true;
 
-            _currentTween = battleManager.GoToDefaultPosition(this.gameObject, _isMoving, _currentTween, defaultPosition, attackTime);
+            _currentTween = battleManager.GoToDefaultPosition(this.gameObject, _isMovingBattle, _currentTween, defaultPosition, attackTime);
         }
 
         _canMove = !_isBattleScene;
 
         if(_canMove) _moveDirection = move.action.ReadValue<Vector2>();
+
+        AnimateMovement();
+    }
+
+    public void AnimateMovement()
+    {
+        if(!_isBattleScene)
+        {
+            animator.SetFloat("Horizontal", _moveDirection.x);
+            animator.SetFloat("Vertical", _moveDirection.y);
+            animator.SetFloat("Speed", _moveDirection.sqrMagnitude);
+        }
     }
 
     void OnMouseOver()
     {
+        if(!_isBattleScene) return;
+        
         Color colorToFade = spriteRenderer.color;
         colorToFade.b += 1f;
         _currentCoroutine = battleManager.FadeToColor(colorToFade, _currentCoroutine, spriteRenderer, fadeTime);
@@ -93,13 +110,14 @@ public class PlayerController : MonoBehaviour
     public void PlayerMovement()
     {
         Vector2 enemyPosition = enemy.transform.position;
-        _isMoving = true;
+        _isMovingBattle = true;
         _currentTween?.Kill();
-        _currentTween = transform.DOLocalMove(enemyPosition, attackTime).SetEase(Ease.InQuad).OnComplete(() => _isMoving = false);
+        _currentTween = transform.DOLocalMove(enemyPosition, attackTime).SetEase(Ease.InQuad).OnComplete(() => _isMovingBattle = false);
     }
 
     void OnMouseExit()
     {
+        if(!_isBattleScene) return;
         _currentCoroutine = battleManager.FadeToColor(defaultColor, _currentCoroutine, spriteRenderer, fadeTime);
     }
 
