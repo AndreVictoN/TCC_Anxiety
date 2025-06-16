@@ -12,6 +12,8 @@ TagManager:
   - Enemy
   - Card
   - Arrow
+  - ToOtherScene
+  - Row
   layers:
   - Default
   - TransparentFX

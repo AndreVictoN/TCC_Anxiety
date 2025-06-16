@@ -19,10 +19,12 @@ public class PlayerController : MonoBehaviour
     public string prototypeScene = "PrototypeScene";
     public string firstFloor = "FirstFloorPrototype";
     public string battleScene = "BattleScene";
+    public string classroom = "Classroom";
 
     private string npcTag = "NPC";
     private string doorTag = "Door";
     private string stairsTag = "Stairs";
+    public string changeSceneTag = "ToOtherScene";
     #endregion
 
     [Header("HoverSettings")]
@@ -146,14 +148,18 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }else if(collision.gameObject.CompareTag(stairsTag))
         {
-            if(SceneManager.GetActiveScene().name == prototypeScene) StartCoroutine(LoadScene(firstFloor));
-            else if(SceneManager.GetActiveScene().name == firstFloor) StartCoroutine(LoadScene(prototypeScene));
+            if(SceneManager.GetActiveScene().name == prototypeScene) StartCoroutine(LoadFloor(firstFloor));
+            else if(SceneManager.GetActiveScene().name == firstFloor) StartCoroutine(LoadFloor(prototypeScene));
 
+            _canMove = false;
+        }else if(collision.gameObject.CompareTag(changeSceneTag))
+        {
+            collision.gameObject.GetComponent<ToOtherScene>().StartLoadNewScene(classroom);
             _canMove = false;
         }
     }
 
-    IEnumerator LoadScene(string sceneName)
+    IEnumerator LoadFloor(string sceneName)
     {
         transform.DOMoveY(-2, 1f).SetRelative();
 
