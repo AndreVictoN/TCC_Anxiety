@@ -22,6 +22,7 @@ public class NPC : MonoBehaviour
     public float wordSpeed;
 
     [Header("Battle")]
+    public Animator battleAnimator;
     public BattleManager battleManager;
     public SpriteRenderer spriteRenderer;
     public GameObject enemy;
@@ -84,6 +85,7 @@ public class NPC : MonoBehaviour
     public void BattleManagement()
     {
         if(!_isBattling) return;
+        battleAnimator = this.gameObject.GetComponent<Animator>();
 
         _currentTween = battleManager.GoToDefaultPosition(this.gameObject, _isMoving, _currentTween, defaultPosition, attackTime);
     }
@@ -176,7 +178,7 @@ public class NPC : MonoBehaviour
         dialoguePanel.SetActive(true);
 
         GameObject npcImage = GameObject.FindGameObjectWithTag("NPC_Image");
-        npcImage.GetComponent<Image>().color = this.gameObject.GetComponent<SpriteRenderer>().color;
+        npcImage.GetComponent<Image>().sprite = this.gameObject.GetComponent<SpriteRenderer>().sprite;
 
         GameObject npcName = GameObject.FindGameObjectWithTag("NPC_Name");
         npcName.GetComponent<TextMeshProUGUI>().text = this.gameObject.name.ToString();
@@ -189,7 +191,7 @@ public class NPC : MonoBehaviour
         dialogueText.text = "";
         _i = 0;
 
-        if(dialoguePanel.activeSelf && dialoguePanel.activeInHierarchy) dialoguePanel.SetActive(false);
+        if(dialoguePanel != null) dialoguePanel.SetActive(false);
     }
 
     IEnumerator Typing()
@@ -243,5 +245,12 @@ public class NPC : MonoBehaviour
             _playerIsClose = false;
             ResetText();
         }
+    }
+
+    public void AnimateAttack()
+    {
+        if (!_isBattling) return;
+
+        battleAnimator.SetTrigger("Attack");
     }
 }

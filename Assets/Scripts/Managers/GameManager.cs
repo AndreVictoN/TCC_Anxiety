@@ -4,17 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Core.Singleton;
 using UnityEngine.UI;
-using Cinemachine;
+using Unity.Cinemachine;
 
 public class GameManager : Singleton<GameManager>
 {
     public GameObject PlayerPFB;
     public Image transitionImage;
     public List<GameObject> doors;
-    public CinemachineVirtualCamera camera;
+    public CinemachineCamera cinemachineCamera;
 
     protected override void Awake()
     {
+        cinemachineCamera = GameObject.FindFirstObjectByType<CinemachineCamera>();
         PlayerManagement();
     }
 
@@ -22,7 +23,15 @@ public class GameManager : Singleton<GameManager>
     {
         if (GameObject.FindFirstObjectByType<PlayerController>() == null)
         {
-            GameObject.Instantiate(PlayerPFB);
+            CinemachineFollow(GameObject.Instantiate(PlayerPFB).GetComponent<Transform>());
+        }
+    }
+
+    void CinemachineFollow(Transform transform)
+    {
+        if(cinemachineCamera != null)
+        {
+            cinemachineCamera.Follow = transform;
         }
     }
 
@@ -40,16 +49,16 @@ public class GameManager : Singleton<GameManager>
         string identifier = toOtherScene.GetComponentInChildren<Door>().identifier;
 
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-
         yield return null;
+
+        cinemachineCamera = GameObject.FindFirstObjectByType<CinemachineCamera>();
+        CinemachineFollow(player.GetComponent<Transform>());
 
         Door door = null;
 
         if (sceneName == "Classroom")
         {
             door = GameObject.FindFirstObjectByType<Door>();
-            this.gameObject.transform.position = new Vector3(-10.53f, 7f, 1f);
-            this.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
             player.transform.localScale = new Vector3(1.7f, 1.7f, 1f);
             player.GetComponent<PlayerController>().SetSpeed(8f);
             door.SetIsClosed(true);
@@ -67,8 +76,6 @@ public class GameManager : Singleton<GameManager>
                     break;
                 }
             }
-            this.gameObject.transform.position = new Vector3(0.05f, 3.93f, 0f);
-            this.gameObject.transform.localScale = new Vector3(0.4f, 0.4f, 1f);
             player.transform.localScale = new Vector3(0.7f, 0.7f, 1f);
             player.GetComponent<PlayerController>().SetSpeed(5f);
         }
