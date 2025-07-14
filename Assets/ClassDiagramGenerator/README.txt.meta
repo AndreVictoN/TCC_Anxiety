@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9ace500f2b4e07840811f71f7046a26a
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 323124
+  packageName: Class Diagram Generator
+  packageVersion: 1.1
+  assetPath: Assets/ClassDiagramGenerator/README.txt
+  uploadId: 769223

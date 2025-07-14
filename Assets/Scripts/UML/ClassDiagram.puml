@@ -1,0 +1,121 @@
+﻿@startuml
+class Cards {
+    + transformCard : Transform
+    + defaultPosition : Vector3
+    + arrow : GameObject
+    + playerOrNPC : GameObject
+    - _isClicked : bool
+    + OnPointerEnter(eventData : PointerEventData) : void
+    + OnPointerClick(eventData : PointerEventData) : void
+    + OnPointerExit(eventData : PointerEventData) : void
+    + LeaveCard() : void
+}
+class Door {
+    + player : GameObject
+    + doorOpened : Sprite
+    + doorClosed : Sprite
+    + identifier : string
+    - _playerIsClose : bool
+    - _isClosed : bool
+    + IgnoreCollision(newPlayer : GameObject, ignore : bool) : void
+    + SetIsClosed(isClosed : bool) : void
+    + ChangePlayer(newPlayer : GameObject) : void
+    + ChangeSprite(status : string) : void
+}
+class ToOtherScene {
+    + door : Door
+}
+class BattleManager {
+    + GoToDefaultPosition(gameO : GameObject, _isMoving : bool, _currentTween : Tween, defaultPosition : Vector3, attackTime : float) : Tween
+    + FadeToColor(color : Color, _currentCoroutine : Coroutine, spriteRenderer : SpriteRenderer, fadeTime : float) : Coroutine
+    - Fade(old : Color, color : Color, time : float, spriteRenderer : SpriteRenderer) : IEnumerator
+}
+class GameManager {
+    + PlayerPFB : GameObject
+    + transitionImage : Image
+    + doors : List<GameObject>
+    + cinemachineCamera : CinemachineCamera
+    + PlayerManagement() : void
+    + StartLoadNewScene(sceneName : string, player : GameObject, toOtherScene : GameObject) : void
+    + LoadNewScene(sceneName : string, player : GameObject, toOtherScene : GameObject) : IEnumerator
+    - FadeTransition(old : Color, color : Color, time : float) : IEnumerator
+}
+class PlayerDrawManager {
+    + player : GameObject
+    + playerSR : SpriteRenderer
+    + DrawManagement() : void
+}
+class NPC {
+    + defaultColor : Color
+    + defaultPosition : Vector3
+    + dialoguePanel : GameObject
+    + continueButton : GameObject
+    + continueButtonText : TextMeshProUGUI
+    + dialogueText : TextMeshProUGUI
+    + wordSpeed : float
+    + battleAnimator : Animator
+    + battleManager : BattleManager
+    + spriteRenderer : SpriteRenderer
+    + enemy : GameObject
+    - _currentCoroutine : Coroutine
+    - _currentTween : Tween
+    - _playerIsClose : bool
+    - _isBattling : bool
+    - _npcName : String
+    - _isMoving : bool
+    - _isTyping : bool
+    - _i : int
+    - getPosition() : Vector3
+    + BattleManagement() : void
+    - CheckColorAspectByNPC() : Color
+    + Movement() : void
+    + SetDialoguePanel() : void
+    + AnimateAttack() : void
+}
+class PlayerController {
+    + rb : Rigidbody2D
+    + move : InputActionReference
+    + animator : Animator
+    + battleAnimator : Animator
+    + idleDown : Sprite
+    + spriteRenderer : SpriteRenderer
+    + defaultColor : Color
+    + battleManager : BattleManager
+    + enemy : GameObject
+    + defaultPosition : Vector3
+    - _moveDirection : Vector2
+    - _positionBeforeFloor : Vector3
+    - _currentCoroutine : Coroutine
+    - _currentTween : Tween
+    - _walkingDown : string
+    + AnimateMovement() : void
+    + PlayerMovement() : void
+    + AnimateAttack() : void
+    + SetCanMove(canMove : bool) : void
+    + MovePlayer() : void
+    + SetSpriteDown() : void
+    + SetSpeed(speed : float) : void
+}
+class Stairs {
+}
+class DontDestroy {
+}
+class Singleton {
+}
+MonoBehaviour <|-- Cards
+IPointerEnterHandler <|.. Cards
+IPointerExitHandler <|.. Cards
+IPointerClickHandler <|.. Cards
+MonoBehaviour <|-- Door
+MonoBehaviour <|-- ToOtherScene
+MonoBehaviour <|-- BattleManager
+class "Singleton\<GameManager\>" as SingletonGameManager
+SingletonGameManager <|-- GameManager
+MonoBehaviour <|-- PlayerDrawManager
+MonoBehaviour <|-- NPC
+MonoBehaviour <|-- Stairs
+MonoBehaviour <|-- DontDestroy
+ToOtherScene --> Door : field
+NPC --> BattleManager : field
+PlayerController --> BattleManager : field
+@enduml
