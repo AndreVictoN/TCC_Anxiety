@@ -8,7 +8,8 @@ using Unity.Cinemachine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameObject PlayerPFB;
+    public GameObject playerPFB;
+    public GameObject animalPlayerPFB;
     public Image transitionImage;
     public List<GameObject> doors;
     public CinemachineCamera cinemachineCamera;
@@ -23,7 +24,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (GameObject.FindFirstObjectByType<PlayerController>() == null)
         {
-            CinemachineFollow(GameObject.Instantiate(PlayerPFB).GetComponent<Transform>());
+            CinemachineFollow(GameObject.Instantiate(playerPFB).GetComponent<Transform>());
         }
     }
 

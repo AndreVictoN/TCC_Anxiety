@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 using Core.Singleton;
 
-public class PlayerController : Singleton<PlayerController>
+public abstract class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
-    GameManager gameManager;
+    protected GameManager gameManager;
 
     [Header("Movement Settings")]
     public Rigidbody2D rb;
@@ -25,9 +25,9 @@ public class PlayerController : Singleton<PlayerController>
     public string battleScene = "BattleScene";
     public string classroom = "Classroom";
 
-    private string npcTag = "NPC";
-    private string doorTag = "Door";
-    private string stairsTag = "Stairs";
+    protected string npcTag = "NPC";
+    protected string doorTag = "Door";
+    protected string stairsTag = "Stairs";
     public string changeSceneTag = "ToOtherScene";
     #endregion
 
@@ -43,18 +43,18 @@ public class PlayerController : Singleton<PlayerController>
     public Vector3 defaultPosition;
 
     #region Privates
-    private Vector2 _moveDirection;
-    private Vector3 _positionBeforeFloor;
-    private bool _canMove = true;
-    private bool _isBattleScene = false;
-    private bool _isMovingBattle = false;
-    private Coroutine _currentCoroutine;
-    private Tween _currentTween;
-    private string _walkingDown;
-    private Vector2 _lastMoveDirection = Vector2.down;
+    protected Vector2 _moveDirection;
+    protected Vector3 _positionBeforeFloor;
+    protected bool _canMove = true;
+    protected bool _isBattleScene = false;
+    protected bool _isMovingBattle = false;
+    protected Coroutine _currentCoroutine;
+    protected Tween _currentTween;
+    protected string _walkingDown;
+    protected Vector2 _lastMoveDirection = Vector2.down;
     #endregion
 
-    protected override void Awake()
+    void Awake()
     {
         gameManager = GameObject.FindFirstObjectByType<GameManager>();
 

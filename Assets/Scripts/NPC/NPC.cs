@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class NPC : MonoBehaviour
+public abstract class NPC : MonoBehaviour
 {
     [Header("GeneralSettings")]
     public Color defaultColor;
@@ -15,8 +15,8 @@ public class NPC : MonoBehaviour
 
     [Header("Dialogue")]
     public GameObject dialoguePanel;
-    public GameObject continueButton;
-    public TextMeshProUGUI continueButtonText;
+    //public GameObject continueButton;
+    //public TextMeshProUGUI continueButtonText;
     public TextMeshProUGUI dialogueText;
     public List<String> dialogue = new List<String>();
     public float wordSpeed;
@@ -30,22 +30,15 @@ public class NPC : MonoBehaviour
     public float fadeTime = 0.5f;
 
     #region Privates
-    private Coroutine _currentCoroutine;
-    private Tween _currentTween;
-    private bool _playerIsClose;
-    private bool _isBattling;
-    private String _npcName;
-    private bool _isMoving;
-    private bool _isTyping;
-    private int _i;
+    protected Coroutine _currentCoroutine;
+    protected Tween _currentTween;
+    protected bool _playerIsClose;
+    protected bool _isBattling;
+    protected String _npcName;
+    protected bool _isMoving;
+    protected bool _isTyping;
+    protected int _i;
     #endregion
-
-    void Awake()
-    {
-        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-        defaultColor = spriteRenderer.color;
-        _npcName = this.gameObject.name;
-    }
 
     void Start()
     {
@@ -58,16 +51,24 @@ public class NPC : MonoBehaviour
         }
     }
 
-    private Vector3 getPosition()
+    protected void BasicSettings()
     {
-        return _npcName switch
+        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+        defaultColor = spriteRenderer.color;
+        _npcName = this.gameObject.name;
+    }
+
+    protected virtual Vector3 getPosition()
+    {
+        /*return _npcName switch
         {
             "Estella" => new Vector3(-5.3f, 0.01f, 0),
             "Rebecca" => new Vector3(-6.9f, 3.7f, 0),
             "Ezequiel" => new Vector3(-5.3f, 2.5f, 0),
             "Yuri" => new Vector3(-6.9f, -1.1f, 0),
             _ => this.gameObject.transform.position,
-        };
+        };*/
+        return this.gameObject.transform.position;
     }
 
     void Update()
@@ -102,11 +103,11 @@ public class NPC : MonoBehaviour
         }*/
     }
 
-    private Color CheckColorAspectByNPC()
+    protected virtual Color CheckColorAspectByNPC()
     {
         Color colorToFade = spriteRenderer.color;
 
-        switch(_npcName)
+        /*switch(_npcName)
         {
             case "Estella":
                 colorToFade.r += 0.2f;
@@ -120,7 +121,7 @@ public class NPC : MonoBehaviour
             case "Yuri":
                 colorToFade.b -= 1f;
                 break;
-        }
+        }*/
 
         return colorToFade;
     }
@@ -161,7 +162,7 @@ public class NPC : MonoBehaviour
         {
             StopCoroutine(Typing());
             dialogueText.text = dialogue[_i];
-            continueButton.SetActive(true);
+            //continueButton.SetActive(true);
         }else if(Input.GetKeyDown(KeyCode.Return) && !_isTyping && _playerIsClose && dialoguePanel.activeSelf)
         {
             NextLine();
@@ -169,7 +170,7 @@ public class NPC : MonoBehaviour
 
         if(dialogueText.text == dialogue[_i])
         {
-            continueButton.SetActive(true);
+            //continueButton.SetActive(true);
         }
     }
 
@@ -179,9 +180,15 @@ public class NPC : MonoBehaviour
 
         GameObject npcImage = GameObject.FindGameObjectWithTag("NPC_Image");
         npcImage.GetComponent<Image>().sprite = this.gameObject.GetComponent<SpriteRenderer>().sprite;
+        npcImage.GetComponent<Image>().color = this.gameObject.GetComponent<SpriteRenderer>().color;
+        npcImage.GetComponent<Image>().color = new Vector4(npcImage.GetComponent<Image>().color.r, npcImage.GetComponent<Image>().color.g, npcImage.GetComponent<Image>().color.b, 1);
 
         GameObject npcName = GameObject.FindGameObjectWithTag("NPC_Name");
         npcName.GetComponent<TextMeshProUGUI>().text = this.gameObject.name.ToString();
+
+        GameObject playerImage = GameObject.FindGameObjectWithTag("Player_Image");
+        playerImage.GetComponent<Image>().color = new Vector4(playerImage.GetComponent<Image>().color.r, playerImage.GetComponent<Image>().color.g, playerImage.GetComponent<Image>().color.b, 0.75f);
+
     }
 
     public virtual void ResetText()
@@ -189,6 +196,7 @@ public class NPC : MonoBehaviour
         if(_isBattling) return;
 
         dialogueText.text = "";
+        dialogueText.alignment = TextAlignmentOptions.Left;
         _i = 0;
 
         if(dialoguePanel != null) dialoguePanel.SetActive(false);
@@ -217,11 +225,12 @@ public class NPC : MonoBehaviour
 
     public virtual void NextLine()
     {
-        continueButton.SetActive(false);
+        //continueButton.SetActive(false);
 
         if(_i < dialogue.Count - 1)
         {
             _i++;
+            CheckCharacter(_i);
             dialogueText.text = "";
             StartCoroutine(Typing());
         }else
@@ -229,6 +238,8 @@ public class NPC : MonoBehaviour
             ResetText();
         }
     }
+    
+    protected virtual void CheckCharacter(int i){}
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
