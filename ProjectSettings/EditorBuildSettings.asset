@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PrototypeScene.unity
+    path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/FirstFloorPrototype.unity
+    path: Assets/Scenes/Terreo.unity
     guid: 8f1b3316fa9bb224ea0e87294e76519a
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
