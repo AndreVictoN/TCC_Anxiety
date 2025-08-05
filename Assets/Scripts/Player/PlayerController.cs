@@ -4,8 +4,9 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using Core.Singleton;
+using System.Collections.Generic;
 
-public abstract class PlayerController : MonoBehaviour
+public abstract class PlayerController : Singleton<PlayerController>
 {
     [Header("Player Settings")]
     protected GameManager gameManager;
@@ -26,6 +27,7 @@ public abstract class PlayerController : MonoBehaviour
     public string classroom = "Classroom";
 
     protected string npcTag = "NPC";
+    protected List<string> npcTags = new() {"Ezequiel", "Estella", "Yuri", "Rebecca"};
     protected string doorTag = "Door";
     protected string stairsTag = "Stairs";
     public string changeSceneTag = "ToOtherScene";
@@ -54,7 +56,7 @@ public abstract class PlayerController : MonoBehaviour
     protected Vector2 _lastMoveDirection = Vector2.down;
     #endregion
 
-    void Awake()
+    protected override void Awake()
     {
         gameManager = GameObject.FindFirstObjectByType<GameManager>();
 
@@ -95,7 +97,7 @@ public abstract class PlayerController : MonoBehaviour
             _isBattleScene = false;
         }
 
-        _canMove = !_isBattleScene;
+        if(_isBattleScene) _canMove = false;
 
         if (_canMove) _moveDirection = move.action.ReadValue<Vector2>();
 
@@ -157,7 +159,7 @@ public abstract class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(npcTag) || collision.gameObject.CompareTag(doorTag))
+        if (collision.gameObject.CompareTag(npcTag) || collision.gameObject.CompareTag(doorTag) || npcTags.Contains(collision.gameObject.tag))
         {
             rb.linearVelocity = Vector2.zero;
         }
@@ -217,7 +219,8 @@ public abstract class PlayerController : MonoBehaviour
 
     public void MovePlayer()
     {
-        rb.linearVelocity = new Vector2(_moveDirection.x * moveSpeed, _moveDirection.y * moveSpeed);
+        if(_canMove){rb.linearVelocity = new Vector2(_moveDirection.x * moveSpeed, _moveDirection.y * moveSpeed);}
+        else{rb.linearVelocity = Vector2.zero; _moveDirection = Vector2.zero;}
     }
 
     public void SetSpriteDown()
@@ -229,5 +232,30 @@ public abstract class PlayerController : MonoBehaviour
     public void SetSpeed(float speed)
     {
         moveSpeed = speed;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("PrototypeEzequielTrigger1"))
+        {
+            _canMove = false;
+            gameManager.CallEzequiel("PrototypeEzequielTrigger1");
+        }
+    }
+
+    public void SetAnimation(string animation)
+    {
+        animator.Play(animation);
+    }
+
+    public IEnumerator GoTo(float time, Vector2 position)
+    {
+        _canMove = false;
+
+        this.transform.DOMoveX(position.x, time);
+        yield return new WaitForSeconds(time);
+
+        animator.Play("Moving");
+        _canMove = true;
     }
 }
