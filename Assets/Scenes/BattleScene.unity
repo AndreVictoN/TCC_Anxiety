@@ -857,7 +857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &177853680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,22 +870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1828aa74cc06b5744bd67c19b79f4e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  defaultPosition: {x: 0, y: 0, z: 0}
-  dialoguePanel: {fileID: 0}
-  continueButton: {fileID: 0}
-  continueButtonText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogue:
-  - Oii, Alex! <3
-  - "Como voc\xEA t\xE1 hoje?!"
-  wordSpeed: 0.1
-  battleAnimator: {fileID: 0}
-  battleManager: {fileID: 2063207365}
-  spriteRenderer: {fileID: 0}
-  enemy: {fileID: 251606433}
-  attackTime: 0.3
-  fadeTime: 0.5
 --- !u!58 &177853681
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1185,11 +1169,10 @@ Transform:
   m_GameObject: {fileID: 251606433}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.47, y: 0.7, z: 0}
+  m_LocalPosition: {x: 4.95, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1415715560}
+  m_Children: []
   m_Father: {fileID: 1584341037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &251606435
@@ -2836,7 +2819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &479257925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2993,7 +2976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &509888284
 Transform:
   m_ObjectHideFlags: 0
@@ -3021,22 +3004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1828aa74cc06b5744bd67c19b79f4e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  defaultPosition: {x: 0, y: 0, z: 0}
-  dialoguePanel: {fileID: 0}
-  continueButton: {fileID: 0}
-  continueButtonText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogue:
-  - Opa Alex!
-  - "Quais s\xE3o as boas?"
-  wordSpeed: 0.1
-  battleAnimator: {fileID: 0}
-  battleManager: {fileID: 2063207365}
-  spriteRenderer: {fileID: 0}
-  enemy: {fileID: 251606433}
-  attackTime: 0.3
-  fadeTime: 0.5
 --- !u!58 &509888286
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4805,7 +4772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &754778491
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5914,7 +5881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &919273735
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6097,7 +6064,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207260428}
+      - m_Target: {fileID: 1207260434}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: PlayerMovement
         m_Mode: 1
@@ -6121,7 +6088,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1207260428}
+      - m_Target: {fileID: 1207260434}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: AnimateAttack
         m_Mode: 1
@@ -6483,10 +6450,10 @@ GameObject:
   - component: {fileID: 1207260431}
   - component: {fileID: 1207260430}
   - component: {fileID: 1207260429}
-  - component: {fileID: 1207260428}
   - component: {fileID: 1207260427}
   - component: {fileID: 1207260426}
   - component: {fileID: 1207260433}
+  - component: {fileID: 1207260434}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6536,36 +6503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e0d3ce8fea1b845bac6cc5fd1aae7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1207260428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1207260425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6db4168b00ba44188c0b4636835502, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  moveSpeed: 5
-  move: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  animator: {fileID: 0}
-  battleAnimator: {fileID: 1207260433}
-  idleDown: {fileID: 0}
-  prototypeScene: PrototypeScene
-  firstFloor: FirstFloorPrototype
-  battleScene: BattleScene
-  classroom: Classroom
-  changeSceneTag: ToOtherScene
-  spriteRenderer: {fileID: 0}
-  defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  fadeTime: 0.5
-  battleManager: {fileID: 2063207365}
-  enemy: {fileID: 251606433}
-  attackTime: 0.3
-  defaultPosition: {x: 0, y: 0, z: 0}
 --- !u!50 &1207260429
 Rigidbody2D:
   serializedVersion: 5
@@ -6731,6 +6668,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1207260434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207260425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199f42a108a5cc84498b1806bd75018d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  moveSpeed: 5
+  move: {fileID: 0}
+  animator: {fileID: 0}
+  battleAnimator: {fileID: 1207260433}
+  idleDown: {fileID: 0}
+  prototypeScene: PrototypeScene
+  firstFloor: FirstFloorPrototype
+  battleScene: BattleScene
+  classroom: Classroom
+  changeSceneTag: ToOtherScene
+  spriteRenderer: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  fadeTime: 1
+  battleManager: {fileID: 2063207365}
+  enemy: {fileID: 251606433}
+  attackTime: 0.5
+  defaultPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1231396019
 GameObject:
   m_ObjectHideFlags: 0
@@ -7433,7 +7400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1330226255
 Transform:
   m_ObjectHideFlags: 0
@@ -7461,23 +7428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1828aa74cc06b5744bd67c19b79f4e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  defaultPosition: {x: 0, y: 0, z: 0}
-  dialoguePanel: {fileID: 0}
-  continueButton: {fileID: 0}
-  continueButtonText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogue:
-  - Ah... iai.
-  - "N\xE3o to muito afim de falar agora..."
-  - "Se voc\xEA pudesse vazar..."
-  wordSpeed: 0.1
-  battleAnimator: {fileID: 0}
-  battleManager: {fileID: 2063207365}
-  spriteRenderer: {fileID: 0}
-  enemy: {fileID: 251606433}
-  attackTime: 0.3
-  fadeTime: 0.5
 --- !u!58 &1330226257
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7699,93 +7649,6 @@ Transform:
   - {fileID: 1934887270}
   m_Father: {fileID: 196292581}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1415715559
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1415715560}
-  - component: {fileID: 1415715561}
-  m_Layer: 0
-  m_Name: BG
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1415715560
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415715559}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.05, y: 1.05, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 251606434}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1415715561
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415715559}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1436323308
 GameObject:
   m_ObjectHideFlags: 0
@@ -8995,7 +8858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1700569493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9765,7 +9628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1934887270
 Transform:
   m_ObjectHideFlags: 0
@@ -9793,21 +9656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1828aa74cc06b5744bd67c19b79f4e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  defaultPosition: {x: 0, y: 0, z: 0}
-  dialoguePanel: {fileID: 0}
-  continueButton: {fileID: 0}
-  continueButtonText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogue:
-  - "Salve Al\xEA! Ta bem?"
-  wordSpeed: 0.1
-  battleAnimator: {fileID: 0}
-  battleManager: {fileID: 2063207365}
-  spriteRenderer: {fileID: 0}
-  enemy: {fileID: 251606433}
-  attackTime: 0.3
-  fadeTime: 0.5
 --- !u!58 &1934887272
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10008,7 +9856,7 @@ GameObject:
   - component: {fileID: 1957169235}
   m_Layer: 5
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: EnemyName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10029,8 +9877,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 608, y: 370}
-  m_SizeDelta: {x: 437.054, y: 109.65869}
+  m_AnchoredPosition: {x: 537.8496, y: 319.4154}
+  m_SizeDelta: {x: 577.3547, y: 108.4895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1957169235
 Animator:
@@ -10074,10 +9922,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ENEMY
+  m_text: Enemy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a26ece3bb9cfd2c488476270c2385847, type: 2}
+  m_sharedMaterial: {fileID: -4858602051298769863, guid: a26ece3bb9cfd2c488476270c2385847, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10101,8 +9949,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 110
+  m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10692,7 +10540,7 @@ GameObject:
   - component: {fileID: 2063207365}
   m_Layer: 0
   m_Name: BattleManager
-  m_TagString: Untagged
+  m_TagString: BattleManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10724,6 +10572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3389994dd2038429edffb5b5ed1611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pastScene: 
 --- !u!1 &2063614689
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,11 @@ TagManager:
   - PrototypeEzequielTrigger1
   - Ezequiel
   - SkipText
+  - collision
+  - PrototypeBattleTrigger
+  - EnemyName
+  - BattleManager
+  - PrototypeFirstInteractionTrigger
   layers:
   - Default
   - TransparentFX

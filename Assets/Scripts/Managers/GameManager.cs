@@ -6,8 +6,9 @@ using Core.Singleton;
 using UnityEngine.UI;
 using Unity.Cinemachine;
 using TMPro;
+using UnityEditor.PackageManager;
 
-public class GameManager : Singleton<GameManager>
+public class GameManager : Singleton<GameManager>, IObserver
 {
     public GameObject playerPFB;
     public GameObject animalPlayerPFB;
@@ -16,13 +17,24 @@ public class GameManager : Singleton<GameManager>
     public CinemachineCamera cinemachineCamera;
     public TextMeshProUGUI currentDay;
     public TextMeshProUGUI currentObjective;
+
+    [Header("Texts")]
+    public GameObject dialoguePanel;
+    public TextMeshProUGUI dialogueText;
+    public List<string> dialogue = new List<string>();
+    public float wordSpeed = 0.6f;
+
     private PlayerController _playerController;
     private Ezequiel _ezequiel;
+    private bool _isTyping;
+    private bool _canSkip;
+    private int _i;
 
     protected override void Awake()
     {
         cinemachineCamera = GameObject.FindFirstObjectByType<CinemachineCamera>();
         PlayerManagement();
+        _canSkip = false;
     }
 
     void Start()
@@ -207,5 +219,130 @@ public class GameManager : Singleton<GameManager>
             _ezequiel.RecieveTrigger(_playerController.gameObject, "PrototypeEzequielTrigger1");
             Destroy(GameObject.FindGameObjectWithTag("PrototypeEzequielTrigger1"));
         }
+    }
+
+    public void OnNotify(EventsEnum evt)
+    {
+        if(evt == EventsEnum.CallPrototypeEzequiel)
+        {
+            CallEzequiel("PrototypeEzequielTrigger1");
+        }else if(evt == EventsEnum.PrototypeBattle)
+        {
+            StartCoroutine(LoadBattleScene("PrototypeScene"));
+        }else if(evt == EventsEnum.PrototypeFirstInteraction)
+        {
+            if(dialogue.Count < 2)
+            {
+                dialogue.Add("Que lugar enorme...");
+                dialogue.Add("acho que vou ter que pedir informaÇÃo para alguÉm... de preferÊncia um professor.");
+            }
+
+            Destroy(GameObject.FindGameObjectWithTag("PrototypeFirstInteractionTrigger"));
+            StartCoroutine(StartAutomaticTalk());
+        }
+    }
+
+    protected IEnumerator Typing()
+    {
+        _isTyping = true;
+
+        if(dialogueText.text != "")
+        {
+            dialogueText.text = "";
+        }
+
+        foreach(char letter in dialogue[_i].ToCharArray())
+        {
+            if(dialogueText.text != dialogue[_i])
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(wordSpeed);
+            }
+        }
+
+        _isTyping = false;
+    }
+
+    protected IEnumerator StartAutomaticTalk()
+    {
+        GameObject skipText = new();
+
+        if(!dialoguePanel.activeSelf)
+        {
+            dialogueText.text = "";
+            dialogueText.alignment = TextAlignmentOptions.Center;
+            dialogueText.fontStyle = FontStyles.Italic;
+            dialoguePanel.SetActive(true);
+            _i = 0;
+
+            GameObject npcImage = GameObject.FindGameObjectWithTag("NPC_Image");
+            npcImage.GetComponent<Image>().color = new Vector4(0, 0, 0, 0);
+
+            GameObject npcName = GameObject.FindGameObjectWithTag("NPC_Name");
+            npcName.GetComponent<TextMeshProUGUI>().text = "";
+
+            GameObject playerImage = GameObject.FindGameObjectWithTag("Player_Image");
+            playerImage.GetComponent<Image>().color = new Vector4(playerImage.GetComponent<Image>().color.r, playerImage.GetComponent<Image>().color.g, playerImage.GetComponent<Image>().color.b, 1f);
+            
+            skipText = GameObject.FindGameObjectWithTag("SkipText");
+            skipText.SetActive(false);
+            StartCoroutine(Typing());
+        }
+
+        while(_i != dialogue.Count - 1)
+        {
+            yield return null;
+
+            if(!_isTyping)
+            {
+                yield return new WaitForSeconds(1f);
+                NextLine();
+            }
+        }
+
+        if(skipText != null) skipText.SetActive(true);
+        _canSkip = true;
+    }
+
+    public virtual void NextLine()
+    {
+
+        if(_i < dialogue.Count - 1)
+        {
+            _i++;
+            dialogueText.text = "";
+            StartCoroutine(Typing());
+        }else
+        {
+            _i = 0;
+            if(dialoguePanel != null) dialoguePanel.SetActive(false);
+        }
+    }
+
+    void Update()
+    {
+        if(_canSkip && Input.GetKeyDown(KeyCode.Return) && _isTyping)
+        {
+            StopCoroutine(Typing());
+            dialogueText.text = dialogue[_i];
+        }else if(_canSkip && Input.GetKeyDown(KeyCode.Return) && !_isTyping)
+        {
+            NextLine();
+            _canSkip = false;
+            _playerController.SetCanMove(true);
+        }
+    }
+
+    public IEnumerator LoadBattleScene(string pastScene)
+    {
+        transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
+        _playerController.SetCanMove(false);
+        AnimateTransition(1f, false);
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+        yield return null;
+        BattleManager bm = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
+        bm.SetPastScene(pastScene);
     }
 }

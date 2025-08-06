@@ -11,19 +11,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Terreo.unity
     guid: 8f1b3316fa9bb224ea0e87294e76519a
-    path: Assets/Scenes/Menu.unity
-    guid: e3032a92bbab6114783e0250c6880088
   - enabled: 1
-    path: Assets/Scenes/Real_PrototypeScene.unity
+    path: Assets/Scenes/PrototypeScene.unity
     guid: 3a1a612d5f9adc14cb2b88ef001fb773
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 645b5b86bcb1ae54db98c0e29667d768
   - enabled: 0
-    path: Assets/Scenes/TestScene.unity
+    path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 0
-    path: Assets/Scenes/FirstFloorPrototype.unity
+    path: Assets/Scenes/Terreo.unity
     guid: 8f1b3316fa9bb224ea0e87294e76519a
   - enabled: 0
     path: Assets/Scenes/Classroom.unity

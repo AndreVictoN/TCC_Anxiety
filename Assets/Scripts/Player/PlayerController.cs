@@ -6,7 +6,7 @@ using DG.Tweening;
 using Core.Singleton;
 using System.Collections.Generic;
 
-public abstract class PlayerController : Singleton<PlayerController>
+public abstract class PlayerController : Subject
 {
     [Header("Player Settings")]
     protected GameManager gameManager;
@@ -54,11 +54,13 @@ public abstract class PlayerController : Singleton<PlayerController>
     protected Tween _currentTween;
     protected string _walkingDown;
     protected Vector2 _lastMoveDirection = Vector2.down;
+    protected string collisionTag = "collision";
     #endregion
 
     protected override void Awake()
     {
         gameManager = GameObject.FindFirstObjectByType<GameManager>();
+        Subscribe(gameManager);
 
         if (SceneManager.GetActiveScene().name == battleScene)
         {
@@ -148,6 +150,12 @@ public abstract class PlayerController : Singleton<PlayerController>
     {
         if (!_isBattleScene) return;
 
+        StartCoroutine(AttackAnimation());
+    }
+
+    IEnumerator AttackAnimation()
+    {
+        yield return new WaitForSeconds(0.3f);
         battleAnimator.SetTrigger("Attack");
     }
 
@@ -159,7 +167,7 @@ public abstract class PlayerController : Singleton<PlayerController>
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(npcTag) || collision.gameObject.CompareTag(doorTag) || npcTags.Contains(collision.gameObject.tag))
+        if (collision.gameObject.CompareTag(npcTag) || collision.gameObject.CompareTag(doorTag) || npcTags.Contains(collision.gameObject.tag) || collision.gameObject.CompareTag(collisionTag))
         {
             rb.linearVelocity = Vector2.zero;
         }
@@ -239,7 +247,14 @@ public abstract class PlayerController : Singleton<PlayerController>
         if(collision.gameObject.CompareTag("PrototypeEzequielTrigger1"))
         {
             _canMove = false;
-            gameManager.CallEzequiel("PrototypeEzequielTrigger1");
+            Notify(EventsEnum.CallPrototypeEzequiel);
+        }else if(collision.gameObject.CompareTag("PrototypeBattleTrigger"))
+        {
+            Notify(EventsEnum.PrototypeBattle);
+        }else if(collision.gameObject.CompareTag("PrototypeFirstInteractionTrigger"))
+        {
+            _canMove = false;
+            Notify(EventsEnum.PrototypeFirstInteraction);
         }
     }
 

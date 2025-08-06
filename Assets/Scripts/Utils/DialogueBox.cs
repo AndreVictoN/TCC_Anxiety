@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 public abstract class DialogueBox : MonoBehaviour
 {
     [Header("Dialogue")]
     public GameObject dialoguePanel;
-    //public GameObject continueButton;
-    //public TextMeshProUGUI continueButtonText;
     public TextMeshProUGUI dialogueText;
     public List<string> dialogue = new List<string>();
     public float wordSpeed;
 
+    [SerializeField] protected Sprite _npcSprite;
     protected int _i;
     protected bool _isTyping;
     protected int _currentDialogue = 1;
@@ -22,8 +22,7 @@ public abstract class DialogueBox : MonoBehaviour
         dialoguePanel.SetActive(true);
 
         GameObject npcImage = GameObject.FindGameObjectWithTag("NPC_Image");
-        npcImage.GetComponent<Image>().sprite = this.gameObject.GetComponent<SpriteRenderer>().sprite;
-        npcImage.GetComponent<Image>().color = this.gameObject.GetComponent<SpriteRenderer>().color;
+        npcImage.GetComponent<Image>().sprite = this._npcSprite;
         npcImage.GetComponent<Image>().color = new Vector4(npcImage.GetComponent<Image>().color.r, npcImage.GetComponent<Image>().color.g, npcImage.GetComponent<Image>().color.b, 1);
 
         GameObject npcName = GameObject.FindGameObjectWithTag("NPC_Name");
@@ -31,7 +30,6 @@ public abstract class DialogueBox : MonoBehaviour
 
         GameObject playerImage = GameObject.FindGameObjectWithTag("Player_Image");
         playerImage.GetComponent<Image>().color = new Vector4(playerImage.GetComponent<Image>().color.r, playerImage.GetComponent<Image>().color.g, playerImage.GetComponent<Image>().color.b, 0.75f);
-
     }
 
     public virtual void ResetText()

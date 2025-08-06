@@ -1,10 +1,40 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
+    [SerializeField] private string _pastScene;
+    private TextMeshProUGUI _enemyName;
+    private bool _prototypeSetupMade;
+
+    void Start()
+    {
+        _enemyName = GameObject.FindGameObjectWithTag("EnemyName").GetComponent<TextMeshProUGUI>();
+        _prototypeSetupMade = false;
+    }
+
+    void Update()
+    {
+        if(_pastScene == "PrototypeScene"){PrototypeBattle();}
+    }
+
+#region Prototype
+    private void PrototypeBattleSetup()
+    {
+        _enemyName.text = "Vergosulo";
+
+        _prototypeSetupMade = true;
+    }
+
+    private void PrototypeBattle()
+    {
+        if(!_prototypeSetupMade) PrototypeBattleSetup();
+    }
+#endregion
+
     public Tween GoToDefaultPosition(GameObject gameO, bool _isMoving, Tween _currentTween, Vector3 defaultPosition, float attackTime)
     {
         if(!_isMoving && gameO.activeSelf)
@@ -42,4 +72,6 @@ public class BattleManager : MonoBehaviour
             yield return null;
         }
     }
+
+    public void SetPastScene(string pastScene) {_pastScene = pastScene;}
 }
