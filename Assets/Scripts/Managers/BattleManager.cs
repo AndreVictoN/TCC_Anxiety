@@ -14,6 +14,10 @@ public class BattleManager : MonoBehaviour
     {
         _enemyName = GameObject.FindGameObjectWithTag("EnemyName").GetComponent<TextMeshProUGUI>();
         _prototypeSetupMade = false;
+
+        _pastScene = PlayerPrefs.GetString("pastScene");
+
+        if(_pastScene == "PrototypeScene"){PrototypeBattleSetup();}
     }
 
     void Update()
@@ -32,6 +36,7 @@ public class BattleManager : MonoBehaviour
     private void PrototypeBattle()
     {
         if(!_prototypeSetupMade) PrototypeBattleSetup();
+        
     }
 #endregion
 

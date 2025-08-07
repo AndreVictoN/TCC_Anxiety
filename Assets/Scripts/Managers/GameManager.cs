@@ -18,6 +18,9 @@ public class GameManager : Singleton<GameManager>, IObserver
     public TextMeshProUGUI currentDay;
     public TextMeshProUGUI currentObjective;
 
+    [Header("Prototype")]
+    [SerializeField] private GameObject _prototypeTeacher;
+
     [Header("Texts")]
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
@@ -27,6 +30,7 @@ public class GameManager : Singleton<GameManager>, IObserver
     private PlayerController _playerController;
     private Ezequiel _ezequiel;
     private bool _isTyping;
+    private bool _skipped;
     private bool _canSkip;
     private int _i;
 
@@ -231,15 +235,20 @@ public class GameManager : Singleton<GameManager>, IObserver
             StartCoroutine(LoadBattleScene("PrototypeScene"));
         }else if(evt == EventsEnum.PrototypeFirstInteraction)
         {
-            if(dialogue.Count < 2)
-            {
-                dialogue.Add("Que lugar enorme...");
-                dialogue.Add("acho que vou ter que pedir informaÇÃo para alguÉm... de preferÊncia um professor.");
-            }
-
-            Destroy(GameObject.FindGameObjectWithTag("PrototypeFirstInteractionTrigger"));
-            StartCoroutine(StartAutomaticTalk());
+            ManagePrototypeInteraction();
         }
+    }
+
+    private void ManagePrototypeInteraction()
+    {
+        if(dialogue.Count < 2)
+        {
+            dialogue.Add("Que lugar enorme...");
+            dialogue.Add("acho que vou ter que pedir informaÇÃo para alguÉm... de preferÊncia um professor.");
+        }
+
+        Destroy(GameObject.FindGameObjectWithTag("PrototypeFirstInteractionTrigger"));
+        StartCoroutine(StartAutomaticTalk());
     }
 
     protected IEnumerator Typing()
@@ -265,7 +274,7 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     protected IEnumerator StartAutomaticTalk()
     {
-        GameObject skipText = new();
+        GameObject skipText = null;
 
         if(!dialoguePanel.activeSelf)
         {
@@ -302,6 +311,46 @@ public class GameManager : Singleton<GameManager>, IObserver
 
         if(skipText != null) skipText.SetActive(true);
         _canSkip = true;
+        _skipped = false;
+
+        StartCoroutine(TeacherTalk());
+    }
+
+    private IEnumerator TeacherTalk()
+    {
+        while(!_skipped) yield return null;
+
+        if(_playerController.gameObject.transform.localPosition.x > 18.44f) _playerController.SetAnimation("H_WalkingLeft");
+        else if(_playerController.gameObject.transform.localPosition.x < 18.44f) _playerController.SetAnimation("H_WalkingRight");
+
+        float seconds = _playerController.ToX(18.44f);
+        yield return new WaitForSeconds(seconds);
+
+        if(_playerController.gameObject.transform.localPosition.y > 65.22f) _playerController.SetAnimation("H_WalkingDown");
+        else if(_playerController.gameObject.transform.localPosition.y < 65.22f) _playerController.SetAnimation("H_WalkingUp");
+
+        seconds = _playerController.ToY(65.22f);
+        yield return new WaitForSeconds(seconds);
+
+        _playerController.SetAnimation("H_IdleR");
+
+        _prototypeTeacher.SetActive(true);
+
+        _prototypeTeacher.GetComponent<Teacher>().Move(4f, new Vector2(this.gameObject.transform.position.x, 65.22f), 'y');
+        _prototypeTeacher.GetComponent<Teacher>().SetAnimation("WalkingDown");
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(_prototypeTeacher.GetComponent<Teacher>().StartAutomaticTalk());
+        yield return new WaitForSeconds(4f);
+        _prototypeTeacher.GetComponent<Teacher>().Move(2f, new Vector2(this.gameObject.transform.position.x, 51.33f), 'y');
+        yield return new WaitForSeconds(3f);
+
+        while(!_prototypeTeacher.GetComponent<Teacher>().GetIsClosed()) yield return null;
+        
+        _prototypeTeacher.GetComponent<Teacher>().SetIsAutomatic(false);
+        _playerController.SetCanMove(true);
+        _playerController.SetAnimation("Moving");
+
+        Destroy(_prototypeTeacher);
     }
 
     public virtual void NextLine()
@@ -315,7 +364,10 @@ public class GameManager : Singleton<GameManager>, IObserver
         }else
         {
             _i = 0;
-            if(dialoguePanel != null) dialoguePanel.SetActive(false);
+            if(dialoguePanel != null)
+            {
+                dialoguePanel.SetActive(false);
+            }
         }
     }
 
@@ -329,7 +381,8 @@ public class GameManager : Singleton<GameManager>, IObserver
         {
             NextLine();
             _canSkip = false;
-            _playerController.SetCanMove(true);
+            _skipped = true;
+            //_playerController.SetCanMove(true);
         }
     }
 
@@ -340,9 +393,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         AnimateTransition(1f, false);
         yield return new WaitForSeconds(1f);
 
+        PlayerPrefs.SetString("pastScene", pastScene);
         SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
-        yield return null;
-        BattleManager bm = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
-        bm.SetPastScene(pastScene);
     }
 }

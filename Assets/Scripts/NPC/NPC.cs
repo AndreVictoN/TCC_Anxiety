@@ -12,6 +12,7 @@ public abstract class NPC : DialogueBox
     [Header("GeneralSettings")]
     public Color defaultColor;
     public Vector3 defaultPosition;
+    public Animator animator;
 
     [Header("Battle")]
     public Animator battleAnimator;
@@ -29,7 +30,7 @@ public abstract class NPC : DialogueBox
     protected String _npcName;
     protected bool _isMoving;
     protected PlayerController _player;
-    protected bool _isAutomatic = false;
+    protected bool _inPrototype;
     #endregion
 
     void Start()
@@ -136,7 +137,7 @@ public abstract class NPC : DialogueBox
     {
         if(!_isAutomatic)
         {
-            if(Input.GetKeyDown(KeyCode.E) && _playerIsClose && !_isTyping)
+            if(Input.GetKeyDown(KeyCode.E) && _playerIsClose && !_isTyping && !_isAutomatic)
             {
                 if(!dialoguePanel.activeSelf)
                 {
@@ -149,6 +150,7 @@ public abstract class NPC : DialogueBox
                 else
                 {
                     dialoguePanel.SetActive(false);
+                    _isClosed = true;
                     StopCoroutine(Typing());
                     ResetText();
                 }
@@ -220,17 +222,20 @@ public abstract class NPC : DialogueBox
         }
     }
 
-    protected IEnumerator GoTo(float time, Vector2 position)
+    protected IEnumerator GoTo(float time, Vector2 position, char xy)
     {
-        this.transform.DOMoveX(position.x, time);
+        if(xy == 'x') this.transform.DOMoveX(position.x, time);
+        else if(xy == 'y') this.transform.DOMoveY(position.y, time);
+        
         yield return new WaitForSeconds(time);
 
-        if(_isAutomatic) _isAutomatic = false;
+        if(_isAutomatic && this.gameObject.name.Equals("Ezequiel")) _isAutomatic = false;
     }
 
-    protected IEnumerator StartAutomaticTalk()
+    public IEnumerator StartAutomaticTalk()
     {
         GameObject skipText = new();
+        _isAutomatic = true;
 
         yield return new WaitForSeconds(0.5f);
         if(!dialoguePanel.activeSelf)
@@ -250,11 +255,25 @@ public abstract class NPC : DialogueBox
 
             if(!_isTyping)
             {
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(_secondsToReturn);
                 NextLine();
             }
         }
 
         if(skipText != null) skipText.SetActive(true);
+    }
+
+    public void SetIsAutomatic(bool automatic)
+    {
+        _isAutomatic = automatic;
+    }
+
+    public bool GetIsClosed() {return _isClosed;}
+    
+    public void SetAnimation(string animation)
+    {
+        if(animator == null) animator = this.gameObject.GetComponent<Animator>();
+
+        animator.Play(animation);
     }
 }

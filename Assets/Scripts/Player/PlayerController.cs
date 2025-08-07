@@ -251,7 +251,7 @@ public abstract class PlayerController : Subject
         }else if(collision.gameObject.CompareTag("PrototypeBattleTrigger"))
         {
             Notify(EventsEnum.PrototypeBattle);
-        }else if(collision.gameObject.CompareTag("PrototypeFirstInteractionTrigger"))
+        }else if(collision.transform.parent.gameObject.CompareTag("PrototypeFirstInteractionTrigger"))
         {
             _canMove = false;
             Notify(EventsEnum.PrototypeFirstInteraction);
@@ -263,14 +263,67 @@ public abstract class PlayerController : Subject
         animator.Play(animation);
     }
 
-    public IEnumerator GoTo(float time, Vector2 position)
+    public IEnumerator GoTo(float time, Vector2 position, char xy, bool canMoveAfter)
     {
         _canMove = false;
 
-        this.transform.DOMoveX(position.x, time);
+        if(xy == 'x') this.transform.DOMoveX(position.x, time);
+        else if(xy == 'y') this.transform.DOMoveY(position.y, time);
+
         yield return new WaitForSeconds(time);
 
-        animator.Play("Moving");
-        _canMove = true;
+        if(canMoveAfter)
+        {
+            animator.Play("Moving");
+            _canMove = true;
+        }
+    }
+
+    public float ToX(float positionX)
+    {
+        float time = 0;
+        float distance = Mathf.Abs(this.gameObject.transform.localPosition.x - positionX);
+
+        if(distance <= 1)
+        {
+            time = 0.3f;
+        }else if (distance > 1 && distance <= 3.5f)
+        {
+            time = 1f;
+        }else if(distance > 3.5f && distance <= 10)
+        {
+            time = 3f;
+        }else if(distance > 10)
+        {
+            time = 5f;
+        }
+
+        if(time != 0) StartCoroutine(GoTo(time, new Vector2 (positionX, this.transform.position.y), 'x', false));
+
+        return time;
+    }
+
+    public float ToY(float positionY)
+    {
+        float time = 0;
+        float distance = Mathf.Abs(this.gameObject.transform.localPosition.y - positionY);
+
+        if(distance <= 1)
+        {
+            time = 0.3f;
+        }else if (distance > 1 && distance <= 3.5f)
+        {
+            time = 1f;
+        }else if(distance > 3.5f && distance <= 10)
+        {
+            time = 3f;
+        }else if(distance > 10)
+        {
+            time = 5f;
+        }
+
+        if(time != 0) StartCoroutine(GoTo(time, new Vector2 (this.transform.position.x, positionY), 'y', false));
+
+        return time;
     }
 }

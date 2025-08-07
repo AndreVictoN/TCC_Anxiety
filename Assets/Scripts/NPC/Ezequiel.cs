@@ -11,7 +11,6 @@ public class Ezequiel : NPC
 {
     public List<String> prototypeDialogue = new();
     public List<String> prototypeDialogue2 = new();
-    private bool _inPrototype;
 
     void Awake()
     {
@@ -81,8 +80,8 @@ public class Ezequiel : NPC
         if(_player == null){ _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); }
         _player.SetAnimation("H_WalkingLeft");
         _isAutomatic = true;
-        StartCoroutine(GoTo(77.5f, new Vector2(-40, this.gameObject.transform.position.y)));
-        StartCoroutine(_player.GoTo(77.5f, new Vector2(-40 + 0.8f, this.gameObject.transform.position.y)));
+        StartCoroutine(GoTo(77.5f, new Vector2(-40, this.gameObject.transform.position.y), 'x'));
+        StartCoroutine(_player.GoTo(77.5f, new Vector2(-40 + 0.8f, this.gameObject.transform.position.y), 'x', true));
         StartCoroutine(StartAutomaticTalk());
     }
 

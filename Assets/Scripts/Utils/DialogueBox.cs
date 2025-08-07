@@ -11,6 +11,9 @@ public abstract class DialogueBox : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public List<string> dialogue = new List<string>();
     public float wordSpeed;
+    [SerializeField]protected float _secondsToReturn = 1.5f;
+    protected bool _isClosed = true;
+    protected bool _isAutomatic = false;
 
     [SerializeField] protected Sprite _npcSprite;
     protected int _i;
@@ -20,10 +23,11 @@ public abstract class DialogueBox : MonoBehaviour
     public virtual void SetDialoguePanel()
     {
         dialoguePanel.SetActive(true);
+        _isClosed = false;
 
         GameObject npcImage = GameObject.FindGameObjectWithTag("NPC_Image");
         npcImage.GetComponent<Image>().sprite = this._npcSprite;
-        npcImage.GetComponent<Image>().color = new Vector4(npcImage.GetComponent<Image>().color.r, npcImage.GetComponent<Image>().color.g, npcImage.GetComponent<Image>().color.b, 1);
+        npcImage.GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
 
         GameObject npcName = GameObject.FindGameObjectWithTag("NPC_Name");
         npcName.GetComponent<TextMeshProUGUI>().text = this.gameObject.name.ToString();
@@ -38,12 +42,17 @@ public abstract class DialogueBox : MonoBehaviour
         dialogueText.alignment = TextAlignmentOptions.Left;
         _i = 0;
 
-        if(dialoguePanel != null) dialoguePanel.SetActive(false);
+        if(dialoguePanel != null)
+        {
+            dialoguePanel.SetActive(false);
+            _isClosed = true;
+        }
     }
 
     protected IEnumerator Typing()
     {
         _isTyping = true;
+        CheckCharacter(_i);
 
         if(dialogueText.text != "")
         {
