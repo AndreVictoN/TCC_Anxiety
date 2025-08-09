@@ -1,21 +1,32 @@
 using System;
 using System.Collections;
+using Core.Singleton;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class BattleManager : MonoBehaviour
+public class BattleManager : Singleton<BattleManager>
 {
+    public Enemy enemy;
+    public PlayerController player;
+
     [SerializeField] private string _pastScene;
     private TextMeshProUGUI _enemyName;
     private bool _prototypeSetupMade;
+    private bool _enemyIsAttacking;
 
     void Start()
     {
         _enemyName = GameObject.FindGameObjectWithTag("EnemyName").GetComponent<TextMeshProUGUI>();
         _prototypeSetupMade = false;
+        _enemyIsAttacking = false;
 
         _pastScene = PlayerPrefs.GetString("pastScene");
+
+        if(enemy == null) enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+        if(player == null) player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player.SetMyTurn(true);
 
         if(_pastScene == "PrototypeScene"){PrototypeBattleSetup();}
     }
@@ -23,7 +34,20 @@ public class BattleManager : MonoBehaviour
     void Update()
     {
         if(_pastScene == "PrototypeScene"){PrototypeBattle();}
+
+        BattleUpdate();
     }
+
+    private void BattleUpdate()
+    {
+        if(!player.GetMyTurn() && !_enemyIsAttacking)
+        {
+            _enemyIsAttacking = true;
+            enemy.Attack(player);
+        }
+    }
+
+    public void SetEnemyIsAttacking(bool isAttacking){_enemyIsAttacking = isAttacking;}
 
 #region Prototype
     private void PrototypeBattleSetup()
@@ -77,6 +101,8 @@ public class BattleManager : MonoBehaviour
             yield return null;
         }
     }
+
+    public void DamageEnemy(float damage){if(enemy != null) enemy.TakeDamage(damage);}
 
     public void SetPastScene(string pastScene) {_pastScene = pastScene;}
 }

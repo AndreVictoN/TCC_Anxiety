@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 using Core.Singleton;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using Unity.VisualScripting;
 
-public abstract class PlayerController : Subject
+public abstract class PlayerController : Subject, IHealthManager
 {
     [Header("Player Settings")]
     protected GameManager gameManager;
@@ -39,10 +41,15 @@ public abstract class PlayerController : Subject
     public float fadeTime = 1f;
 
     [Header("BattleSettings")]
-    public BattleManager battleManager;
+    public float myDamage;
     public GameObject enemy;
     public float attackTime = 0.5f;
     public Vector3 defaultPosition;
+    public BattleManager battleManager;
+    [SerializeField] protected bool _myTurn;
+
+    [Header("HealthManagement")]
+    public float healthAmount;
 
     #region Privates
     protected Vector2 _moveDirection;
@@ -66,6 +73,7 @@ public abstract class PlayerController : Subject
         if (SceneManager.GetActiveScene().name == battleScene)
         {
             defaultPosition = new Vector3(-3.7f, 1.3f, 0);
+            if(PlayerPrefs.GetString("pastScene") == "PrototypeScene"){myDamage = 5f;}
             this.gameObject.transform.position = defaultPosition;
         }
         else if (SceneManager.GetActiveScene().name == classroom)
@@ -142,6 +150,8 @@ public abstract class PlayerController : Subject
 
     public void PlayerMovement()
     {
+        if(!_myTurn) return;
+
         Vector2 enemyPosition = enemy.transform.position;
         _isMovingBattle = true;
         _currentTween?.Kill();
@@ -150,7 +160,7 @@ public abstract class PlayerController : Subject
 
     public void AnimateAttack()
     {
-        if (!_isBattleScene) return;
+        if (!_isBattleScene || !_myTurn) return;
 
         StartCoroutine(AttackAnimation());
     }
@@ -159,6 +169,9 @@ public abstract class PlayerController : Subject
     {
         yield return new WaitForSeconds(0.3f);
         battleAnimator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.2f);
+        battleManager.DamageEnemy(myDamage);
+        _myTurn = false;
     }
 
     void OnMouseExit()
@@ -339,4 +352,24 @@ public abstract class PlayerController : Subject
 
         return time;
     }
+
+    public void SetMyTurn(bool myTurn){_myTurn = myTurn;}
+    public bool GetMyTurn(){return _myTurn;}
+
+#region HealthManagement
+    public void TakeDamage(float damage)
+    {
+        if(!_isBattleScene) return;
+
+        healthAmount -= damage;
+    }
+
+    public void Heal(float healingAmount)
+    {
+        if(!_isBattleScene) return;
+
+        healthAmount += healingAmount;
+        healthAmount = Mathf.Clamp(healthAmount, 0, 100);
+    }
+#endregion
 }

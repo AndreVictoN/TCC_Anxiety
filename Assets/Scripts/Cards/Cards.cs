@@ -59,5 +59,7 @@ public class Cards : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
         {
             arrow.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 0);
         }
+
+        if(EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
     }
 }

@@ -43,6 +43,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         cinemachineCamera = GameObject.FindFirstObjectByType<CinemachineCamera>();
         PlayerManagement();
         _canSkip = false;
+        PlayerPrefs.SetString("pastScene", null);
     }
 
     void Start()

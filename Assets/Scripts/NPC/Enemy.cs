@@ -1,0 +1,61 @@
+using UnityEngine.UI;
+using UnityEngine;
+using System.Collections;
+
+public class Enemy : MonoBehaviour, IHealthManager
+{
+    public Image healthBar;
+    public float healthAmount;
+    public Animator animator;
+
+    [SerializeField]private bool _myTurn;
+
+    void Start()
+    {
+        if(healthBar == null) healthBar = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<Image>();
+        if(animator == null) animator = this.gameObject.GetComponent<Animator>();
+
+        if(healthAmount == 0 && PlayerPrefs.GetString("pastScene") == "PrototypeScene") healthAmount = 100;
+    }
+
+    void Update()
+    {
+        if(healthAmount == 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void Attack(PlayerController player)
+    {
+        StartCoroutine(AttackActions(player));
+    }
+
+    IEnumerator AttackActions(PlayerController player)
+    {
+        yield return new WaitForSeconds(1f);
+        animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
+        player.SetMyTurn(true);
+        BattleManager.Instance.SetEnemyIsAttacking(false);
+    }
+
+    public void SetMyTurn(bool myTurn){_myTurn = myTurn;}
+
+#region HealthManagement
+    public void TakeDamage(float damage)
+    {
+        healthAmount -= damage;
+        healthBar.fillAmount = healthAmount / 100f;
+    }
+
+    public void Heal(float healingAmount)
+    {
+        healthAmount += healingAmount;
+        healthAmount = Mathf.Clamp(healthAmount, 0, 100);
+
+        healthBar.fillAmount = healthAmount / 100f;
+    }
+#endregion
+}
