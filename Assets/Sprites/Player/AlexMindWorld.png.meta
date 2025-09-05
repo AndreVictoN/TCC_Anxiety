@@ -1,67 +1,43 @@
 fileFormatVersion: 2
-guid: 59b0915b98cb221418a1631a2c5b130c
+guid: 9c3b8b733a62d494aa946259ac0571b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4014656278017056547
-    second: alex_real_mask_0
+      213: -6227853873475107391
+    second: AlexMindWorld_0
   - first:
-      213: -7614776455340833370
-    second: alex_real_mask_1
+      213: 3767972451048842345
+    second: AlexMindWorld_1
   - first:
-      213: 228088352267798378
-    second: alex_real_mask_2
+      213: -8369682248547507711
+    second: AlexMindWorld_2
   - first:
-      213: -812632938569383499
-    second: alex_real_mask_3
+      213: -7347758654563923823
+    second: AlexMindWorld_3
   - first:
-      213: -1336843971004450703
-    second: alex_real_mask_4
+      213: -4562797959349554307
+    second: AlexMindWorld_4
   - first:
-      213: 6193766867177935993
-    second: alex_real_mask_5
+      213: 7644015115486876147
+    second: AlexMindWorld_5
   - first:
-      213: 2504835959730176634
-    second: alex_real_mask_6
+      213: 473726542526535230
+    second: AlexMindWorld_6
   - first:
-      213: 1781108332801242537
-    second: alex_real_mask_7
+      213: -5257049769098583575
+    second: AlexMindWorld_7
   - first:
-      213: 2677389153090061995
-    second: alex_real_mask_8
+      213: 4161792462221786979
+    second: AlexMindWorld_8
   - first:
-      213: 7565937640821056354
-    second: alex_real_mask_9
+      213: -8986526742587914453
+    second: AlexMindWorld_9
   - first:
-      213: 3268540638736743638
-    second: alex_real_mask_10
+      213: 3386883489368347338
+    second: AlexMindWorld_10
   - first:
-      213: 8446448914929961627
-    second: alex_real_mask_11
-  - first:
-      213: 1194924958414468640
-    second: alex_real_mask_12
-  - first:
-      213: -178341199802905074
-    second: alex_real_mask_13
-  - first:
-      213: 5777650924685322188
-    second: alex_real_mask_14
-  - first:
-      213: 4524048289455385023
-    second: alex_real_mask_15
-  - first:
-      213: 767512845231321853
-    second: alex_real_mask_16
-  - first:
-      213: 738909841879694508
-    second: alex_real_mask_17
-  - first:
-      213: -4469785979122693297
-    second: alex_real_mask_18
-  - first:
-      213: 2670907506970063139
-    second: alex_real_mask_19
+      213: 6812700371885878373
+    second: AlexMindWorld_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -94,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -108,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,7 +108,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -157,12 +133,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alex_real_mask_0
+      name: AlexMindWorld_D1
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,19 +148,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd0608db2631948c0800000000000000
-      internalID: -4014656278017056547
+      spriteID: 1c5c97e06e73299a0800000000000000
+      internalID: -6227853873475107391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_1
+      name: AlexMindWorld_D2
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -194,19 +170,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a5c66f9821e25690800000000000000
-      internalID: -7614776455340833370
+      spriteID: 964693c0bf68a4430800000000000000
+      internalID: 3767972451048842345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_2
+      name: AlexMindWorld_D3
       rect:
         serializedVersion: 2
-        x: 67
+        x: 64
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -216,19 +192,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a67835ed5255a2300800000000000000
-      internalID: 228088352267798378
+      spriteID: 102ee64e65ae8db80800000000000000
+      internalID: -8369682248547507711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_3
+      name: AlexMindWorld_D4
       rect:
         serializedVersion: 2
-        x: 99
+        x: 96
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -238,19 +214,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5b14acbd5a2f8b4f0800000000000000
-      internalID: -812632938569383499
+      spriteID: 1984a6b0f64870a90800000000000000
+      internalID: -7347758654563923823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_4
+      name: AlexMindWorld_D5
       rect:
         serializedVersion: 2
-        x: 131
+        x: 128
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -260,19 +236,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1783824cd73927de0800000000000000
-      internalID: -1336843971004450703
+      spriteID: d73b7134e6fada0c0800000000000000
+      internalID: -4562797959349554307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_5
+      name: AlexMindWorld_L1
       rect:
         serializedVersion: 2
-        x: 165
+        x: 160
         y: 0
-        width: 23
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -282,19 +258,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97499b3562ea4f550800000000000000
-      internalID: 6193766867177935993
+      spriteID: 3f1df407f3ff41a60800000000000000
+      internalID: 7644015115486876147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_6
+      name: AlexMindWorld_L2
       rect:
         serializedVersion: 2
-        x: 196
+        x: 192
         y: 0
-        width: 25
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -304,19 +280,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a728750c807f2c220800000000000000
-      internalID: 2504835959730176634
+      spriteID: e36d7ffc7c3039600800000000000000
+      internalID: 473726542526535230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_7
+      name: AlexMindWorld_L3
       rect:
         serializedVersion: 2
-        x: 229
+        x: 224
         y: 0
-        width: 24
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -326,19 +302,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9a53b1b8794c7b810800000000000000
-      internalID: 1781108332801242537
+      spriteID: 9e1645a86153b07b0800000000000000
+      internalID: -5257049769098583575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_8
+      name: AlexMindWorld_L4
       rect:
         serializedVersion: 2
-        x: 259
+        x: 256
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -348,19 +324,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba6ca63df3ff72520800000000000000
-      internalID: 2677389153090061995
+      spriteID: 36fb0abb138a1c930800000000000000
+      internalID: 4161792462221786979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_9
+      name: AlexMindWorld_L5
       rect:
         serializedVersion: 2
-        x: 293
+        x: 288
         y: 0
-        width: 24
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -370,19 +346,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26365e1c23c9ff860800000000000000
-      internalID: 7565937640821056354
+      spriteID: b27cf7f4a81794380800000000000000
+      internalID: -8986526742587914453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_10
+      name: AlexMindWorld_R1
       rect:
         serializedVersion: 2
-        x: 325
+        x: 320
         y: 0
-        width: 22
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -392,19 +368,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6dcf4d9b4603c5d20800000000000000
-      internalID: 3268540638736743638
+      spriteID: ac29f6fc690a00f20800000000000000
+      internalID: 3386883489368347338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_11
+      name: AlexMindWorld_R2
       rect:
         serializedVersion: 2
-        x: 356
+        x: 352
         y: 0
-        width: 25
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -414,19 +390,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9a42e37980d73570800000000000000
-      internalID: 8446448914929961627
+      spriteID: 56ced6b94e29b8e50800000000000000
+      internalID: 6812700371885878373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_12
+      name: AlexMindWorld_R3
       rect:
         serializedVersion: 2
-        x: 388
+        x: 384
         y: 0
-        width: 23
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -434,21 +410,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 026fa8f2be9359010800000000000000
-      internalID: 1194924958414468640
+      spriteID: f0f2145bee8a0514cb1edd5e561e18e2
+      internalID: 142280596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_13
+      name: AlexMindWorld_R4
       rect:
         serializedVersion: 2
-        x: 420
+        x: 416
         y: 0
-        width: 24
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -456,21 +432,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e0e4ee8af97668df0800000000000000
-      internalID: -178341199802905074
+      spriteID: ecacd8962f4d255498776cea1b5b9b20
+      internalID: -624954072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_14
+      name: AlexMindWorld_R5
       rect:
         serializedVersion: 2
-        x: 452
+        x: 448
         y: 0
-        width: 23
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -478,21 +454,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cc7631a97e65e2050800000000000000
-      internalID: 5777650924685322188
+      spriteID: 832baed1592b9084faadc31934e04448
+      internalID: 1350794317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_15
+      name: AlexMindWorld_U1
       rect:
         serializedVersion: 2
-        x: 483
+        x: 480
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -500,21 +476,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fb9a3b723f5a8ce30800000000000000
-      internalID: 4524048289455385023
+      spriteID: a3bab01de32956f4daf7575104e4fe89
+      internalID: 502103293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_16
+      name: AlexMindWorld_U2
       rect:
         serializedVersion: 2
-        x: 515
+        x: 512
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -522,21 +498,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: df2ff84cdd0c6aa00800000000000000
-      internalID: 767512845231321853
+      spriteID: 06f9f7f3ee38a0c4ba90fa7e65c9b728
+      internalID: 858362031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_17
+      name: AlexMindWorld_U3
       rect:
         serializedVersion: 2
-        x: 547
+        x: 544
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -544,21 +520,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cac77461692214a00800000000000000
-      internalID: 738909841879694508
+      spriteID: c25999f1fe8b6c34d8fb7f85c07f4c0d
+      internalID: -699747202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_18
+      name: AlexMindWorld_U4
       rect:
         serializedVersion: 2
-        x: 579
+        x: 576
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -566,21 +542,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f4bce5c755128f1c0800000000000000
-      internalID: -4469785979122693297
+      spriteID: c2fb5c8791d3cd546946988ce3d36745
+      internalID: 1093414709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_19
+      name: AlexMindWorld_U5
       rect:
         serializedVersion: 2
-        x: 611
+        x: 608
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -588,10 +564,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 321ffdcf938f01520800000000000000
-      internalID: 2670907506970063139
+      spriteID: 2c8f826c18d358a429be9cfcbdc840e8
+      internalID: 1676759922
       vertices: []
       indices: 
       edges: []
@@ -600,7 +576,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 93e5ded9c6310fe41ac0305e5a633781
     internalID: 0
     vertices: []
     indices: 
@@ -610,26 +586,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      alex_real_mask_0: -4014656278017056547
-      alex_real_mask_1: -7614776455340833370
-      alex_real_mask_10: 3268540638736743638
-      alex_real_mask_11: 8446448914929961627
-      alex_real_mask_12: 1194924958414468640
-      alex_real_mask_13: -178341199802905074
-      alex_real_mask_14: 5777650924685322188
-      alex_real_mask_15: 4524048289455385023
-      alex_real_mask_16: 767512845231321853
-      alex_real_mask_17: 738909841879694508
-      alex_real_mask_18: -4469785979122693297
-      alex_real_mask_19: 2670907506970063139
-      alex_real_mask_2: 228088352267798378
-      alex_real_mask_3: -812632938569383499
-      alex_real_mask_4: -1336843971004450703
-      alex_real_mask_5: 6193766867177935993
-      alex_real_mask_6: 2504835959730176634
-      alex_real_mask_7: 1781108332801242537
-      alex_real_mask_8: 2677389153090061995
-      alex_real_mask_9: 7565937640821056354
+      AlexMindWorld_D1: -6227853873475107391
+      AlexMindWorld_D2: 3767972451048842345
+      AlexMindWorld_D3: -8369682248547507711
+      AlexMindWorld_D4: -7347758654563923823
+      AlexMindWorld_D5: -4562797959349554307
+      AlexMindWorld_L1: 7644015115486876147
+      AlexMindWorld_L2: 473726542526535230
+      AlexMindWorld_L3: -5257049769098583575
+      AlexMindWorld_L4: 4161792462221786979
+      AlexMindWorld_L5: -8986526742587914453
+      AlexMindWorld_R1: 3386883489368347338
+      AlexMindWorld_R2: 6812700371885878373
+      AlexMindWorld_R3: 142280596
+      AlexMindWorld_R4: -624954072
+      AlexMindWorld_R5: 1350794317
+      AlexMindWorld_U1: 502103293
+      AlexMindWorld_U2: 858362031
+      AlexMindWorld_U3: -699747202
+      AlexMindWorld_U4: 1093414709
+      AlexMindWorld_U5: 1676759922
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

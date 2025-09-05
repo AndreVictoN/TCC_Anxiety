@@ -357,8 +357,15 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     private void Inventory()
     {
-        if(inventory.activeSelf == false) {inventory.SetActive(true);}
-        else{inventory.SetActive(false);}
+        if(inventory == null) inventory = GameObject.FindGameObjectWithTag("Inventory");
+
+        if(inventory != null)
+        {
+            GameObject inventoryHUD = inventory.transform.Find("Inventory").gameObject;
+
+            if(inventoryHUD != null && inventoryHUD.activeSelf == false){inventoryHUD.SetActive(true);}
+            else if(inventoryHUD != null && inventoryHUD.activeSelf == true){inventoryHUD.SetActive(false);}
+        }
     }
 
     private IEnumerator InSchool()

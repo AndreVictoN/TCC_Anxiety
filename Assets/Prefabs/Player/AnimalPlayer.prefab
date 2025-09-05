@@ -127,8 +127,9 @@ MonoBehaviour:
   move: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   animator: {fileID: 705586796808578349}
   battleAnimator: {fileID: 0}
-  idleDown: {fileID: -1619384319, guid: 8082ff4750a6a9446b5cfdf7aace6781, type: 3}
-  prototypeScene: PrototypeScene
+  idleDown: {fileID: -6227853873475107391, guid: 9c3b8b733a62d494aa946259ac0571b9, type: 3}
+  idleLeft: {fileID: 7644015115486876147, guid: 9c3b8b733a62d494aa946259ac0571b9, type: 3}
+  testScene: TestScene
   firstFloor: FirstFloorPrototype
   battleScene: BattleScene
   classroom: Classroom
@@ -136,10 +137,21 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
   fadeTime: 1
-  battleManager: {fileID: 0}
+  myDamage: 0
   enemy: {fileID: 0}
+  playerSplash: {fileID: 0}
   attackTime: 0.5
   defaultPosition: {x: 0, y: 0, z: 0}
+  battleManager: {fileID: 0}
+  _myTurn: 0
+  sanity: {fileID: 0}
+  anxiety: {fileID: 0}
+  maxAnxiety: {fileID: 0}
+  maxSanity: {fileID: 0}
+  _numSanity: 0
+  _numAnxiety: 0
+  _numMaxSanity: 0
+  _numMaxAnxiety: 0
 --- !u!114 &415419490434733595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +226,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1619384319, guid: 8082ff4750a6a9446b5cfdf7aace6781, type: 3}
+  m_Sprite: {fileID: -6227853873475107391, guid: 9c3b8b733a62d494aa946259ac0571b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -45,6 +45,7 @@ TagManager:
   - EnterSchool
   - AlexOctopus
   - Inventory
+  - Item
   layers:
   - Default
   - TransparentFX
