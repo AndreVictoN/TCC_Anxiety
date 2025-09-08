@@ -4,9 +4,22 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using Core.Singleton;
+using UnityEditor.Animations;
 
 public class HumanPlayer : PlayerController
 {
+    [SerializeField] private AnimatorController _noMask;
+    [SerializeField] private AnimatorController _withMask;
+
+    private bool _isMasked;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        animator.runtimeAnimatorController = _noMask;
+    }
+
     void Update()
     {
         _isBattleScene = false;
@@ -22,5 +35,13 @@ public class HumanPlayer : PlayerController
         }
 
         AnimateMovement();
+    }
+
+    public void SetIsMasked(bool isMasked)
+    {
+        _isMasked = isMasked;
+
+        if (_isMasked) { animator.runtimeAnimatorController = _withMask; }
+        else{ animator.runtimeAnimatorController = _noMask; }
     }
 }

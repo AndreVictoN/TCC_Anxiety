@@ -7,12 +7,33 @@ public class InventoryManager : MonoBehaviour, IObserver
 {
     public List<Image> itemsImages = new();
     public Image currentMask;
-    public Sprite fan;
+    public List<Sprite> itemsSprites = new();
+    public Image alexImage;
     private Animator _animator;
     private int _selectedSlot;
     [SerializeField] private Color _defaultSlotColor;
+    private GameObject _currentItemImage;
+    private GameObject _player;
+    private int _lastItemSpriteIndex;
+
+    #region Masks Images
+    [SerializeField] private Sprite _alexNoMask;
+    [SerializeField] private List<Sprite> _alexMasks;
+    #endregion
 
     void Awake()
+    {
+        alexImage.sprite = _alexNoMask;
+        if (_player == null) { _player = GameObject.FindGameObjectWithTag("Player"); }
+        BasicSettings();
+    }
+
+    void OnEnable()
+    {
+        BasicSettings();
+    }
+
+    private void BasicSettings()
     {
         ColorUtility.TryParseHtmlString("#EF776F", out _defaultSlotColor);
         _selectedSlot = 1;
@@ -23,8 +44,8 @@ public class InventoryManager : MonoBehaviour, IObserver
             if (image.gameObject.transform.parent != null && i != 0)
             {
                 _animator = image.gameObject.transform.parent.gameObject.GetComponent<Animator>();
-
-                _animator.enabled = false;
+                _animator.SetBool("DEACTIVATE", true);
+                //_animator.enabled = false;
             }
 
             i++;
@@ -33,114 +54,96 @@ public class InventoryManager : MonoBehaviour, IObserver
 
     void Update()
     {
+        Navigate();
+        Select();
+    }
+
+    private void SelectNewSlot(int selectedSlot, int deactivated, int activated)
+    {
+        _selectedSlot = selectedSlot;
+        itemsImages[deactivated].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
+        itemsImages[activated].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
+        itemsImages[activated].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
+    }
+
+    private void Navigate()
+    {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (_selectedSlot == 1)
-            {
-                _selectedSlot = 2;
-                itemsImages[0].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[1].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[1].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
-            else if (_selectedSlot == 3)
-            {
-                _selectedSlot = 4;
-                itemsImages[2].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[3].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[3].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
-            else if (_selectedSlot == 5)
-            {
-                _selectedSlot = 6;
-                itemsImages[4].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[5].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[5].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
+            if (_selectedSlot == 1) { SelectNewSlot(2, 0, 1); }
+            else if (_selectedSlot == 3) { SelectNewSlot(4, 2, 3); }
+            else if (_selectedSlot == 5) { SelectNewSlot(6, 4, 5); }
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (_selectedSlot == 2)
-            {
-                _selectedSlot = 1;
-                itemsImages[1].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[0].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[0].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
-            else if (_selectedSlot == 4)
-            {
-                _selectedSlot = 3;
-                itemsImages[3].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[2].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[2].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
-            else if (_selectedSlot == 6)
-            {
-                _selectedSlot = 5;
-                itemsImages[5].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[4].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[4].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
+            if (_selectedSlot == 2) { SelectNewSlot(1, 1, 0); }
+            else if (_selectedSlot == 4) { SelectNewSlot(3, 3, 2); }
+            else if (_selectedSlot == 6) { SelectNewSlot(5, 5, 4); }
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (_selectedSlot == 1)
-            {
-                _selectedSlot = 3;
-                itemsImages[0].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[2].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[2].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
-            else if (_selectedSlot == 2)
-            {
-                _selectedSlot = 4;
-                itemsImages[1].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[3].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[3].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
-            else if (_selectedSlot == 3)
-            {
-                _selectedSlot = 5;
-                itemsImages[2].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[4].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[4].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
-            else if (_selectedSlot == 4)
-            {
-                _selectedSlot = 6;
-                itemsImages[3].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[5].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[5].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
+            if (_selectedSlot == 1) { SelectNewSlot(3, 0, 2); }
+            else if (_selectedSlot == 2) { SelectNewSlot(4, 1, 3); }
+            else if (_selectedSlot == 3) { SelectNewSlot(5, 2, 4); }
+            else if (_selectedSlot == 4) { SelectNewSlot(6, 3, 5); }
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (_selectedSlot == 3)
+            if (_selectedSlot == 3) { SelectNewSlot(1, 2, 0); }
+            else if (_selectedSlot == 4) { SelectNewSlot(2, 3, 1); }
+            else if (_selectedSlot == 5) { SelectNewSlot(3, 4, 2); }
+            else if (_selectedSlot == 6) { SelectNewSlot(4, 5, 3); }
+        }
+    }
+
+    private void Select()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            _currentItemImage = itemsImages[_selectedSlot - 1].gameObject.transform.parent?.Find("ItemImage").gameObject;
+
+            if (_currentItemImage.activeSelf)
             {
-                _selectedSlot = 1;
-                itemsImages[2].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[0].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[0].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
+                if (!currentMask.gameObject.activeSelf)
+                {
+                    currentMask.gameObject.SetActive(true);
+                    currentMask.sprite = _currentItemImage.GetComponent<Image>().sprite;
+
+                    _currentItemImage.SetActive(false);
+                }
+                else
+                {
+                    (_currentItemImage.GetComponent<Image>().sprite, currentMask.sprite) = (currentMask.sprite, _currentItemImage.GetComponent<Image>().sprite);
+                }
+
+                for (int i = 0; i < itemsSprites.Count; i++)
+                {
+                    if (currentMask.sprite == itemsSprites[i])
+                    {
+                        alexImage.sprite = _alexMasks[i];
+                    }
+                }
+
+                if (_player == null) { _player = GameObject.FindGameObjectWithTag("Player"); }
+                _player?.GetComponent<HumanPlayer>().SetIsMasked(true);
             }
-            else if (_selectedSlot == 4)
+            else
             {
-                _selectedSlot = 2;
-                itemsImages[3].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[1].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[1].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
-            else if (_selectedSlot == 5)
-            {
-                _selectedSlot = 3;
-                itemsImages[4].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[2].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[2].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
-            }
-            else if (_selectedSlot == 6)
-            {
-                _selectedSlot = 4;
-                itemsImages[5].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", true);
-                itemsImages[3].gameObject.transform.parent.gameObject.GetComponent<Animator>().enabled = true;
-                itemsImages[3].gameObject.transform.parent.gameObject.GetComponent<Animator>().SetBool("DEACTIVATE", false);
+                if (currentMask.gameObject.activeSelf)
+                {
+                    if (itemsSprites.Contains(currentMask.sprite))
+                    {
+                        _currentItemImage.GetComponent<Image>().sprite = currentMask.sprite;
+                        if (!_currentItemImage.activeSelf) _currentItemImage.SetActive(true);
+
+                        alexImage.sprite = _alexNoMask;
+
+                        if (_player == null) { _player = GameObject.FindGameObjectWithTag("Player"); }
+                        _player?.GetComponent<HumanPlayer>().SetIsMasked(false);
+                    }
+
+                    currentMask.gameObject.SetActive(false);
+                }
             }
         }
     }
@@ -149,10 +152,10 @@ public class InventoryManager : MonoBehaviour, IObserver
     {
         foreach (Image image in itemsImages)
         {
-            if (image.gameObject.activeSelf == false)
+            if (!image.gameObject.activeSelf)
             {
                 image.gameObject.SetActive(true);
-                image.sprite = fan;
+                image.sprite = itemsSprites[_lastItemSpriteIndex];
                 break;
             }
         }
@@ -160,9 +163,17 @@ public class InventoryManager : MonoBehaviour, IObserver
 
     public void OnNotify(EventsEnum evt)
     {
-        if(evt == EventsEnum.NewItem)
+        if (evt == EventsEnum.NewItem)
         {
             CheckItems();
+        }
+    }
+
+    public void LastItemRecieved(Sprite itemSprite)
+    {
+        if (itemsSprites.Contains(itemSprite))
+        {
+            _lastItemSpriteIndex = itemsSprites.IndexOf(itemSprite);
         }
     }
 }

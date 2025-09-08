@@ -94,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -108,7 +108,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -157,12 +157,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alex_real_mask_0
+      name: ADM_1
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,12 +179,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_1
+      name: ADM_2
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -201,12 +201,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_2
+      name: ADM_3
       rect:
         serializedVersion: 2
-        x: 67
+        x: 64
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -223,12 +223,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_3
+      name: ADM_4
       rect:
         serializedVersion: 2
-        x: 99
+        x: 96
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -245,12 +245,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_4
+      name: ADM_5
       rect:
         serializedVersion: 2
-        x: 131
+        x: 128
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -267,12 +267,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_5
+      name: ALM_1
       rect:
         serializedVersion: 2
-        x: 165
+        x: 160
         y: 0
-        width: 23
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -289,12 +289,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_6
+      name: ALM_2
       rect:
         serializedVersion: 2
-        x: 196
+        x: 192
         y: 0
-        width: 25
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -311,12 +311,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_7
+      name: ALM_3
       rect:
         serializedVersion: 2
-        x: 229
+        x: 224
         y: 0
-        width: 24
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -333,12 +333,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_8
+      name: ALM_4
       rect:
         serializedVersion: 2
-        x: 259
+        x: 256
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -355,12 +355,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_9
+      name: ALM_5
       rect:
         serializedVersion: 2
-        x: 293
+        x: 288
         y: 0
-        width: 24
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -377,12 +377,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_10
+      name: ARM_1
       rect:
         serializedVersion: 2
-        x: 325
+        x: 320
         y: 0
-        width: 22
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -399,12 +399,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_11
+      name: ARM_2
       rect:
         serializedVersion: 2
-        x: 356
+        x: 352
         y: 0
-        width: 25
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -421,12 +421,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_12
+      name: ARM_3
       rect:
         serializedVersion: 2
-        x: 388
+        x: 384
         y: 0
-        width: 23
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -443,12 +443,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_13
+      name: ARM_4
       rect:
         serializedVersion: 2
-        x: 420
+        x: 416
         y: 0
-        width: 24
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -465,12 +465,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_14
+      name: ARM_5
       rect:
         serializedVersion: 2
-        x: 452
+        x: 448
         y: 0
-        width: 23
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -487,12 +487,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_15
+      name: AUM_1
       rect:
         serializedVersion: 2
-        x: 483
+        x: 480
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -509,12 +509,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_16
+      name: AUM_2
       rect:
         serializedVersion: 2
-        x: 515
+        x: 512
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -531,12 +531,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_17
+      name: AUM_3
       rect:
         serializedVersion: 2
-        x: 547
+        x: 544
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -553,12 +553,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_18
+      name: AUM_4
       rect:
         serializedVersion: 2
-        x: 579
+        x: 576
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -575,12 +575,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alex_real_mask_19
+      name: AUM_5
       rect:
         serializedVersion: 2
-        x: 611
+        x: 608
         y: 0
-        width: 26
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -600,7 +600,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 32d36aeb8d5f00442a13a03f762a8c9f
     internalID: 0
     vertices: []
     indices: 
@@ -610,26 +610,27 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      alex_real_mask_0: -4014656278017056547
-      alex_real_mask_1: -7614776455340833370
-      alex_real_mask_10: 3268540638736743638
-      alex_real_mask_11: 8446448914929961627
-      alex_real_mask_12: 1194924958414468640
-      alex_real_mask_13: -178341199802905074
-      alex_real_mask_14: 5777650924685322188
-      alex_real_mask_15: 4524048289455385023
-      alex_real_mask_16: 767512845231321853
-      alex_real_mask_17: 738909841879694508
+      ADM_1: -4014656278017056547
+      ADM_2: -7614776455340833370
+      ADM_3: 228088352267798378
+      ADM_4: -812632938569383499
+      ADM_5: -1336843971004450703
+      ALM_1: 6193766867177935993
+      ALM_2: 2504835959730176634
+      ALM_3: 1781108332801242537
+      ALM_4: 2677389153090061995
+      ALM_5: 7565937640821056354
+      ARM_1: 3268540638736743638
+      ARM_2: 8446448914929961627
+      ARM_3: 1194924958414468640
+      ARM_4: -178341199802905074
+      ARM_5: 5777650924685322188
+      AUM_1: 4524048289455385023
+      AUM_2: 767512845231321853
+      AUM_3: 738909841879694508
+      AUM_4: -4469785979122693297
+      AUM_5: 2670907506970063139
       alex_real_mask_18: -4469785979122693297
-      alex_real_mask_19: 2670907506970063139
-      alex_real_mask_2: 228088352267798378
-      alex_real_mask_3: -812632938569383499
-      alex_real_mask_4: -1336843971004450703
-      alex_real_mask_5: 6193766867177935993
-      alex_real_mask_6: 2504835959730176634
-      alex_real_mask_7: 1781108332801242537
-      alex_real_mask_8: 2677389153090061995
-      alex_real_mask_9: 7565937640821056354
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

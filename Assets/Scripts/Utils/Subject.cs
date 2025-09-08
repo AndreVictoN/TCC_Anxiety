@@ -6,7 +6,7 @@ using Core.Singleton;
 
 public abstract class Subject : Singleton<Subject>
 {
-    private List<IObserver> _subscribers = new List<IObserver>();
+    protected List<IObserver> _subscribers = new List<IObserver>();
 
     public void Subscribe(IObserver observer)
     {

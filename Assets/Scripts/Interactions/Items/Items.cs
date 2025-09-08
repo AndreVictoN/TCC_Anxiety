@@ -1,22 +1,25 @@
 using UnityEngine;
 
-public class Items : Subject
+public class Items : MonoBehaviour
 {
     public bool canGet;
     public InventoryManager ivManager;
+    private PlayerController _player;
 
     private void Start()
     {
         canGet = false;
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
-        Subscribe(ivManager);
+        _player.RegisterToSubscribers(ivManager);
     }
 
     void Update()
     {
         if(canGet && Input.GetKeyDown(KeyCode.E))
         {
-            Notify(EventsEnum.NewItem);
+            ivManager.LastItemRecieved(this.gameObject.GetComponent<SpriteRenderer>().sprite);
+            _player.NotifyFromItem(EventsEnum.NewItem);
             Destroy(this.gameObject);
         }
     }

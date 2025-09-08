@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a431a60cba79c344b52f91dac8f9a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ivManager: {fileID: 6120344727525868574, guid: cd905254d8438534895f34e824e2a54e, type: 3}
   rb: {fileID: 0}
   moveSpeed: 5
   move: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
@@ -152,6 +153,8 @@ MonoBehaviour:
   _numAnxiety: 0
   _numMaxSanity: 0
   _numMaxAnxiety: 0
+  _noMask: {fileID: 9100000, guid: aa1fe8766166fa542997aa436eac8b44, type: 2}
+  _withMask: {fileID: 9100000, guid: 061dea4de814cc14085e0729e6d3c941, type: 2}
 --- !u!114 &415419490434733595
 MonoBehaviour:
   m_ObjectHideFlags: 0
