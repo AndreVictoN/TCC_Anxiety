@@ -426,7 +426,13 @@ public abstract class PlayerController : Subject, IHealthManager
         return time;
     }
 
-    public void SetMyTurn(bool myTurn){_myTurn = myTurn;}
+    public void InventorySet(bool isSet)
+    {
+        if (isSet) _canMove = false;
+        else _canMove = true;
+    }
+
+    public void SetMyTurn(bool myTurn) { _myTurn = myTurn; }
     public bool GetMyTurn(){return _myTurn;}
     public bool GetCanAct(){return _canAct;}
     public bool GetCanAttack(){return _canAttack;}

@@ -35,7 +35,7 @@ public class GameManager : Singleton<GameManager>, IObserver
     public List<string> dialogue = new List<string>();
     public float wordSpeed = 0.6f;
 
-    private PlayerController _playerController;
+    [SerializeField] private PlayerController _playerController;
     [SerializeField] private Ezequiel _ezequiel;
     private string _classroomScene = "Classroom";
     private bool _isTyping;
@@ -149,7 +149,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         yield return null;
 
-        if(sceneName != _classroomScene && sceneName != "TestScene")
+        if (sceneName != _classroomScene && sceneName != "TestScene")
         {
             cinemachineCamera = GameObject.FindFirstObjectByType<CinemachineCamera>();
             CinemachineFollow(player.GetComponent<Transform>());
@@ -208,6 +208,8 @@ public class GameManager : Singleton<GameManager>, IObserver
 
         player.GetComponent<PlayerController>().SetCanMove(true);
         doors.Clear();
+
+        _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     void AnimateTransition(float time, bool toTransparent)
@@ -363,8 +365,8 @@ public class GameManager : Singleton<GameManager>, IObserver
         {
             GameObject inventoryHUD = inventory.transform.Find("Inventory").gameObject;
 
-            if(inventoryHUD != null && inventoryHUD.activeSelf == false){inventoryHUD.SetActive(true);}
-            else if(inventoryHUD != null && inventoryHUD.activeSelf == true){inventoryHUD.SetActive(false);}
+            if(inventoryHUD != null && inventoryHUD.activeSelf == false){inventoryHUD.SetActive(true); _playerController.InventorySet(true);}
+            else if(inventoryHUD != null && inventoryHUD.activeSelf == true){inventoryHUD.SetActive(false); _playerController.InventorySet(false);}
         }
     }
 

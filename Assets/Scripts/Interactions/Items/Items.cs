@@ -1,18 +1,22 @@
 using UnityEngine;
 
-public class Items : MonoBehaviour
+public class Items : Subject
 {
     public bool canGet;
+    public InventoryManager ivManager;
 
-    private void Awake()
+    private void Start()
     {
         canGet = false;
+
+        Subscribe(ivManager);
     }
 
     void Update()
     {
         if(canGet && Input.GetKeyDown(KeyCode.E))
         {
+            Notify(EventsEnum.NewItem);
             Destroy(this.gameObject);
         }
     }
