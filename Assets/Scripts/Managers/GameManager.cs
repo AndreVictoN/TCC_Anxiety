@@ -45,6 +45,7 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     protected override void Awake()
     {
+        //PlayerPrefs.SetString("pastScene", "Menu");
         cinemachineCamera = GameObject.FindFirstObjectByType<CinemachineCamera>();
         PlayerManagement();
         _canSkip = false;
@@ -91,8 +92,8 @@ public class GameManager : Singleton<GameManager>, IObserver
         if(_firstInteractionTrigger.activeSelf == true) _firstInteractionTrigger.SetActive(false);
         if(_ezequiel.gameObject.activeSelf == false) _ezequiel.gameObject.SetActive(true);
         if(currentDay.gameObject.activeSelf == true) currentDay.gameObject.SetActive(false);
-        _ezequiel.gameObject.transform.localPosition = new Vector2(5.54f, 80.11f);
-        _playerController.gameObject.transform.localPosition = new Vector2(7.18f, 80.11f);
+        _ezequiel.gameObject.transform.localPosition = new Vector2(9.44f, 102.03f);
+        _playerController.gameObject.transform.localPosition = new Vector2(11.52f, 102.03f);
         _playerController.SetAnimation("H_IdleL", 0);
         _ezequiel.SetAnimation("H_IdleR");
     }
@@ -307,15 +308,15 @@ public class GameManager : Singleton<GameManager>, IObserver
         while(!_prototypeGirl.GetComponent<Girl>().GetIsClosed()) { yield return null; }
 
         _playerController.SetAnimation("H_WalkingLeft", 2);
-        StartCoroutine(_playerController.GoTo(1f, new Vector2(5.15f, _playerController.transform.localPosition.y), 'x', false));
+        StartCoroutine(_playerController.GoTo(1f, new Vector2(9.58f, _playerController.transform.localPosition.y), 'x', false));
         yield return new WaitForSeconds(1);
 
         _playerController.SetAnimation("H_WalkingUp", 3);
-        StartCoroutine(_playerController.GoTo(4f, new Vector2(_playerController.transform.localPosition.x, 80.11f), 'y', false));
+        StartCoroutine(_playerController.GoTo(4f, new Vector2(_playerController.transform.localPosition.x, 102.03f), 'y', false));
         yield return new WaitForSeconds(4f);
 
         _playerController.SetAnimation("H_WalkingLeft", 0);
-        StartCoroutine(_playerController.GoTo(3f, new Vector2(7.18f, _playerController.transform.localPosition.y), 'x', false));
+        StartCoroutine(_playerController.GoTo(3f, new Vector2(11.52f, _playerController.transform.localPosition.y), 'x', false));
         yield return new WaitForSeconds(3f);
         _playerController.SetAnimation("TransformL", 0);
         _battleTrigger.SetActive(true);
@@ -376,7 +377,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         yield return new WaitForSeconds(1);
 
         _playerController.SetCanMove(true);
-        _playerController.gameObject.transform.localPosition = new Vector2(11.44f, 23.33f);
+        _playerController.gameObject.transform.localPosition = new Vector2(8.8f, 24f);
 
         _playerController.SetAnimation("H_IdleUp", 0);
 
@@ -401,7 +402,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         yield return new WaitForSeconds(1);
 
         _playerController.SetCanMove(true);
-        _playerController.gameObject.transform.localPosition = new Vector2(11.44f, 6.40f);
+        _playerController.gameObject.transform.localPosition = new Vector2(8.8f, 7.1f);
         currentObjective.text = "";
 
         _playerController.SetAnimation("H_Idle", 0);
@@ -420,7 +421,7 @@ public class GameManager : Singleton<GameManager>, IObserver
 
         _ezequiel.gameObject.SetActive(false);
         _playerController.SetCanMove(true);
-        _playerController.gameObject.transform.localPosition = new Vector2(21.49f, 93f);
+        _playerController.gameObject.transform.localPosition = new Vector2(18f, 110.53f);
         currentObjective = GameObject.FindGameObjectWithTag("Objective").GetComponent<TextMeshProUGUI>();
         currentObjective.text = "Objetivo: Saia da Escola";
 
@@ -433,6 +434,8 @@ public class GameManager : Singleton<GameManager>, IObserver
 
 
         _playerController.SetAnimation("Moving", 0);
+
+        if(!exitGame.activeSelf) exitGame.SetActive(true);
     }
 
     private void StopPlayer(EventsEnum evt)
@@ -532,31 +535,37 @@ public class GameManager : Singleton<GameManager>, IObserver
         while(!_skipped) yield return null;
         dialogueText.fontStyle = FontStyles.Normal;
 
-        if(_playerController.gameObject.transform.localPosition.x > 18.44f) _playerController.SetAnimation("H_WalkingLeft", 0);
-        else if(_playerController.gameObject.transform.localPosition.x < 18.44f) _playerController.SetAnimation("H_WalkingRight", 0);
+        if(_playerController.gameObject.transform.localPosition.x > 28.86f) _playerController.SetAnimation("H_WalkingLeft", 0);
+        else if(_playerController.gameObject.transform.localPosition.x < 28.86f) _playerController.SetAnimation("H_WalkingRight", 0);
 
-        float seconds = _playerController.ToX(18.44f);
+        float seconds = _playerController.ToX(28.86f);
         yield return new WaitForSeconds(seconds);
 
-        if(_playerController.gameObject.transform.localPosition.y > 65.22f) _playerController.SetAnimation("H_WalkingDown", 0);
-        else if(_playerController.gameObject.transform.localPosition.y < 65.22f) _playerController.SetAnimation("H_WalkingUp", 0);
+        if(_playerController.gameObject.transform.localPosition.y > 78.38f) _playerController.SetAnimation("H_WalkingDown", 0);
+        else if(_playerController.gameObject.transform.localPosition.y < 78.38f) _playerController.SetAnimation("H_WalkingUp", 0);
 
-        seconds = _playerController.ToY(65.22f);
+        seconds = _playerController.ToY(78.38f);
         yield return new WaitForSeconds(seconds);
 
-        _playerController.SetAnimation("H_IdleR", 0);
+        _playerController.SetAnimation("H_IdleL", 0);
 
         _prototypeTeacher.SetActive(true);
-        _prototypeTeacher.GetComponent<Teacher>().Move(4f, new Vector2(this.gameObject.transform.position.x, 65.22f), 'y');
+        _prototypeTeacher.GetComponent<Teacher>().Move(4f, new Vector2(_prototypeTeacher.transform.localPosition.x, 78.38f), 'y');
         _prototypeTeacher.GetComponent<Teacher>().SetAnimation("WalkingDown");
         yield return new WaitForSeconds(1f);
         _prototypeTeacher.GetComponent<Teacher>().SetCanSkip(false);
         StartCoroutine(_prototypeTeacher.GetComponent<Teacher>().StartAutomaticTalk());
         yield return new WaitForSeconds(4f);
-        _prototypeTeacher.GetComponent<Teacher>().Move(2f, new Vector2(this.gameObject.transform.position.x, 51.33f), 'y');
+        _prototypeTeacher.GetComponent<Teacher>().Move(1f, new Vector2(_prototypeTeacher.transform.localPosition.x, 74.04f), 'y');
+        yield return new WaitForSeconds(1f);
+        _prototypeTeacher.GetComponent<Teacher>().Move(1f, new Vector2(24.17f, _prototypeTeacher.transform.localPosition.y), 'x');
+        _prototypeTeacher.GetComponent<Teacher>().SetAnimation("WalkingLeft");
+        yield return new WaitForSeconds(1f);
+        _prototypeTeacher.GetComponent<Teacher>().Move(1f, new Vector2(_prototypeTeacher.transform.localPosition.x, 63.12f), 'y');
+        _prototypeTeacher.GetComponent<Teacher>().SetAnimation("WalkingDown");
         if(skipText.activeSelf == false) skipText.SetActive(true);
         _prototypeTeacher.GetComponent<Teacher>().SetCanSkip(true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
 
         while(!_prototypeTeacher.GetComponent<Teacher>().GetIsClosed()) yield return null;
         

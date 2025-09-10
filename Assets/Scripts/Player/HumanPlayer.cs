@@ -4,12 +4,11 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using Core.Singleton;
-using UnityEditor.Animations;
 
 public class HumanPlayer : PlayerController
 {
-    [SerializeField] private AnimatorController _noMask;
-    [SerializeField] private AnimatorController _withMask;
+    [SerializeField] private RuntimeAnimatorController _noMask;
+    [SerializeField] private RuntimeAnimatorController _withMask;
 
     private bool _isMasked;
 
@@ -26,11 +25,14 @@ public class HumanPlayer : PlayerController
 
         if (_canMove) _moveDirection = move.action.ReadValue<Vector2>();
 
-        if (!_isBattleScene && _canAct)
+        if (!_isBattleScene)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                Notify(EventsEnum.Inventory);
+                if (!_canMove)
+                {
+                    if (_inventorySet) { Notify(EventsEnum.Inventory); }
+                }else{ Notify(EventsEnum.Inventory); }
             }
         }
 

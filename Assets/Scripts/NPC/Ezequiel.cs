@@ -87,56 +87,60 @@ public class Ezequiel : NPC
     {
         _isMoving = true;
 
-        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
         this.gameObject.GetComponent<CircleCollider2D>().radius = 2;
 
-        _player.SetAnimation("H_WalkingLeft", 0);
-        animator.Play("H_WalkingL");
-        //77.5f
-        StartCoroutine(GoTo(3f, new Vector2(1.88f, this.gameObject.transform.position.y), 'x'));
-        StartCoroutine(_player.GoTo(3.3f, new Vector2(3.64f, this.gameObject.transform.position.y), 'x', false));
-        yield return new WaitForSeconds(3f);
+        //animator.Play("H_WalkingL");
 
         animator.Play("H_WalkingD");
+        StartCoroutine(GoTo(16f, new Vector2(this.gameObject.transform.position.x, 75.12f), 'y'));
+        yield return new WaitForSeconds(0.5f);
+
+        _player.SetAnimation("H_WalkingLeft", 0);
+        StartCoroutine(_player.GoTo(0.5f, new Vector2(this.gameObject.transform.position.x, _player.gameObject.transform.position.y), 'x', false));
+        yield return new WaitForSeconds(0.2f);
+        //yield return new WaitForSeconds(3f);
+
         _player.SetAnimation("H_WalkingDown", 0);
-        StartCoroutine(GoTo(16f, new Vector2(this.gameObject.transform.position.x, 63.3f), 'y'));
-        StartCoroutine(_player.GoTo(16f, new Vector2(_player.gameObject.transform.position.x, 65.5f), 'y', false));
+        StartCoroutine(_player.GoTo(17f, new Vector2(_player.gameObject.transform.position.x, 76.12f), 'y', false));
         yield return new WaitForSeconds(16f);
         
         _player.SetAnimation("H_Idle", 0);
         animator.Play("H_WalkingR");
-        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
-        StartCoroutine(GoTo(20f, new Vector2(38f, this.gameObject.transform.position.y), 'x'));
-        yield return new WaitForSeconds(1f);
-        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        StartCoroutine(GoTo(20f, new Vector2(39.65f, this.gameObject.transform.position.y), 'x'));
+        yield return new WaitForSeconds(0.5f);
 
         _player.SetAnimation("H_WalkingDown", 0);
         StartCoroutine(_player.GoTo(0.5f, new Vector2(_player.gameObject.transform.position.x, this.gameObject.transform.position.y), 'y', false));
         yield return new WaitForSeconds(0.5f);
 
         _player.SetAnimation("H_WalkingRight", 0);
-        StartCoroutine(_player.GoTo(20f, new Vector2(36f, this.gameObject.transform.position.y), 'x', false));
+        StartCoroutine(_player.GoTo(20f, new Vector2(37.65f, this.gameObject.transform.position.y), 'x', false));
         yield return new WaitForSeconds(20);
 
-        _player.SetAnimation("H_WalkingUp", 0);
+        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;
         animator.Play("H_WalkingU");
-        StartCoroutine(GoTo(27f, new Vector2(this.gameObject.transform.position.x, 92f), 'y'));
-        StartCoroutine(_player.GoTo(27f, new Vector2(_player.gameObject.transform.position.x, 90f), 'y', false));
+        StartCoroutine(GoTo(27f, new Vector2(this.gameObject.transform.position.x, 111.43f), 'y'));
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(_player.GoTo(0.5f, new Vector2(this.gameObject.transform.position.x, _player.gameObject.transform.position.y), 'x', false));
+        yield return new WaitForSeconds(0.5f);
+
+        _player.SetAnimation("H_WalkingUp", 0);
+        StartCoroutine(_player.GoTo(27f, new Vector2(_player.gameObject.transform.position.x, 109.43f), 'y', false));
         yield return new WaitForSeconds(27);
 
         _player.SetAnimation("H_IdleUp", 0);
-        animator.Play("H_WalkingL");
-        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;
-        StartCoroutine(GoTo(10, new Vector2(18.79f, this.gameObject.transform.position.y), 'x'));
-        yield return new WaitForSeconds(1f);
         this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        animator.Play("H_WalkingL");
+        StartCoroutine(GoTo(10, new Vector2(15.08f, this.gameObject.transform.position.y), 'x'));
+        yield return new WaitForSeconds(0.5f);
 
         _player.SetAnimation("H_WalkingUp", 0);
         StartCoroutine(_player.GoTo(0.5f, new Vector2(_player.gameObject.transform.position.x, this.gameObject.transform.position.y), 'y', false));
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
 
         _player.SetAnimation("H_WalkingLeft", 0);
-        StartCoroutine(_player.GoTo(10f, new Vector2(21f, this.gameObject.transform.position.y), 'x', true));
+        StartCoroutine(_player.GoTo(10f, new Vector2(17.08f, this.gameObject.transform.position.y), 'x', true));
         yield return new WaitForSeconds(10f);
         animator.Play("H_IdleR");
 

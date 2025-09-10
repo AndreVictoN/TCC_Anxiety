@@ -282,7 +282,7 @@ public abstract class NPC : DialogueBox, IHealthManager
             yield return new WaitForSeconds(0.5f);
             animator.Play("WalkingRight");
 
-            this.transform.DOMoveX(-0.96f, time);
+            this.transform.DOMoveX(3.17f, time);
             yield return new WaitForSeconds(time);
             animator.Play("IdleR");
         }

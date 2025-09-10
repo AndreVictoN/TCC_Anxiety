@@ -10,7 +10,6 @@ using Unity.VisualScripting;
 using TMPro;
 using System;
 using UnityEngine.InputSystem.Controls;
-using UnityEditor.PackageManager;
 
 public abstract class PlayerController : Subject, IHealthManager
 {
@@ -76,6 +75,7 @@ public abstract class PlayerController : Subject, IHealthManager
     protected Vector2 _lastMoveDirection = Vector2.down;
     protected string collisionTag = "collision";
     private float _defaultAnimatorSpeed;
+    protected bool _inventorySet;
     #endregion
 
     protected override void Awake()
@@ -443,6 +443,7 @@ public abstract class PlayerController : Subject, IHealthManager
 
     public void InventorySet(bool isSet)
     {
+        _inventorySet = isSet;
         if (isSet) _canMove = false;
         else _canMove = true;
     }
