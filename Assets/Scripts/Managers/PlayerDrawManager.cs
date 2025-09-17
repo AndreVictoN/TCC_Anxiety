@@ -60,12 +60,15 @@ public class PlayerDrawManager : MonoBehaviour
             }
         }else if(SceneManager.GetActiveScene().name == "PrototypeScene")
         {
-            if((player.transform.position.y >= 59.24f && player.transform.position.y <= 60.18f) || (player.transform.position.y >= 52.219f && player.transform.position.y <= 53.22f) || (player.transform.position.x >= 52.5f && player.transform.position.x <= 67.54f && ((player.transform.position.y >= 83.75f && player.transform.position.y <= 100.78f) || (player.transform.position.y >= 103.22f && player.transform.position.y <= 108.17f))))
+            /*if((player.transform.position.y >= 59.24f && player.transform.position.y <= 60.18f) || 
+            (player.transform.position.y >= 52.219f && player.transform.position.y <= 53.22f) || 
+            (player.transform.position.x >= 52.5f && player.transform.position.x <= 67.54f && ((player.transform.position.y >= 83.75f && player.transform.position.y <= 100.78f) || 
+            (player.transform.position.y >= 103.22f && player.transform.position.y <= 108.17f))))
             {
                 playerSR.sortingOrder = -1;
             }else{
                 playerSR.sortingOrder = 1;
-            }
+            }*/
         }
     }
 }
