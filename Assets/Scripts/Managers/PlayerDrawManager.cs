@@ -36,7 +36,7 @@ public class PlayerDrawManager : MonoBehaviour
 
     public void DrawManagement()
     {
-        if(SceneManager.GetActiveScene().name == "Classroom" && _playerIsSet)
+        if (SceneManager.GetActiveScene().name == "Classroom" && _playerIsSet)
         {
             if (player.transform.position.y > rows[0].transform.position.y)
             {
@@ -58,17 +58,29 @@ public class PlayerDrawManager : MonoBehaviour
             {
                 playerSR.sortingOrder = 4;
             }
-        }else if(SceneManager.GetActiveScene().name == "PrototypeScene")
+        } else if (SceneManager.GetActiveScene().name == "PrototypeScene")
         {
-            /*if((player.transform.position.y >= 59.24f && player.transform.position.y <= 60.18f) || 
-            (player.transform.position.y >= 52.219f && player.transform.position.y <= 53.22f) || 
-            (player.transform.position.x >= 52.5f && player.transform.position.x <= 67.54f && ((player.transform.position.y >= 83.75f && player.transform.position.y <= 100.78f) || 
-            (player.transform.position.y >= 103.22f && player.transform.position.y <= 108.17f))))
+            if (player.transform.position.x >= 0.68f && player.transform.position.x <= 9.11f)
             {
-                playerSR.sortingOrder = -1;
-            }else{
-                playerSR.sortingOrder = 1;
-            }*/
+                if ((player.transform.position.y >= 80f && player.transform.position.y <= 82f) || (player.transform.position.y <= 86.25f && player.transform.position.y >= 85.25f))
+                {
+                    playerSR.sortingOrder = -1;
+                }
+            }
+            else if (player.transform.position.x >= 15f && player.transform.position.x <= 23f)
+            {
+                if (player.transform.position.y >= 81.3f && player.transform.position.y <= 82.3f)
+                {
+                    playerSR.sortingOrder = -1;
+                }
+            }
+            else if (player.transform.position.x >= 27.5f && player.transform.position.x <= 35.28f)
+            {
+                if (player.transform.position.y >= 83.3f && player.transform.position.y <= 84.3f)
+                {
+                    playerSR.sortingOrder = -1;
+                }
+            }else { playerSR.sortingOrder = 1; }
         }
     }
 }
