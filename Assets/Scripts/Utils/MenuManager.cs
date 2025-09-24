@@ -40,7 +40,7 @@ public class MenuManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetString("pastScene", "Menu");
-        SceneManager.LoadScene("PrototypeScene");
+        SceneManager.LoadScene("Cutscene");
     }
 
     private IEnumerator FadeTransition(Color oldColor, Color newColor, float time)

@@ -133,7 +133,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: estella_real_0
+      name: Estella_D1
       rect:
         serializedVersion: 2
         x: 0
@@ -141,7 +141,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -155,7 +155,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_1
+      name: Estella_D2
       rect:
         serializedVersion: 2
         x: 32
@@ -163,7 +163,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,7 +177,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_2
+      name: Estella_D3
       rect:
         serializedVersion: 2
         x: 64
@@ -185,7 +185,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,7 +199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_3
+      name: Estella_D4
       rect:
         serializedVersion: 2
         x: 96
@@ -207,7 +207,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,7 +221,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_4
+      name: Estella_D5
       rect:
         serializedVersion: 2
         x: 128
@@ -229,7 +229,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_5
+      name: Estella_L1
       rect:
         serializedVersion: 2
         x: 160
@@ -251,7 +251,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -265,7 +265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_6
+      name: Estella_L2
       rect:
         serializedVersion: 2
         x: 192
@@ -273,7 +273,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -287,7 +287,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_7
+      name: Estella_L3
       rect:
         serializedVersion: 2
         x: 224
@@ -295,7 +295,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -309,7 +309,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_8
+      name: Estella_L4
       rect:
         serializedVersion: 2
         x: 256
@@ -317,7 +317,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -331,7 +331,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_9
+      name: Estella_L5
       rect:
         serializedVersion: 2
         x: 288
@@ -339,7 +339,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -353,7 +353,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_10
+      name: Estella_R1
       rect:
         serializedVersion: 2
         x: 320
@@ -361,7 +361,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -375,7 +375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: estella_real_11
+      name: Estella_R2
       rect:
         serializedVersion: 2
         x: 352
@@ -383,7 +383,7 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -392,6 +392,204 @@ TextureImporter:
       bones: []
       spriteID: eb544ef1e6c5f1f10800000000000000
       internalID: 2242612767505008062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estella_R3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4671422c1d535974fa34888323910122
+      internalID: 651104100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estella_R4
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3a1a021a1343841b5ea288d2210014
+      internalID: 1351173997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estella_R5
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6bcdc49bda342d4784ee2022f4aaa4c
+      internalID: 1632425141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estella_U1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509bad0c0ce75eb438a072aa442c05b8
+      internalID: 2143961330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estella_U2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4e7e8f6ed91aa4caa42af5b07767e7
+      internalID: -1696791019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estella_U3
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91e9ebfb6c175a4b81e22f26b18c509
+      internalID: -770284069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estella_U4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f27042ef70cf234299a9bdbb1673285
+      internalID: -438096526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estella_U5
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d7b8c8764cf094b9ea99893f05ec37
+      internalID: -2142631170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estella_T
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 18
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665da7afe169d70428b7bdff94496fb0
+      internalID: -2043973885
       vertices: []
       indices: 
       edges: []
@@ -410,18 +608,27 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      estella_real_0: -1975397515548953464
-      estella_real_1: 2520887933659965346
-      estella_real_10: 347857122259430520
-      estella_real_11: 2242612767505008062
-      estella_real_2: -6122958813126662698
-      estella_real_3: -5306735276765103048
-      estella_real_4: -91536937105265749
-      estella_real_5: 2784880901446670025
-      estella_real_6: -3028615602676841335
-      estella_real_7: -8647422932827190244
-      estella_real_8: 4027791694940782737
-      estella_real_9: -4227370691796622007
+      Estella_D1: -1975397515548953464
+      Estella_D2: 2520887933659965346
+      Estella_D3: -6122958813126662698
+      Estella_D4: -5306735276765103048
+      Estella_D5: -91536937105265749
+      Estella_L1: 2784880901446670025
+      Estella_L2: -3028615602676841335
+      Estella_L3: -8647422932827190244
+      Estella_L4: 4027791694940782737
+      Estella_L5: -4227370691796622007
+      Estella_R1: 347857122259430520
+      Estella_R2: 2242612767505008062
+      Estella_R3: 651104100
+      Estella_R4: 1351173997
+      Estella_R5: 1632425141
+      Estella_T: -2043973885
+      Estella_U1: 2143961330
+      Estella_U2: -1696791019
+      Estella_U3: -770284069
+      Estella_U4: -438096526
+      Estella_U5: -2142631170
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

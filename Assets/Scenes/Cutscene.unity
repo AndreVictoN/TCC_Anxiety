@@ -193,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3334465786362009637, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 198
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 3334465786362009637, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -207,13 +207,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3439429116524787565, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439429116524787565, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.13705514
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439429116524787565, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21698111
+      objectReference: {fileID: 0}
     - target: {fileID: 4340834637568914538, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
       propertyPath: m_Name
       value: DialoguePanel
       objectReference: {fileID: 0}
     - target: {fileID: 4340834637568914538, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7457969275776219955, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -234,6 +246,18 @@ PrefabInstance:
     - target: {fileID: 7457969275776219955, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799484392365494897, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 660.0042
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799484392365494897, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.2532
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425234160302903458, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
+      propertyPath: m_margin.z
+      value: 0.04675293
       objectReference: {fileID: 0}
     - target: {fileID: 8425234160302903458, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -266,6 +290,81 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4340834637568914538, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
   m_PrefabInstance: {fileID: 197485317}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &960692279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 960692280}
+  - component: {fileID: 960692282}
+  - component: {fileID: 960692281}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: TransitionImage
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &960692280
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960692279}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1384867647}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &960692281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960692279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.027047155, g: 0.0003114994, b: 0.066037714, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &960692282
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960692279}
+  m_CullTransparentMesh: 1
 --- !u!1 &1023172738
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,26 +476,44 @@ MonoBehaviour:
   dialoguePanel: {fileID: 197485320}
   dialogueText: {fileID: 197485319}
   dialogue:
-  - 'Alex, Alex, acorde meu amor, vai se atrasar pro seu primeiro dia de aula. '
-  - "Sim m\xE3e, j\xE1 estou acordado."
-  - "*Alex responde a m\xE3e, claramente carregando a menor vontade de se fazer presente
-    no primeiro dia de aula.*"
-  - "*Mesmo relutante, Alex levanta, se arruma e caminha em dire\xE7\xE3o ao ponto
-    de \xF4nibus.*"
-  - "*Ao entrar em seu \xF4nibus instantaneamente p\xF5e seu fone se dando ao luxo
-    de s\xF3 ouvir ao trocador e a mais ningu\xE9m.*"
-  - "*Observando a paisagem, o sossego de Alex \xE9 interrompido ao sentir algu\xE9m
-    @ cutucar.*"
-  - "*E cutucava incans\xE1velmente.*"
-  - '*Quando finalmente se virou, Alex percebeu...*'
+  - "*Incomodado por um chiado, voc\xCA acorda de seu sono profundo*"
+  - Alex... Alex... Alex!!!
+  - 'Acorde meu amor, vai se atrasar pro seu primeiro dia de aula. '
+  - "Sim m\xC3e, j\xC1 estou acordad@."
+  - "*Voc\xCA responde a m\xC3e, claramente carregando a menor vontade de ir ao primeiro
+    dia.*"
+  - "*Mesmo relutante, voc\xCA se levanta, se arruma e caminha em dire\xC7\xC3o ao
+    ponto de \xD4nibus.*"
+  - "*Ao entrar no \xD4nibus, instantaneamente p\xD5e seu fone de ouvido, se dando
+    ao luxo de s\xD3 ouvir ao trocador e a mais ningu\xC9m.*"
+  - "*Olhando pela janela, em um piscar de olhos, podia observar ali mesmo, um cen\xC1rio
+    perfeito, onde seria bem recebido em sua nova escola...*"
+  - "*...por pessoas que respeitassem seu modo de ser, um cen\xC1rio que moldava
+    a realidade a seu redor.*"
+  - '*podia ver mais cores na paisagem, mais beleza nos momentos...*'
+  - "*...se sentia mais leve quando se desconectava desse mundo e se colocava em
+    seu pr\xD3prio.*"
+  - "*Entre del\xCDrios e del\xCDrios, imerso em sua m\xDAsica, seu sossego \xC9
+    interrompido ao sentir algu\xC9m te cutucar.*"
+  - "*E cutucava incans\xC1velmente.*"
+  - '*Quando finalmente se virou, percebeu...*'
   - '*Era... uma garota...*'
-  - "*Que tamb\xE9m vestia o mesmo uniforme.*"
+  - "*Que tamb\xC9m vestia o mesmo uniforme.*"
   - "C-com licen\xE7a, posso me sentar aqui?"
   - ...
-  - "*Alex n\xE3o responde, mas libera o assento do lado para ela.*"
-  - "*Um sil\xEAncio se instaurou no mesmo momento que a garota se sentou, que com
-    uma express\xE3o neutra em seu rosto, seguiu viagem ao lado de Alex.*"
-  wordSpeed: 0.6
+  - "*Voc\xCA n\xC3o responde, mas libera o assento do lado para ela.*"
+  - "*Um sil\xCAncio se instaurou no mesmo momento que a garota se sentou que, com
+    uma express\xC3o neutra em seu rosto, seguiu viagem ao seu lado.*"
+  wordSpeed: 0.06
+  _secondsToReturn: 1.5
+  _npcSprite: {fileID: 0}
+  npcSprites:
+  - {fileID: -2043973885, guid: 4ad389c293d3782418fb1efbaa3a8769, type: 3}
+  playerSprites:
+  - {fileID: -7513653127177280571, guid: 0fd72d7a4e9df804bae42ed17523d83f, type: 3}
+  - {fileID: 1926148367, guid: 0fd72d7a4e9df804bae42ed17523d83f, type: 3}
+  - {fileID: 941068024, guid: 0fd72d7a4e9df804bae42ed17523d83f, type: 3}
+  _transitionImage: {fileID: 960692281}
 --- !u!4 &1276952174
 Transform:
   m_ObjectHideFlags: 0
@@ -506,6 +623,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 960692280}
   - {fileID: 197485318}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -551,7 +669,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.3207547, g: 0.2303061, b: 0.05900677, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

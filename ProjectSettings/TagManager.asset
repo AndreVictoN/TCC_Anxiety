@@ -46,6 +46,7 @@ TagManager:
   - AlexOctopus
   - Inventory
   - Item
+  - PlayerName
   layers:
   - Default
   - TransparentFX

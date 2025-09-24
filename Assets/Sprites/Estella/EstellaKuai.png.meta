@@ -121,35 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Estella_IdleD
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26610c089084e4410800000000000000
-      internalID: 1463186134593967714
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: EstellaKuai_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,7 +149,7 @@ TextureImporter:
         x: 64
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,7 +171,7 @@ TextureImporter:
         x: 96
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,7 +193,7 @@ TextureImporter:
         x: 128
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,7 +215,7 @@ TextureImporter:
         x: 160
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,7 +237,7 @@ TextureImporter:
         x: 192
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,7 +259,7 @@ TextureImporter:
         x: 224
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,7 +281,7 @@ TextureImporter:
         x: 256
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,7 +303,7 @@ TextureImporter:
         x: 288
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,7 +325,7 @@ TextureImporter:
         x: 320
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,7 +347,7 @@ TextureImporter:
         x: 352
         y: 0
         width: 32
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,6 +358,204 @@ TextureImporter:
       bones: []
       spriteID: 10431171d12e2044db9f3cad154fe578
       internalID: -1364270376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstellaKuai_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeaaa769bda5e0a46962062428f5da96
+      internalID: -1089235115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstellaKuai_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62b428f766df6c41b695175d65ed2f0
+      internalID: 1517916667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstellaKuai_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570b9b363a58e8541a595bc24140f2bc
+      internalID: -569391845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstellaKuai_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30366fd394ba95947a27d37e4e755a03
+      internalID: 658230937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstellaKuai_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a755696cbdca54dba37ef44a875318
+      internalID: -545936822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstellaKuai_16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be141e4350388a9459f17a9f1f12595b
+      internalID: 708793850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstellaKuai_17
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f2c3f029ba39d4488c393852258ae1
+      internalID: -429529392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstellaKuai_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cd582ffba79ac4cbdf142b5d736619
+      internalID: 1174896207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstellaKuai_19
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ea0e3f6e143a5468694d557cb205d7
+      internalID: 239551356
       vertices: []
       indices: 
       edges: []
@@ -398,9 +574,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      EstellaKuai_0: -1089235115
       EstellaKuai_1: -4774535033163665063
       EstellaKuai_10: -886720261
       EstellaKuai_11: -1364270376
+      EstellaKuai_12: 1517916667
+      EstellaKuai_13: -569391845
+      EstellaKuai_14: 658230937
+      EstellaKuai_15: -545936822
+      EstellaKuai_16: 708793850
+      EstellaKuai_17: -429529392
+      EstellaKuai_18: 1174896207
+      EstellaKuai_19: 239551356
       EstellaKuai_2: -1913870143353215653
       EstellaKuai_3: -1476983789739846957
       EstellaKuai_4: 8546160507558756570
@@ -409,7 +594,6 @@ TextureImporter:
       EstellaKuai_7: -6066172254609188436
       EstellaKuai_8: 834034347
       EstellaKuai_9: 1971339484
-      Estella_IdleD: 1463186134593967714
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5089977382397778653}
   - component: {fileID: 4877102822198472600}
   - component: {fileID: 2131913614184625214}
-  - component: {fileID: 3875515298627513519}
   m_Layer: 0
   m_Name: Estella
   m_TagString: NPC
@@ -80,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1463186134593967714, guid: 3dd86afe5a7609542ae9aa9819cbeaa8, type: 3}
+  m_Sprite: {fileID: -1975397515548953464, guid: 4ad389c293d3782418fb1efbaa3a8769, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -125,17 +124,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.14792192}
+  m_Offset: {x: 0.0021389723, y: 0.07948363}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.40625}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1, y: 1.5}
+    newSize: {x: 1, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.70415616}
+  m_Size: {x: 0.550874, y: 0.6528275}
   m_EdgeRadius: 0
 --- !u!50 &4877102822198472600
 Rigidbody2D:
@@ -200,30 +199,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.8
---- !u!114 &3875515298627513519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4675408674844833134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1828aa74cc06b5744bd67c19b79f4e55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  defaultPosition: {x: 0, y: 0, z: 0}
-  dialoguePanel: {fileID: 0}
-  continueButton: {fileID: 0}
-  continueButtonText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogue:
-  - Oii, Alex! <3
-  - "Como voc\xEA t\xE1 hoje?!"
-  wordSpeed: 0.1
-  battleManager: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  enemy: {fileID: 0}
-  attackTime: 0.3
-  fadeTime: 0.5
