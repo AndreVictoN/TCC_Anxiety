@@ -34,7 +34,7 @@ public class Ezequiel : NPC
                     playerImage.GetComponent<Image>().color = new Vector4(playerImage.GetComponent<Image>().color.r, playerImage.GetComponent<Image>().color.g, playerImage.GetComponent<Image>().color.b, 1);
                     npcImage.GetComponent<Image>().color = new Vector4(npcImage.GetComponent<Image>().color.r, npcImage.GetComponent<Image>().color.g, npcImage.GetComponent<Image>().color.b, 0.75f);
 
-                    if(i == 17){_currentDialogue = 2;}
+                    if(i == 17){ StartCoroutine(changeDialogue(2)); }
                 }else if(i == 6)
                 {
                     dialogueText.alignment = TextAlignmentOptions.Center;
@@ -65,9 +65,16 @@ public class Ezequiel : NPC
         }
     }
 
+    IEnumerator changeDialogue(int dialogueNumber)
+    {
+        yield return new WaitForSeconds(0.2f);
+        _currentDialogue = dialogueNumber;
+    }
+
     public override void UpdateNPC()
     {
-        if(_currentDialogue == 2 && !dialoguePanel.activeSelf && !_isTyping && dialogue != prototypeDialogue2){
+        if (_currentDialogue == 2 && !dialoguePanel.activeSelf && !_isTyping && dialogue != prototypeDialogue2)
+        {
             dialogue = prototypeDialogue2;
             SetupSecondDialogue();
         }
