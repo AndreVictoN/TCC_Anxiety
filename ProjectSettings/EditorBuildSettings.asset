@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscene.unity
     guid: 9d83fba4395263646a124621d05cc0e1
   - enabled: 1
+    path: Assets/Scenes/Terreo.unity
+    guid: faf83a6f578094242adb202a8a8b4890
+  - enabled: 0
     path: Assets/Scenes/PrototypeScene.unity
     guid: 3a1a612d5f9adc14cb2b88ef001fb773
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 645b5b86bcb1ae54db98c0e29667d768
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndScene.unity
     guid: 79c6207ffd84d624b8cd77faa6206668
   - enabled: 1

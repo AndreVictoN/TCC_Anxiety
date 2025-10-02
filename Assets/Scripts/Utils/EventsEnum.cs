@@ -13,5 +13,6 @@ public enum EventsEnum
     ExitGame,
     EnterSchool,
     Inventory,
-    NewItem
+    NewItem,
+    FirstInteraction
 }

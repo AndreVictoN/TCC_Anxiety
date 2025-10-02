@@ -11,10 +11,12 @@ public class CutsceneManager : DialogueBox
 {
     public List<Sprite> npcSprites = new();
     public List<Sprite> playerSprites = new();
-    public Image fullPlayer;
-    public Image fullNPC;
+    public List<Sprite> backgroundImages = new();
+    //public Image fullPlayer;
+    //public Image fullNPC;
 
     [SerializeField] private Image _transitionImage;
+    [SerializeField] private Image _background;
     private Color _transitionImageColor;
     private Color _newTransitionColor;
     private Coroutine _currentCoroutine;
@@ -68,21 +70,16 @@ public class CutsceneManager : DialogueBox
                 NextLine();
             }
         }
-    }
 
-    IEnumerator StartFullArtHighlight(Image fullImage)
-    {
-        if (fullImage == fullPlayer)
+        if (_i == dialogue.Count - 1)
         {
-            fullImage.gameObject.GetComponent<Animator>().Play("FullPlayer_FadeIn");
-            yield return new WaitForSeconds(0.5f);
-            fullImage.gameObject.GetComponent<Animator>().Play("Player_Highlighted");
-        }
-        else if (fullImage == fullNPC)
-        {
-            fullImage.gameObject.GetComponent<Animator>().Play("FullNPC_FadeIn");
-            yield return new WaitForSeconds(0.5f);
-            fullImage.gameObject.GetComponent<Animator>().Play("NPC_Highlighted");
+            yield return new WaitForSeconds(7f);
+            StartCoroutine(ChangeBackground(-5));
+            yield return new WaitForSeconds(1.7f);
+            _currentCoroutine = StartCoroutine(FadeTransition(_transitionImageColor, _newTransitionColor, 1f));
+            yield return new WaitForSeconds(1f);
+            PlayerPrefs.SetString("pastScene", "Cutscene");
+            SceneManager.LoadScene("Terreo");
         }
     }
 
@@ -98,8 +95,8 @@ public class CutsceneManager : DialogueBox
             if (i == 3)
             {
                 playerName.GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, 1);
-                fullPlayer.gameObject.SetActive(true);
-                fullPlayer.gameObject.GetComponent<Animator>().Play("FullPlayer_FadeIn");
+                //fullPlayer.gameObject.SetActive(true);
+                //fullPlayer.gameObject.GetComponent<Animator>().Play("FullPlayer_FadeIn");
             }
 
             wordSpeed = 0.07f;
@@ -114,9 +111,14 @@ public class CutsceneManager : DialogueBox
         {
             if (i == 0)
             {
+                _background.sprite = backgroundImages[0];
+                _background.gameObject.SetActive(true);
                 npcImage.GetComponent<Image>().color = new Vector4(npcImage.GetComponent<Image>().color.r, npcImage.GetComponent<Image>().color.g, npcImage.GetComponent<Image>().color.b, 0f);
                 playerImage.GetComponent<Image>().color = new Vector4(playerImage.GetComponent<Image>().color.r, playerImage.GetComponent<Image>().color.g, playerImage.GetComponent<Image>().color.b, 0f);
                 playerName.GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, 0);
+            }else if (i == 18)
+            {
+                StartCoroutine(ChangeBackground(4));
             }
             else
             {
@@ -124,24 +126,34 @@ public class CutsceneManager : DialogueBox
 
                 if (i == 5)
                 {
+                    StartCoroutine(ChangeBackground(-5));
                     npcImage.GetComponent<Image>().color = new Vector4(npcImage.GetComponent<Image>().color.r, npcImage.GetComponent<Image>().color.g, npcImage.GetComponent<Image>().color.b, 0f);
                     playerImage.GetComponent<Image>().sprite = playerSprites[0];
                     npcName.GetComponent<TextMeshProUGUI>().text = "";
-                    fullNPC.gameObject.GetComponent<Animator>().Play("FullNPC_FadeOut");
-                } else if (i == 7) {
+                    //fullNPC.gameObject.GetComponent<Animator>().Play("FullNPC_FadeOut");
+                }
+                else if (i == 7)
+                {
                     playerImage.GetComponent<Image>().sprite = playerSprites[1];
-                    fullPlayer.gameObject.GetComponent<Animator>().Play("FullPlayer_FadeOut");
+                    //fullPlayer.gameObject.GetComponent<Animator>().Play("FullPlayer_FadeOut");
+                }
+                else if (i == 10)
+                {
+                    _background.sprite = backgroundImages[2];
+                    _background.gameObject.SetActive(true);
                 }
                 else if (i == 11) { playerImage.GetComponent<Image>().sprite = playerSprites[0]; }
                 else if (i == 12) { playerImage.GetComponent<Image>().sprite = playerSprites[2]; }
-                else if (i == 13) { fullPlayer.gameObject.GetComponent<Animator>().Play("FullPlayer_FadeIn"); }
-                else if (i == 14) {
+                //else if (i == 13) { fullPlayer.gameObject.GetComponent<Animator>().Play("FullPlayer_FadeIn"); }
+                else if (i == 14)
+                {
+                    StartCoroutine(ChangeBackground(3));
                     playerImage.GetComponent<Image>().sprite = playerSprites[0];
                     npcImage.GetComponent<Image>().sprite = npcSprites[0];
                     npcName.GetComponent<TextMeshProUGUI>().text = "?";
-                    fullNPC.gameObject.SetActive(true);
-                    fullNPC.sprite = npcSprites[3];
-                    fullNPC.gameObject.GetComponent<Animator>().Play("FullNPC_FadeIn");
+                    //fullNPC.gameObject.SetActive(true);
+                    //fullNPC.sprite = npcSprites[3];
+                    //fullNPC.gameObject.GetComponent<Animator>().Play("FullNPC_FadeIn");
                 }
 
                 playerImage.GetComponent<Image>().color = new Vector4(playerImage.GetComponent<Image>().color.r, playerImage.GetComponent<Image>().color.g, playerImage.GetComponent<Image>().color.b, 0.3f);
@@ -163,9 +175,10 @@ public class CutsceneManager : DialogueBox
                 playerImage.GetComponent<Image>().color = new Vector4(playerImage.GetComponent<Image>().color.r, playerImage.GetComponent<Image>().color.g, playerImage.GetComponent<Image>().color.b, 0f);
                 if (i == 1)
                 {
-                    fullNPC.sprite = npcSprites[4];
-                    fullNPC.gameObject.SetActive(true);
-                    fullNPC.gameObject.GetComponent<Animator>().Play("FullNPC_FadeIn");
+                    StartCoroutine(ChangeBackground(1));
+                    //fullNPC.sprite = npcSprites[4];
+                    //fullNPC.gameObject.SetActive(true);
+                    //fullNPC.gameObject.GetComponent<Animator>().Play("FullNPC_FadeIn");
                     npcImage.GetComponent<Image>().sprite = npcSprites[2];
                     npcName.GetComponent<TextMeshProUGUI>().text = "MÃe";
                     wordSpeed = 0.1f;
@@ -184,6 +197,19 @@ public class CutsceneManager : DialogueBox
             //fullPlayer.gameObject.GetComponent<Animator>().Play("FullPlayer_Idle");
             dialogueText.alignment = TextAlignmentOptions.Left;
             npcImage.GetComponent<Image>().color = new Vector4(npcImage.GetComponent<Image>().color.r, npcImage.GetComponent<Image>().color.g, npcImage.GetComponent<Image>().color.b, 1);
+        }
+    }
+
+    private IEnumerator ChangeBackground(int bg)
+    {
+        _background.gameObject.GetComponent<Animator>().Play("BgTransition");
+        yield return new WaitForSeconds(0.5f);
+        if (bg >= 0) { _background.sprite = backgroundImages[bg]; }
+        else
+        {
+            _background.gameObject.GetComponent<Animator>().Play("BgDeactivate");
+            yield return new WaitForSeconds(1.1f);
+            _background.gameObject.SetActive(false);
         }
     }
 

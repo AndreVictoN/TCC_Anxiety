@@ -16,8 +16,12 @@ public class GameManager : Singleton<GameManager>, IObserver
     public CinemachineCamera cinemachineCamera;
     public TextMeshProUGUI currentDay;
     public TextMeshProUGUI currentObjective;
+    public TextMeshProUGUI instruction;
     public GameObject exitGame;
     public GameObject inventory;
+
+    [Header("Arrival")]
+    public ArrivalManager arrivalManager;
 
     [Header("Prototype")]
     [SerializeField] private GameObject _prototypeTeacher;
@@ -53,24 +57,41 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     void Start()
     {
-        if(SceneManager.GetActiveScene().name.Equals("PrototypeScene"))
+        if (SceneManager.GetActiveScene().name.Equals("PrototypeScene"))
         {
             PrototypeConfig();
         }
+        else if (SceneManager.GetActiveScene().name.Equals("Terreo"))
+        {
+            ArrivalConfig();
+        }
+    }
+
+    private void ArrivalConfig()
+    {
+        transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
+        if (currentDay == null) { currentDay = GameObject.FindGameObjectWithTag("CurrentDay").GetComponent<TextMeshProUGUI>(); }
+        transitionImage.color = new Vector4(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, 1f);
+        AnimateTransition(3f, true);
+        AnimateText(currentDay, 3f, true);
+        arrivalManager.SetGameManager(this);
+        if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Objective").GetComponent<TextMeshProUGUI>(); }
+        if (instruction == null) instruction = GameObject.FindGameObjectWithTag("Instruction").GetComponent<TextMeshProUGUI>();
+        StartCoroutine(arrivalManager.FirstLines());
     }
 
     private void PrototypeConfig()
     {
         transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
-        if(currentDay == null){currentDay = GameObject.FindGameObjectWithTag("CurrentDay").GetComponent<TextMeshProUGUI>();}
-        if(currentObjective == null){currentObjective = GameObject.FindGameObjectWithTag("Objective").GetComponent<TextMeshProUGUI>();}
+        if (currentDay == null) { currentDay = GameObject.FindGameObjectWithTag("CurrentDay").GetComponent<TextMeshProUGUI>(); }
+        if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Objective").GetComponent<TextMeshProUGUI>(); }
         transitionImage.color = new Vector4(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, 1f);
-        currentObjective.color = new Vector4(currentObjective.color.r, currentObjective.color.g, currentObjective.color.b, 0f);
 
-        if(PlayerPrefs.GetString("pastScene") == "BattleScene")
+        if (PlayerPrefs.GetString("pastScene") == "BattleScene")
         {
             PostBattleConfig();
-        }else
+        }
+        else
         {
             BasicConfig();
         }
@@ -83,15 +104,15 @@ public class GameManager : Singleton<GameManager>, IObserver
     {
         _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         currentObjective = GameObject.FindGameObjectWithTag("Objective").GetComponent<TextMeshProUGUI>();
-        if(exitGame.activeSelf == false) exitGame.SetActive(true);
-        if(_girlTrigger.activeSelf == true) _girlTrigger.SetActive(false);
-        if(_prototypeGirl.activeSelf == true) _prototypeGirl.SetActive(false);
-        if(_battleTrigger.activeSelf == true) _battleTrigger.SetActive(false);
-        if(_stopTrigger.activeSelf == true) _stopTrigger.SetActive(false);
-        if(_ezequielTrigger.activeSelf == false) _ezequielTrigger.SetActive(true);
-        if(_firstInteractionTrigger.activeSelf == true) _firstInteractionTrigger.SetActive(false);
-        if(_ezequiel.gameObject.activeSelf == false) _ezequiel.gameObject.SetActive(true);
-        if(currentDay.gameObject.activeSelf == true) currentDay.gameObject.SetActive(false);
+        if (exitGame.activeSelf == false) exitGame.SetActive(true);
+        if (_girlTrigger.activeSelf == true) _girlTrigger.SetActive(false);
+        if (_prototypeGirl.activeSelf == true) _prototypeGirl.SetActive(false);
+        if (_battleTrigger.activeSelf == true) _battleTrigger.SetActive(false);
+        if (_stopTrigger.activeSelf == true) _stopTrigger.SetActive(false);
+        if (_ezequielTrigger.activeSelf == false) _ezequielTrigger.SetActive(true);
+        if (_firstInteractionTrigger.activeSelf == true) _firstInteractionTrigger.SetActive(false);
+        if (_ezequiel.gameObject.activeSelf == false) _ezequiel.gameObject.SetActive(true);
+        if (currentDay.gameObject.activeSelf == true) currentDay.gameObject.SetActive(false);
         _ezequiel.gameObject.transform.localPosition = new Vector2(9.44f, 102.03f);
         _playerController.gameObject.transform.localPosition = new Vector2(11.52f, 102.03f);
         _playerController.SetAnimation("H_IdleL", 0);
@@ -100,17 +121,17 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     private void BasicConfig()
     {
-        if(exitGame.activeSelf == true) exitGame.SetActive(false);
-        if(_girlTrigger.activeSelf == true) _girlTrigger.SetActive(false);
-        if(_prototypeGirl.activeSelf == true) _prototypeGirl.SetActive(false);
-        if(_battleTrigger.activeSelf == true) _battleTrigger.SetActive(false);
-        if(_ezequielTrigger.activeSelf == true) _ezequielTrigger.SetActive(false);
-        if(_ezequiel.gameObject.activeSelf == true) _ezequiel.gameObject.SetActive(false);
+        if (exitGame.activeSelf == true) exitGame.SetActive(false);
+        if (_girlTrigger.activeSelf == true) _girlTrigger.SetActive(false);
+        if (_prototypeGirl.activeSelf == true) _prototypeGirl.SetActive(false);
+        if (_battleTrigger.activeSelf == true) _battleTrigger.SetActive(false);
+        if (_ezequielTrigger.activeSelf == true) _ezequielTrigger.SetActive(false);
+        if (_ezequiel.gameObject.activeSelf == true) _ezequiel.gameObject.SetActive(false);
         AnimateText(currentDay, 3f, true);
-        StartCoroutine(SetPlayerCanMove());
+        if (PlayerPrefs.GetString("pastScene") != "Cutscene") StartCoroutine(SetPlayerCanMove());
     }
 
-    IEnumerator SetPlayerCanMove()
+    public IEnumerator SetPlayerCanMove()
     {
         _playerController.SetCanMove(false);
         yield return new WaitForSeconds(3f);
@@ -128,7 +149,7 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     void CinemachineFollow(Transform transform)
     {
-        if(cinemachineCamera != null)
+        if (cinemachineCamera != null)
         {
             cinemachineCamera.Follow = transform;
         }
@@ -247,11 +268,11 @@ public class GameManager : Singleton<GameManager>, IObserver
     {
         float elapsedTime = 0f;
 
-        while(elapsedTime < time)
+        while (elapsedTime < time)
         {
             elapsedTime += Time.deltaTime;
 
-            float lerpAmount = Mathf.Clamp01(elapsedTime/time);
+            float lerpAmount = Mathf.Clamp01(elapsedTime / time);
             textToFade.color = Color.Lerp(old, color, lerpAmount);
 
             yield return null;
@@ -262,11 +283,11 @@ public class GameManager : Singleton<GameManager>, IObserver
     {
         float elapsedTime = 0f;
 
-        while(elapsedTime < time)
+        while (elapsedTime < time)
         {
             elapsedTime += Time.deltaTime;
 
-            float lerpAmount = Mathf.Clamp01(elapsedTime/time);
+            float lerpAmount = Mathf.Clamp01(elapsedTime / time);
             transitionImage.color = Color.Lerp(old, color, lerpAmount);
 
             yield return null;
@@ -275,10 +296,10 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     public void CallEzequiel(string trigger)
     {
-        if(trigger.Equals("PrototypeEzequielTrigger1"))
+        if (trigger.Equals("PrototypeEzequielTrigger1"))
         {
             _ezequiel = GameObject.FindGameObjectWithTag("Ezequiel").GetComponent<Ezequiel>();
-            if(_playerController == null) _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+            if (_playerController == null) _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             _playerController.SetCanMove(false);
             _ezequiel.RecieveTrigger(_playerController.gameObject, "PrototypeEzequielTrigger1");
             Destroy(GameObject.FindGameObjectWithTag("PrototypeEzequielTrigger1"));
@@ -287,7 +308,7 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     public void CallGirl(string trigger)
     {
-        if(trigger.Equals("GirlTrigger"))
+        if (trigger.Equals("GirlTrigger"))
         {
             StartCoroutine(GirlActions());
             Destroy(GameObject.FindGameObjectWithTag("GirlTrigger"));
@@ -296,8 +317,8 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     IEnumerator GirlActions()
     {
-        if(_playerController.transform.localPosition.y < _prototypeGirl.transform.localPosition.y) { _playerController.SetAnimation("H_WalkingUp", 0); }
-        else if(_playerController.transform.localPosition.y > _prototypeGirl.transform.localPosition.y){ _playerController.SetAnimation("H_WalkingDown", 0); }
+        if (_playerController.transform.localPosition.y < _prototypeGirl.transform.localPosition.y) { _playerController.SetAnimation("H_WalkingUp", 0); }
+        else if (_playerController.transform.localPosition.y > _prototypeGirl.transform.localPosition.y) { _playerController.SetAnimation("H_WalkingDown", 0); }
 
         float movementTime = _playerController.ToY(_prototypeGirl.transform.localPosition.y);
         yield return new WaitForSeconds(movementTime);
@@ -305,7 +326,7 @@ public class GameManager : Singleton<GameManager>, IObserver
 
         _prototypeGirl.GetComponent<Girl>().RecieveTrigger(_playerController.gameObject, "GirlTrigger");
 
-        while(!_prototypeGirl.GetComponent<Girl>().GetIsClosed()) { yield return null; }
+        while (!_prototypeGirl.GetComponent<Girl>().GetIsClosed()) { yield return null; }
 
         _playerController.SetAnimation("H_WalkingLeft", 2);
         StartCoroutine(_playerController.GoTo(1f, new Vector2(9.58f, _playerController.transform.localPosition.y), 'x', false));
@@ -324,50 +345,67 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     public void OnNotify(EventsEnum evt)
     {
-        if(evt == EventsEnum.CallPrototypeEzequiel)
+        if (evt == EventsEnum.CallPrototypeEzequiel)
         {
             CallEzequiel("PrototypeEzequielTrigger1");
-        }else if(evt == EventsEnum.PrototypeBattle)
+        }
+        else if (evt == EventsEnum.PrototypeBattle)
         {
             StartCoroutine(LoadBattleScene("PrototypeScene"));
             _battleTrigger.SetActive(false);
-        }else if(evt == EventsEnum.PrototypeFirstInteraction)
+        }
+        else if (evt == EventsEnum.PrototypeFirstInteraction)
         {
             ManageTeacherPrototypeInteraction(evt);
-        }else if(evt == EventsEnum.StopInteraction)
+        }
+        else if (evt == EventsEnum.StopInteraction)
         {
             StopPlayer(evt);
-        }else if(evt == EventsEnum.PrototypeGirl)
+        }
+        else if (evt == EventsEnum.PrototypeGirl)
         {
             CallGirl("GirlTrigger");
-        }else if(evt == EventsEnum.IntoSecretary)
+        }
+        else if (evt == EventsEnum.IntoSecretary)
         {
             StartCoroutine(InAndOutSecretary());
-        }else if(evt == EventsEnum.ToOutside)
+        }
+        else if (evt == EventsEnum.ToOutside)
         {
             StartCoroutine(OutSchool());
-        }else if(evt == EventsEnum.ExitGame)
+        }
+        else if (evt == EventsEnum.ExitGame)
         {
             StartCoroutine(LeaveSchool());
-        }else if(evt == EventsEnum.EnterSchool)
+        }
+        else if (evt == EventsEnum.EnterSchool)
         {
             StartCoroutine(InSchool());
-        }else if(evt == EventsEnum.Inventory)
+        }
+        else if (evt == EventsEnum.Inventory)
         {
             Inventory();
+        }
+        else if (evt == EventsEnum.FirstInteraction)
+        {
+            
         }
     }
 
     private void Inventory()
     {
-        if(inventory == null) inventory = GameObject.FindGameObjectWithTag("Inventory");
+        if (inventory == null) inventory = GameObject.FindGameObjectWithTag("Inventory");
 
-        if(inventory != null)
+        if (inventory != null)
         {
             GameObject inventoryHUD = inventory.transform.Find("Inventory").gameObject;
 
-            if(inventoryHUD != null && inventoryHUD.activeSelf == false){inventoryHUD.SetActive(true); _playerController.InventorySet(true);}
-            else if(inventoryHUD != null && inventoryHUD.activeSelf == true){inventoryHUD.SetActive(false); _playerController.InventorySet(false);}
+            if (inventoryHUD != null && inventoryHUD.activeSelf == false)
+            {
+                if(instruction.IsActive()){ instruction.gameObject.SetActive(false); }
+                inventoryHUD.SetActive(true); _playerController.InventorySet(true);
+            }
+            else if (inventoryHUD != null && inventoryHUD.activeSelf == true) { inventoryHUD.SetActive(false); _playerController.InventorySet(false); }
         }
     }
 
@@ -390,7 +428,7 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     private IEnumerator LeaveSchool()
     {
-        AnimateTransition(1f,false);
+        AnimateTransition(1f, false);
         yield return new WaitForSeconds(1);
 
         SceneManager.LoadScene("EndScene");
@@ -435,21 +473,21 @@ public class GameManager : Singleton<GameManager>, IObserver
 
         _playerController.SetAnimation("Moving", 0);
 
-        if(!exitGame.activeSelf) exitGame.SetActive(true);
+        if (!exitGame.activeSelf) exitGame.SetActive(true);
     }
 
     private void StopPlayer(EventsEnum evt)
     {
         dialogue.Clear();
-        if(stopDialogue != null) dialogue.Add(stopDialogue);
+        if (stopDialogue != null) dialogue.Add(stopDialogue);
         StartCoroutine(StartAutomaticTalk(evt));
     }
 
     private void ManageTeacherPrototypeInteraction(EventsEnum evt)
     {
         dialogue.Clear();
-        
-        if(dialogue.Count < 2)
+
+        if (dialogue.Count < 2)
         {
             dialogue.Add("Que lugar enorme...");
             dialogue.Add("vou ter que pedir informaÇÃo para alguÉm se eu quiser encontrar a secretaria... de preferÊncia um professor.");
@@ -463,14 +501,14 @@ public class GameManager : Singleton<GameManager>, IObserver
     {
         _isTyping = true;
 
-        if(dialogueText.text != "")
+        if (dialogueText.text != "")
         {
             dialogueText.text = "";
         }
 
-        foreach(char letter in dialogue[_i].ToCharArray())
+        foreach (char letter in dialogue[_i].ToCharArray())
         {
-            if(dialogueText.text != dialogue[_i])
+            if (dialogueText.text != dialogue[_i])
             {
                 dialogueText.text += letter;
                 yield return new WaitForSeconds(wordSpeed);
@@ -484,7 +522,7 @@ public class GameManager : Singleton<GameManager>, IObserver
     {
         GameObject skipText = null;
 
-        if(!dialoguePanel.activeSelf)
+        if (!dialoguePanel.activeSelf)
         {
             dialogueText.text = "";
             dialogueText.alignment = TextAlignmentOptions.Center;
@@ -500,31 +538,32 @@ public class GameManager : Singleton<GameManager>, IObserver
 
             GameObject playerImage = GameObject.FindGameObjectWithTag("Player_Image");
             playerImage.GetComponent<Image>().color = new Vector4(playerImage.GetComponent<Image>().color.r, playerImage.GetComponent<Image>().color.g, playerImage.GetComponent<Image>().color.b, 1f);
-            
+
             skipText = GameObject.FindGameObjectWithTag("SkipText");
             skipText.SetActive(false);
             StartCoroutine(Typing());
         }
 
-        while(_i != dialogue.Count - 1)
+        while (_i != dialogue.Count - 1)
         {
             yield return null;
 
-            if(!_isTyping)
+            if (!_isTyping)
             {
                 yield return new WaitForSeconds(1f);
                 NextLine();
             }
         }
 
-        if(skipText != null) skipText.SetActive(true);
+        if (skipText != null) skipText.SetActive(true);
 
         _canSkip = true;
         _skipped = false;
 
-        if(evt == EventsEnum.PrototypeFirstInteraction){StartCoroutine(TeacherTalk(skipText));}
-        else{
-            while(!_skipped) yield return null;
+        if (evt == EventsEnum.PrototypeFirstInteraction) { StartCoroutine(TeacherTalk(skipText)); }
+        else
+        {
+            while (!_skipped) yield return null;
             dialogueText.fontStyle = FontStyles.Normal;
             _playerController.SetCanMove(true);
         }
@@ -532,17 +571,17 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     private IEnumerator TeacherTalk(GameObject skipText)
     {
-        while(!_skipped) yield return null;
+        while (!_skipped) yield return null;
         dialogueText.fontStyle = FontStyles.Normal;
 
-        if(_playerController.gameObject.transform.localPosition.x > 28.86f) _playerController.SetAnimation("H_WalkingLeft", 0);
-        else if(_playerController.gameObject.transform.localPosition.x < 28.86f) _playerController.SetAnimation("H_WalkingRight", 0);
+        if (_playerController.gameObject.transform.localPosition.x > 28.86f) _playerController.SetAnimation("H_WalkingLeft", 0);
+        else if (_playerController.gameObject.transform.localPosition.x < 28.86f) _playerController.SetAnimation("H_WalkingRight", 0);
 
         float seconds = _playerController.ToX(28.86f);
         yield return new WaitForSeconds(seconds);
 
-        if(_playerController.gameObject.transform.localPosition.y > 78.38f) _playerController.SetAnimation("H_WalkingDown", 0);
-        else if(_playerController.gameObject.transform.localPosition.y < 78.38f) _playerController.SetAnimation("H_WalkingUp", 0);
+        if (_playerController.gameObject.transform.localPosition.y > 78.38f) _playerController.SetAnimation("H_WalkingDown", 0);
+        else if (_playerController.gameObject.transform.localPosition.y < 78.38f) _playerController.SetAnimation("H_WalkingUp", 0);
 
         seconds = _playerController.ToY(78.38f);
         yield return new WaitForSeconds(seconds);
@@ -563,12 +602,12 @@ public class GameManager : Singleton<GameManager>, IObserver
         yield return new WaitForSeconds(1f);
         _prototypeTeacher.GetComponent<Teacher>().Move(1f, new Vector2(_prototypeTeacher.transform.localPosition.x, 63.12f), 'y');
         _prototypeTeacher.GetComponent<Teacher>().SetAnimation("WalkingDown");
-        if(skipText.activeSelf == false) skipText.SetActive(true);
+        if (skipText.activeSelf == false) skipText.SetActive(true);
         _prototypeTeacher.GetComponent<Teacher>().SetCanSkip(true);
         yield return new WaitForSeconds(4f);
 
-        while(!_prototypeTeacher.GetComponent<Teacher>().GetIsClosed()) yield return null;
-        
+        while (!_prototypeTeacher.GetComponent<Teacher>().GetIsClosed()) yield return null;
+
         _prototypeTeacher.GetComponent<Teacher>().SetIsAutomatic(false);
         _playerController.SetCanMove(true);
         _playerController.SetAnimation("Moving", 0);
@@ -582,15 +621,16 @@ public class GameManager : Singleton<GameManager>, IObserver
     public virtual void NextLine()
     {
 
-        if(_i < dialogue.Count - 1)
+        if (_i < dialogue.Count - 1)
         {
             _i++;
             dialogueText.text = "";
             StartCoroutine(Typing());
-        }else
+        }
+        else
         {
             _i = 0;
-            if(dialoguePanel != null)
+            if (dialoguePanel != null)
             {
                 dialoguePanel.SetActive(false);
             }
@@ -599,16 +639,20 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     void Update()
     {
-        if(_canSkip && Input.GetKeyDown(KeyCode.Return) && _isTyping)
+        if (arrivalManager.gameObject == null || !arrivalManager.gameObject.activeSelf)
         {
-            StopCoroutine(Typing());
-            dialogueText.text = dialogue[_i];
-        }else if(_canSkip && Input.GetKeyDown(KeyCode.Return) && !_isTyping)
-        {
-            NextLine();
-            _canSkip = false;
-            _skipped = true;
-            //_playerController.SetCanMove(true);
+            if (_canSkip && Input.GetKeyDown(KeyCode.Return) && _isTyping)
+            {
+                StopCoroutine(Typing());
+                dialogueText.text = dialogue[_i];
+            }
+            else if (_canSkip && Input.GetKeyDown(KeyCode.Return) && !_isTyping)
+            {
+                NextLine();
+                _canSkip = false;
+                _skipped = true;
+                //_playerController.SetCanMove(true);
+            }
         }
     }
 
@@ -625,4 +669,6 @@ public class GameManager : Singleton<GameManager>, IObserver
         exitGame.SetActive(true);
         SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
     }
+    
+    public PlayerController GetPlayerController(){ return _playerController; }
 }

@@ -47,6 +47,8 @@ TagManager:
   - Inventory
   - Item
   - PlayerName
+  - Instruction
+  - FirstInteractionTrigger
   layers:
   - Default
   - TransparentFX

@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3334465786362009637, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 540
+      value: 197
       objectReference: {fileID: 0}
     - target: {fileID: 3334465786362009637, guid: 9bdb7d929c232674bb11139cc279ac3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 960692282}
   - component: {fileID: 960692281}
   m_Layer: 5
-  m_Name: Background
+  m_Name: TransitionImage
   m_TagString: TransitionImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,9 +597,9 @@ MonoBehaviour:
   - '*Quando finalmente se virou, percebeu...*'
   - '*Era... uma garota...*'
   - "*Que tamb\xC9m vestia o mesmo uniforme.*"
-  - "C-com licen\xE7a, posso me sentar aqui?"
+  - "C-com licen\xC7a, posso me sentar aqui?"
   - ...
-  - "*Voc\xCA n\xC3o responde, mas libera o assento do lado para ela.*"
+  - "*Sem dizer nada, voc\xCA abre espa\xC7o para ela.*"
   - "*Um sil\xCAncio se instaurou no mesmo momento que a garota se sentou, que, com
     uma express\xC3o neutra em seu rosto, seguiu viagem ao seu lado.*"
   wordSpeed: 0.06
@@ -615,9 +615,14 @@ MonoBehaviour:
   - {fileID: -7513653127177280571, guid: 0fd72d7a4e9df804bae42ed17523d83f, type: 3}
   - {fileID: 1926148367, guid: 0fd72d7a4e9df804bae42ed17523d83f, type: 3}
   - {fileID: 941068024, guid: 0fd72d7a4e9df804bae42ed17523d83f, type: 3}
-  fullPlayer: {fileID: 26303078}
-  fullNPC: {fileID: 1957064606}
+  backgroundImages:
+  - {fileID: 21300000, guid: c497c6e8bc1699b40bada11bf93af931, type: 3}
+  - {fileID: 21300000, guid: 055e47ce3e1782c45888e936f10b247b, type: 3}
+  - {fileID: 21300000, guid: 458b461519130854bb69b43ca10469f6, type: 3}
+  - {fileID: 21300000, guid: 87ed5481e42493341bbc6d2f081b0bef, type: 3}
+  - {fileID: 21300000, guid: f29ebe809b1973b49934a301c9c5ab2b, type: 3}
   _transitionImage: {fileID: 960692281}
+  _background: {fileID: 1773076289}
 --- !u!4 &1276952174
 Transform:
   m_ObjectHideFlags: 0
@@ -728,6 +733,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 960692280}
+  - {fileID: 1773076288}
   - {fileID: 1957064605}
   - {fileID: 26303077}
   - {fileID: 197485318}
@@ -738,6 +744,104 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1773076287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773076288}
+  - component: {fileID: 1773076290}
+  - component: {fileID: 1773076289}
+  - component: {fileID: 1773076291}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: TransitionImage
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1773076288
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773076287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1384867647}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1773076289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773076287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c497c6e8bc1699b40bada11bf93af931, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1773076290
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773076287}
+  m_CullTransparentMesh: 1
+--- !u!95 &1773076291
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773076287}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86bb7d252e4b75c4abeae9b936e91d99, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1957064604
 GameObject:
   m_ObjectHideFlags: 0

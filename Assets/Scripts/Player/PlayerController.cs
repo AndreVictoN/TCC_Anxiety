@@ -356,6 +356,11 @@ public abstract class PlayerController : Subject, IHealthManager
                 Notify(EventsEnum.ToOutside);
             }
         }
+        else if (collision.gameObject.CompareTag("FirstInteractionTrigger"))
+        {
+            _canMove = false;
+            Notify(EventsEnum.FirstInteraction);
+        }
     }
 
     public void SetAnimation(string animation, int animationSpeed)
