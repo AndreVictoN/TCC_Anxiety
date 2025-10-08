@@ -1000,6 +1000,7 @@ GameObject:
   - component: {fileID: 177853682}
   - component: {fileID: 177853681}
   - component: {fileID: 177853686}
+  - component: {fileID: 177853687}
   m_Layer: 0
   m_Name: Estella
   m_TagString: NPC
@@ -1108,7 +1109,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5625, y: 1.375}
+    oldSize: {x: 1.5, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1136,6 +1137,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1157,6 +1160,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -1208,6 +1212,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &177853687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177853679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f4d09f8ef1c66e4eb2ec6df4d759a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Estella
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialogue: []
+  wordSpeed: 0
+  _secondsToReturn: 1.5
+  _npcSprite: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  defaultPosition: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
+  battleAnimator: {fileID: 177853686}
+  battleManager: {fileID: 2063207365}
+  spriteRenderer: {fileID: 177853684}
+  enemy: {fileID: 0}
+  attackTime: 0.3
+  fadeTime: 0.5
+  sanity: {fileID: 0}
+  anxiety: {fileID: 0}
+  maxAnxiety: {fileID: 0}
+  maxSanity: {fileID: 0}
+  _numSanity: 0
+  _numAnxiety: 0
+  _numMaxSanity: 60
+  _numMaxAnxiety: 100
 --- !u!1 &188641240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1312,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 353499481}
   - {fileID: 1365693754}
   - {fileID: 1584341037}
   m_Father: {fileID: 1484722391}
@@ -1407,6 +1445,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1428,6 +1468,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -1458,6 +1499,7 @@ MonoBehaviour:
   healthAmount: 0
   animator: {fileID: 0}
   myDamage: 0
+  dodgeChance: 0.3
   _myTurn: 0
 --- !u!95 &251606439
 Animator:
@@ -1469,7 +1511,7 @@ Animator:
   m_GameObject: {fileID: 251606433}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54b152bb07b590649bfd2300846f68ae, type: 2}
+  m_Controller: {fileID: 9100000, guid: 343dec51836889945a0950902552158f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2383,84 +2425,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335334253}
   m_CullTransparentMesh: 1
---- !u!1001 &353499480
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 196292581}
-    m_Modifications:
-    - target: {fileID: 118487397908353872, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 118487397908353872, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: dialoguePanel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 118487397908353872, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: continueButton
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 118487397908353872, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: continueButtonText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158669730699148495, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-      propertyPath: m_Name
-      value: NPC_Prototype
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
---- !u!4 &353499481 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4769627570937872941, guid: a48133a040efee04b96bdc5a7114fd74, type: 3}
-  m_PrefabInstance: {fileID: 353499480}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &358438997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2859,7 +2823,7 @@ GameObject:
   - component: {fileID: 461065218}
   m_Layer: 5
   m_Name: Number
-  m_TagString: Untagged
+  m_TagString: EsSanity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3302,6 +3266,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3323,6 +3289,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -4084,7 +4051,6 @@ MonoBehaviour:
   m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
-  m_Version: 2
   m_TaaSettings:
     m_Quality: 3
     m_FrameInfluence: 0.1
@@ -4092,6 +4058,7 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &554367263
 GameObject:
   m_ObjectHideFlags: 0
@@ -5116,7 +5083,7 @@ GameObject:
   - component: {fileID: 764319530}
   m_Layer: 5
   m_Name: MAX
-  m_TagString: Untagged
+  m_TagString: EsMaxSanity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7112,6 +7079,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7133,6 +7102,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -7203,7 +7173,7 @@ MonoBehaviour:
   battleAnimator: {fileID: 1207260433}
   idleDown: {fileID: 0}
   idleLeft: {fileID: 0}
-  prototypeScene: PrototypeScene
+  testScene: TestScene
   firstFloor: FirstFloorPrototype
   battleScene: BattleScene
   classroom: Classroom
@@ -7405,8 +7375,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+      - m_Target: {fileID: 177853687}
+        m_TargetAssemblyTypeName: Estella, Assembly-CSharp
         m_MethodName: Movement
         m_Mode: 1
         m_Arguments:
@@ -7429,8 +7399,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+      - m_Target: {fileID: 177853687}
+        m_TargetAssemblyTypeName: Estella, Assembly-CSharp
         m_MethodName: AnimateAttack
         m_Mode: 1
         m_Arguments:
@@ -7462,7 +7432,7 @@ GameObject:
   - component: {fileID: 1269804438}
   m_Layer: 5
   m_Name: Number
-  m_TagString: Untagged
+  m_TagString: EsAnxiety
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8222,6 +8192,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -8243,6 +8215,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -10307,7 +10280,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c2bc26c2365389b46b3282fe7b432124, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c2bc26c2365389b46b3282fe7b432124, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -10621,6 +10594,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10642,6 +10617,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -10911,6 +10887,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10932,6 +10910,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
@@ -11446,10 +11425,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 251606438}
+  mothSprite: {fileID: 6449773760774945624, guid: 35d01486d088b0444b0bce2c7cc05fb6, type: 3}
+  birdSprite: {fileID: 21300000, guid: 45de21d811d41714ca7e15ad0ecec8b4, type: 3}
+  mothAnimator: {fileID: 9100000, guid: 54b152bb07b590649bfd2300846f68ae, type: 2}
+  birdAnimator: {fileID: 9100000, guid: 343dec51836889945a0950902552158f, type: 2}
   ezequiel: {fileID: 1934887277}
+  estella: {fileID: 177853687}
   player: {fileID: 0}
   cards: []
   cardEzequiel: {fileID: 1700569497}
+  cardEstella: {fileID: 919273739}
   battleText: {fileID: 1166330433}
   textBox: {fileID: 1927044017}
   wordSpeed: 0.06
@@ -11507,7 +11492,7 @@ GameObject:
   - component: {fileID: 2069298915}
   m_Layer: 5
   m_Name: MAX
-  m_TagString: Untagged
+  m_TagString: EsMaxAnxiety
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements.Experimental;
 
 public class Enemy : Subject, IHealthManager
 {
@@ -23,10 +24,11 @@ public class Enemy : Subject, IHealthManager
         if(animator == null) animator = this.gameObject.GetComponent<Animator>();
         _isDead = false;
 
-        if(healthAmount == 0 && PlayerPrefs.GetString("pastScene") == "PrototypeScene")
+        if(healthAmount == 0 && (PlayerPrefs.GetString("pastScene") == "PrototypeScene" || (PlayerPrefs.GetString("pastScene").Equals("Floor2") && PlayerPrefs.GetString("currentState").Equals("Start"))))
         {
             healthAmount = 100;
-            myDamage = 10;
+            if (PlayerPrefs.GetString("pastScene").Equals("Floor2")) myDamage = 7;
+            else myDamage = 10;
         }
         /*for (int i = 0; i < 10; i++)
         {
@@ -72,6 +74,10 @@ public class Enemy : Subject, IHealthManager
             Debug.Log("Inimigo desviou!");
             return;
         }*/
+        float criticalHitRatio = Random.value;
+
+        if(criticalHitRatio <= 0.1f){ damage *= 2; }
+
         healthAmount -= damage;
         healthBar.fillAmount = healthAmount / 100f;
     }

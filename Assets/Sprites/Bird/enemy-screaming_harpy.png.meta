@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 32f0a313156122e4497255d834cb7f05
+guid: 45de21d811d41714ca7e15ad0ecec8b4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8249018545371527443
-    second: estella_batalha_0
-  - first:
-      213: 5251409759210883888
-    second: estella_batalha_1
+      213: -9008213828966234399
+    second: enemy-screaming_harpy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,45 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: estella_Idlebatalha
+      name: enemy-screaming_harpy_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 2
-        width: 48
-        height: 48
+        x: 2
+        y: 5
+        width: 90
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de645819659958d80800000000000000
-      internalID: -8249018545371527443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: estella_ATK
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 3
-        width: 62
-        height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03bc8c35a51c0e840800000000000000
-      internalID: 5251409759210883888
+      spriteID: 1e6c4b700456cf280800000000000000
+      internalID: -9008213828966234399
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 85a0ae3257cedf04c8a2eda4102cf2a4
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      estella_ATK: 5251409759210883888
-      estella_Idlebatalha: -8249018545371527443
+      enemy-screaming_harpy_0: -9008213828966234399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

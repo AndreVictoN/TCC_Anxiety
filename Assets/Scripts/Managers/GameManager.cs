@@ -420,8 +420,12 @@ public class GameManager : Singleton<GameManager>, IObserver
         }
         else if (evt == EventsEnum.FirstConflict)
         {
-            if(arrivalManager != null && !arrivalManager.gameObject.activeSelf) arrivalManager.gameObject.SetActive(true);
+            if (arrivalManager != null && !arrivalManager.gameObject.activeSelf) arrivalManager.gameObject.SetActive(true);
             StartCoroutine(arrivalManager.FirstConflictSequence());
+        }
+        else if (evt == EventsEnum.Battle)
+        {
+            StartCoroutine(LoadBattleScene("Floor2"));
         }
     }
 
@@ -697,9 +701,12 @@ public class GameManager : Singleton<GameManager>, IObserver
         yield return new WaitForSeconds(1f);
 
         PlayerPrefs.SetString("pastScene", pastScene);
-        Destroy(_stopTrigger);
-        Destroy(_battleTrigger);
-        exitGame.SetActive(true);
+        if (!PlayerPrefs.GetString("currentState").Equals("Start"))
+        {
+            if (_stopTrigger != null) Destroy(_stopTrigger);
+            if (_battleTrigger != null) Destroy(_battleTrigger);
+            exitGame.SetActive(true);
+        }
         SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
     }
     

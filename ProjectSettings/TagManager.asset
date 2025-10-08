@@ -51,6 +51,11 @@ TagManager:
   - FirstInteractionTrigger
   - ToOtherFloor
   - FirstConflictTrigger
+  - BattleTrigger
+  - EsAnxiety
+  - EsMaxAnxiety
+  - EsSanity
+  - EsMaxSanity
   layers:
   - Default
   - TransparentFX

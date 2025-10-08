@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Core.Singleton;
 using DG.Tweening;
 using TMPro;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,10 +12,16 @@ using UnityEngine.UI;
 public class BattleManager : Singleton<BattleManager>, IObserver
 {
     public Enemy enemy;
+    public Sprite mothSprite;
+    public Sprite birdSprite;
+    public AnimatorController mothAnimator;
+    public AnimatorController birdAnimator;
     public Ezequiel ezequiel;
+    public Estella estella;
     public PlayerController player;
     public List<GameObject> cards;
     public Cards cardEzequiel;
+    public Cards cardEstella;
     public TextMeshProUGUI battleText;
     public GameObject textBox;
     public float wordSpeed = 0.06f;
@@ -24,18 +31,22 @@ public class BattleManager : Singleton<BattleManager>, IObserver
     [SerializeField] private string _stringToType;
     private TextMeshProUGUI _enemyName;
     private bool _prototypeSetupMade;
+    private bool _setupMade;
     private bool _enemyIsAttacking;
     private bool _ezequielInScene = false;
+    private bool _estellaInScene = false;
     private Coroutine _currentTextCoroutine;
     private Coroutine _ezequielCoroutine;
+    private Coroutine _estellaCoroutine;
 
     void Start()
     {
         _enemyName = GameObject.FindGameObjectWithTag("EnemyName").GetComponent<TextMeshProUGUI>();
         _prototypeSetupMade = false;
+        _setupMade = false;
         _enemyIsAttacking = false;
 
-        PlayerPrefs.SetString("pastScene", "PrototypeScene");
+        //PlayerPrefs.SetString("pastScene", "PrototypeScene");
         _pastScene = PlayerPrefs.GetString("pastScene");
 
         if(enemy == null) enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
@@ -43,11 +54,13 @@ public class BattleManager : Singleton<BattleManager>, IObserver
         player.SetMyTurn(true);
 
         if(_pastScene == "PrototypeScene"){PrototypeBattleSetup();}
+        if(_pastScene == "Floor2" && PlayerPrefs.GetString("currentState").Equals("Start")){BattleSetup(_pastScene);}
     }
 
     void Update()
     {
         if(_pastScene == "PrototypeScene"){PrototypeBattle();}
+        else {Battle();}
 
         BattleUpdate();
     }
@@ -59,20 +72,9 @@ public class BattleManager : Singleton<BattleManager>, IObserver
             _enemyIsAttacking = true;
             enemy.Attack(player);
         }
-
-        if(player.GetAnxiety() == 95 && !_ezequielInScene)
-        {
-            _ezequielInScene = true;
-
-            ezequiel.gameObject.SetActive(true);
-            cardEzequiel.gameObject.SetActive(true);
-
-            _ezequielCoroutine = StartCoroutine(EzequielShowsUp());
-            _currentTextCoroutine = _ezequielCoroutine;
-        }
     }
 
-    private IEnumerator EzequielShowsUp()
+    private IEnumerator SomeoneShowsUp()
     {
         textBox.SetActive(true);
         textBox.GetComponent<Animator>().Play("battleText");
@@ -87,16 +89,17 @@ public class BattleManager : Singleton<BattleManager>, IObserver
 
         _currentTextCoroutine = null;
     }
-
+    
     public void ShowActionkWarning()
     {
-        if(player.GetCanAct()) return;
+        if (player.GetCanAct()) return;
 
-        if(_currentTextCoroutine != null && _currentTextCoroutine != _ezequielCoroutine)
+        if (_currentTextCoroutine != null && _currentTextCoroutine != _ezequielCoroutine)
         {
             StopCoroutine(_currentTextCoroutine);
             _currentTextCoroutine = StartCoroutine(ActionkWarningCoroutine("action"));
-        }else if(_currentTextCoroutine == null)
+        }
+        else if (_currentTextCoroutine == null)
         {
             _currentTextCoroutine = StartCoroutine(ActionkWarningCoroutine("action"));
         }
@@ -130,9 +133,45 @@ public class BattleManager : Singleton<BattleManager>, IObserver
 
     public void SetEnemyIsAttacking(bool isAttacking){_enemyIsAttacking = isAttacking;}
 
+    private void BattleSetup(string pastScene)
+    {
+        if (pastScene.Equals("Floor2") && PlayerPrefs.GetString("currentState").Equals("Start"))
+        {
+            enemy.gameObject.GetComponent<Animator>().runtimeAnimatorController = birdAnimator;
+            enemy.gameObject.GetComponent<SpriteRenderer>().sprite = birdSprite;
+            enemy.gameObject.transform.localPosition = new Vector2(enemy.gameObject.transform.localPosition.x, 1f);
+            enemy.gameObject.transform.localScale = new Vector2(1.6f, 1.6f);
+            _enemyName.text = "Panibird";
+            _setupMade = true;
+        }
+
+        player.SetCanAct(false);
+        player.SetCanAttack(true);
+    }
+
+    private void Battle()
+    {
+        if (!_setupMade && _pastScene != null) BattleSetup(_pastScene);
+
+        if(player.GetAnxiety() >= 95 && !_estellaInScene)
+        {
+            estella.gameObject.SetActive(true);
+            cardEstella.gameObject.SetActive(true);
+
+            _estellaInScene = true;
+
+            _estellaCoroutine = StartCoroutine(SomeoneShowsUp());
+            _currentTextCoroutine = _estellaCoroutine;
+        }
+    }
+
 #region Prototype
     private void PrototypeBattleSetup()
     {
+        enemy.gameObject.GetComponent<Animator>().runtimeAnimatorController = mothAnimator;
+        enemy.gameObject.GetComponent<SpriteRenderer>().sprite = mothSprite;
+        enemy.gameObject.transform.localPosition = new Vector2(enemy.gameObject.transform.localPosition.x, 0.7f);
+        enemy.gameObject.transform.localScale = new Vector2(1f, 1f);
         _enemyName.text = "Vergosulo";
 
         _prototypeSetupMade = true;
@@ -143,8 +182,18 @@ public class BattleManager : Singleton<BattleManager>, IObserver
 
     private void PrototypeBattle()
     {
-        if(!_prototypeSetupMade) PrototypeBattleSetup();
-        
+        if (!_prototypeSetupMade) PrototypeBattleSetup();
+
+        if(player.GetAnxiety() >= 95 && !_ezequielInScene)
+        {
+            _ezequielInScene = true;
+
+            ezequiel.gameObject.SetActive(true);
+            cardEzequiel.gameObject.SetActive(true);
+
+            _ezequielCoroutine = StartCoroutine(SomeoneShowsUp());
+            _currentTextCoroutine = _ezequielCoroutine;
+        }
     }
 #endregion
 
@@ -209,14 +258,35 @@ public class BattleManager : Singleton<BattleManager>, IObserver
 
     private void WinSettings()
     {
-        if(_pastScene == "PrototypeScene")
-        {
-            cards.AddRange(GameObject.FindGameObjectsWithTag("Card"));
-            cards.ForEach(card => card.SetActive(false));
-            _enemyName.gameObject.SetActive(false);
+        cards.AddRange(GameObject.FindGameObjectsWithTag("Card"));
+        cards.ForEach(card => card.SetActive(false));
+        _enemyName.gameObject.SetActive(false);
 
-            StartCoroutine(PrototypeWin());
-        }
+        if (_pastScene == "PrototypeScene") { StartCoroutine(PrototypeWin()); }
+        else{ StartCoroutine(Win()); }
+    }
+    
+    private IEnumerator Win()
+    {
+        yield return new WaitForSeconds(0.3f);
+        textBox.SetActive(true);
+        battleText.text = "";
+
+        _stringToType = "\"O-O que foi isso...?\"";
+        if(_currentTextCoroutine != null) StopCoroutine(_currentTextCoroutine);
+        StartCoroutine(Typing());
+        yield return new WaitForSeconds(1f);
+
+        transitionImage.gameObject.SetActive(true);
+        StartCoroutine(FadeTransition(transitionImage.color, new Color(0,0,0,1), 1));
+        PlayerPrefs.SetString("pastScene", "BattleScene");
+        yield return new WaitForSeconds(1f);
+
+        //Destroy(player);
+        player.GetComponent<Animator>().StopPlayback();
+        //cards.ForEach(card => card.GetComponent<Animator>().StopPlayback());
+        DOTween.KillAll();
+        SceneManager.LoadScene("Floor2");
     }
 
     private IEnumerator PrototypeWin()
@@ -226,12 +296,12 @@ public class BattleManager : Singleton<BattleManager>, IObserver
         battleText.text = "";
 
         _stringToType = "\"Q-Quem É ele...\"";
-        if(_currentTextCoroutine != null) StopCoroutine(_currentTextCoroutine);
+        if (_currentTextCoroutine != null) StopCoroutine(_currentTextCoroutine);
         StartCoroutine(Typing());
         yield return new WaitForSeconds(1f);
 
         transitionImage.gameObject.SetActive(true);
-        StartCoroutine(FadeTransition(transitionImage.color, new Color(0,0,0,1), 1));
+        StartCoroutine(FadeTransition(transitionImage.color, new Color(0, 0, 0, 1), 1));
         PlayerPrefs.SetString("pastScene", "BattleScene");
         yield return new WaitForSeconds(1f);
 

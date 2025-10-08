@@ -18,6 +18,7 @@ public class ArrivalManager : DialogueBox
     [SerializeField] private CinemachineCamera conversationView;
     [SerializeField] private CinemachineCamera estellaView;
     [SerializeField] private CinemachineCamera ezequielView;
+    [SerializeField] private GameObject battleTrigger;
     [SerializeField] private Door toOtherFloorDoor;
     [SerializeField] private GameObject playerName;
     [SerializeField] private GameObject npcName;
@@ -26,6 +27,19 @@ public class ArrivalManager : DialogueBox
     [SerializeField] private NPC estella;
     [SerializeField] private Image npcImage;
     private float defaultTimeToReturn;
+
+    void Awake()
+    {
+        if (battleTrigger != null) battleTrigger.SetActive(false);
+    }
+
+    void Start()
+    {
+        if (SceneManager.GetActiveScene().name.Equals("Floor2") && PlayerPrefs.GetString("currentState").Equals("Start") && PlayerPrefs.GetString("pastScene").Equals("BattleScene"))
+        {
+            StartCoroutine(PostBattleArrival());
+        }
+    }
 
     public void SetGameManager(GameManager gm)
     {
@@ -99,7 +113,7 @@ public class ArrivalManager : DialogueBox
         npcName = GameObject.FindGameObjectWithTag("NPC_Name");
         playerName = GameObject.FindGameObjectWithTag("PlayerName");
 
-        if (i < 3 || i == 6 || i == 7 || (i >= 12 && i <= 14) || (i >= 17 && i <= 19))
+        if (i < 3 || i == 6 || i == 7 || (i >= 12 && i <= 14) || (i >= 17 && i <= 19) || i == 23 || i == 24 || i == 27 || i == 33 || i == 35 || i == 40 || i == 43 || i == 51)
         {
             if (i < 3)
             {
@@ -119,7 +133,7 @@ public class ArrivalManager : DialogueBox
             }
             else if (i == 12) { _secondsToReturn = 11f; DialoguePanelSettings(0f, 0f, 0f, 0f, TextAlignmentOptions.Center, FontStyles.Normal); }
             else if (i == 13) { _secondsToReturn = 1.5f; }
-            else if (i >= 14 && i <= 19)
+            else if ((i >= 14 && i <= 19) || i == 23 || i == 24)
             {
                 if (i == 17)
                 {
@@ -130,6 +144,8 @@ public class ArrivalManager : DialogueBox
                     conversationView.gameObject.SetActive(true);
                     estellaView.gameObject.SetActive(false);
                 }else if(i == 18) { _secondsToReturn = 2.5f; }
+                else if(i == 23){ _secondsToReturn = 2f; }
+                else if(i == 24){ wordSpeed = 0.07f; _secondsToReturn = 3f; }
                 DialoguePanelSettings(0f, 0f, 0f, 0f, TextAlignmentOptions.Center, FontStyles.Normal);
             }
             else
@@ -139,24 +155,30 @@ public class ArrivalManager : DialogueBox
                 playerImage.GetComponent<Image>().color = new Vector4(1, 1, 1, 0.5f);*/
             }
         }
-        else if (i == 3 || i == 5 || i == 10 || (i >= 20 && i <= 22))
+        else if (i == 3 || i == 5 || i == 10 || (i >= 20 && i <= 22) || i == 25 || i == 26 || i == 34 || i == 36 || i == 38 || i == 41 || i == 44 || i == 47 || i == 50)
         {
-            if (i == 3 || (i >= 20 && i <= 22))
+            if (i == 3 || (i >= 20 && i <= 22) || i == 25)
             {
                 if (i == 21)
                 {
                     _secondsToReturn = 2.5f;
                     playerImage.sprite = playerImages[2];
-                }else if(i == 22){ playerImage.sprite = playerImages[1]; }
+                }
+                else if (i == 22) { playerImage.sprite = playerImages[1]; _secondsToReturn = 5f; }
+                else if (i == 25) { playerImage.sprite = playerImages[3]; wordSpeed = 0.05f; _secondsToReturn = 1.5f; }
                 DialoguePanelSettings(1f, 1f, 0f, 0f, TextAlignmentOptions.Right, FontStyles.Italic);
             }
             else if (i == 10) { DialoguePanelSettings(1f, 1f, 1f, 0.5f, TextAlignmentOptions.Right, FontStyles.Normal); }
-            else { DialoguePanelSettings(1f, 1f, 1f, 0.5f, TextAlignmentOptions.Right, FontStyles.Italic); }
+            else
+            {
+                if(i == 26){ npcImage.GetComponent<Image>().sprite = npcImages[0]; npcName.GetComponent<TextMeshProUGUI>().text = "?";  }
+                DialoguePanelSettings(1f, 1f, 1f, 0.5f, TextAlignmentOptions.Right, FontStyles.Italic);
+            }
             /*playerImage.GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
             dialogueText.alignment = TextAlignmentOptions.Right;
             dialogueText.fontStyle = FontStyles.Italic;*/
         }
-        else if (i == 4 || i == 8 || i == 9 || i == 15 || i == 16 || i == 11)
+        else if (i == 4 || i == 8 || i == 9 || i == 15 || i == 16 || i == 11 || (i >= 28 && i <= 32) || i == 37 || i == 39 || i == 42 || i == 45 || i == 46 || i == 48 || i == 49)
         {
             if (i == 4)
             {
@@ -175,6 +197,11 @@ public class ArrivalManager : DialogueBox
                 npcName.GetComponent<TextMeshProUGUI>().text = "?";
                 npcImage.GetComponent<Image>().sprite = npcImages[0];
                 DialoguePanelSettings(0f, 0f, 1f, 1f, TextAlignmentOptions.Left, FontStyles.Italic);
+            }
+            else if (i == 29)
+            {
+                DialoguePanelSettings(1f, 0f, 1f, 1f, TextAlignmentOptions.Left, FontStyles.Normal);
+                npcImage.GetComponent<Image>().sprite = npcImages[0]; npcName.GetComponent<TextMeshProUGUI>().text = "?";
             }
             else { DialoguePanelSettings(1f, 0.5f, 1f, 1f, TextAlignmentOptions.Left, FontStyles.Normal); }
 
@@ -214,12 +241,12 @@ public class ArrivalManager : DialogueBox
             }
         }
 
-        if (_i != 7)
+        if (_i != 7 && _i != 28)
         {
             if (skipText != null) skipText.SetActive(true);
             if (!_canSkip) _canSkip = true;
         }
-        _playercontroller.SetCanMove(true);
+        if(_i != 28) _playercontroller.SetCanMove(true);
     }
 
     public IEnumerator FirstInteractionScene()
@@ -355,14 +382,14 @@ public class ArrivalManager : DialogueBox
     public IEnumerator FirstConflictSequence()
     {
         BasicPlayerCutsceneConfig();
-        for (int i = 0; i <= 50; i++) dialogue.Add(arrivalDialogue[i]);
+        for (int i = 0; i <= 28; i++) dialogue.Add(arrivalDialogue[i]);
 
         StartCoroutine(StartAutomaticTalk(20));
         yield return new WaitForSeconds(2f);
         ezequielView.gameObject.SetActive(true);
 
         while (_i != 22) { yield return null; }
-        estella.gameObject.transform.localPosition = new Vector2(21.79f, _playercontroller.gameObject.transform.localPosition.y);
+        estella.gameObject.transform.localPosition = new Vector2(21.79f, _playercontroller.gameObject.transform.localPosition.y + 0.78f);
         estella.gameObject.SetActive(true);
         estella.gameObject.GetComponent<Animator>().Play("Idle_L");
         estellaView.gameObject.transform.localPosition = new Vector3(estellaView.gameObject.transform.localPosition.x, estella.gameObject.transform.localPosition.y, -10);
@@ -371,6 +398,52 @@ public class ArrivalManager : DialogueBox
 
         yield return new WaitForSeconds(5f);
         estellaView.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(2f);
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingRight");
+        _playercontroller.SetSpeed(2f);
+        StartCoroutine(_playercontroller.GoTo(3f, new Vector2(estella.gameObject.transform.localPosition.x, _playercontroller.gameObject.transform.localPosition.y), 'x', false));
+
+        yield return new WaitForSeconds(2f);
+        estella.gameObject.GetComponent<Animator>().Play("Idle_D");
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_IdleUp");
+        StartCoroutine(estella.GoTo(0.3f, new Vector2(estella.gameObject.transform.localPosition.x, estella.gameObject.transform.localPosition.y + 0.5f), 'y'));
+        StartCoroutine(_playercontroller.GoTo(0.3f, new Vector2(_playercontroller.gameObject.transform.localPosition.x, _playercontroller.gameObject.transform.localPosition.y - 0.5f), 'y', false));
+
+        while (_i != 27) { yield return null; }
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingRight");
+        _playercontroller.SetSpeed(2f);
+        StartCoroutine(_playercontroller.GoTo(0.5f, new Vector2(24.73f, _playercontroller.gameObject.transform.localPosition.y), 'x', false));
+        yield return new WaitForSeconds(0.5f);
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingUp");
+        _playercontroller.SetSpeed(2.5f);
+        StartCoroutine(_playercontroller.GoTo(2.5f, new Vector2(_playercontroller.gameObject.transform.localPosition.x, 14.32541f), 'y', false));
+        yield return new WaitForSeconds(2f);
+        estellaView.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        _playercontroller.gameObject.transform.localPosition = new Vector2(23.46f, _playercontroller.gameObject.transform.localPosition.y);
+        _playercontroller.gameObject.GetComponent<Animator>().Play("TransformR");
+        estellaView.gameObject.SetActive(false);
+
+        while (_i != 28) { yield return null; }
+        if (!battleTrigger) battleTrigger = GameObject.FindGameObjectWithTag("BattleTrigger");
+        yield return new WaitForSeconds(2f);
+        battleTrigger?.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        Destroy(battleTrigger);
+    }
+
+    private IEnumerator PostBattleArrival()
+    {
+        BasicPlayerCutsceneConfig();
+        for (int i = 0; i <= 51; i++) dialogue.Add(arrivalDialogue[i]);
+
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_SittingOnFloor");
+        estella.gameObject.SetActive(true);
+        estella.gameObject.GetComponent<Animator>().Play("Idle_L");
+        estella.gameObject.transform.localPosition = new Vector2(_playercontroller.gameObject.transform.localPosition.x + 1.5f, 14.79f);
+        StartCoroutine(StartAutomaticTalk(29));
+        yield return null;
     }
 
     private void BasicPlayerCutsceneConfig()

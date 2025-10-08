@@ -102,7 +102,8 @@ public abstract class PlayerController : Subject, IHealthManager
         }
         else if (SceneManager.GetActiveScene().name == "Floor2" && PlayerPrefs.GetString("currentState").Equals("Start"))
         {
-            this.gameObject.transform.localPosition = new Vector2(-17.47f, 4.59f);
+            if (!PlayerPrefs.GetString("pastScene").Equals("BattleScene")) this.gameObject.transform.localPosition = new Vector2(-17.47f, 4.59f);
+            else this.gameObject.transform.localPosition = new Vector2(23.46f, 14.32541f);
         }
         else
         {
@@ -145,7 +146,8 @@ public abstract class PlayerController : Subject, IHealthManager
         _canAct = true;
         _canAttack = true;
         defaultPosition = new Vector3(-3.7f, 1.3f, 0);
-        if (PlayerPrefs.GetString("pastScene") == "PrototypeScene") { myDamage = 5f; }
+        if (PlayerPrefs.GetString("pastScene").Equals("PrototypeScene")) { myDamage = 5f; }
+        else if (PlayerPrefs.GetString("pastScene") == "Floor2" && PlayerPrefs.GetString("currentState").Equals("Start")) { myDamage = 15f; }
         this.gameObject.transform.position = defaultPosition;
 
         if (sanity == null) sanity = GameObject.FindGameObjectWithTag("AlexSanity").GetComponent<TextMeshProUGUI>();
@@ -374,6 +376,10 @@ public abstract class PlayerController : Subject, IHealthManager
             _canMove = false;
             Notify(EventsEnum.FirstConflict);
         }
+        else if (collision.gameObject.CompareTag("BattleTrigger"))
+        {
+            Notify(EventsEnum.Battle);
+        }
     }
 
     public void SetAnimation(string animation, float animationSpeed)
@@ -476,10 +482,16 @@ public abstract class PlayerController : Subject, IHealthManager
     {
         if (!_isBattleScene) return;
 
+        float criticalHitRatio = UnityEngine.Random.value;
+
+        if(criticalHitRatio <= 0.1f){ damage *= 2; }
+
         _numSanity -= (int)Math.Round(damage);
+        if (_numSanity < 0) _numSanity = 0;
         sanity.text = _numSanity.ToString();
 
         _numAnxiety += (int)(Math.Round(damage) * 1.5);
+        if (_numAnxiety > 100) _numAnxiety = 100;
         anxiety.text = _numAnxiety.ToString();
     }
 

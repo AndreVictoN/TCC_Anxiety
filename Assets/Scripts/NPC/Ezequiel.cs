@@ -193,7 +193,7 @@ public class Ezequiel : NPC
 
     protected override void BattleSettings()
     {
-        if(sanity == null) sanity = GameObject.FindGameObjectWithTag("EzAnxiety").GetComponent<TextMeshProUGUI>();
+        if(sanity == null) sanity = GameObject.FindGameObjectWithTag("EzSanity").GetComponent<TextMeshProUGUI>();
         if(maxSanity == null) maxSanity = GameObject.FindGameObjectWithTag("EzMaxSanity").GetComponent<TextMeshProUGUI>();
         if(anxiety == null) anxiety = GameObject.FindGameObjectWithTag("EzAnxiety").GetComponent<TextMeshProUGUI>();
         if(maxAnxiety == null) maxAnxiety = GameObject.FindGameObjectWithTag("EzMaxAnxiety").GetComponent<TextMeshProUGUI>();
