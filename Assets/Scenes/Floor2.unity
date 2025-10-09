@@ -3759,7 +3759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4675408674844833134, guid: cb4e76b32011ac045a1cda9ecdb9e925, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11172,15 +11172,15 @@ MonoBehaviour:
   - "*Voc\xCA sai correndo dali, por n\xC3o saber o que fazer...*"
   - "-Quem el@ pensa que \xC9, hein?!-"
   - EI!
-  - "Voc\xCA foi muito escrot@ l\xC1 atr\xC1s, sabia?"
+  - "Voc\xCA foi muito babaca l\xC1 atr\xC1s, sabia?"
   - "Voc\xCA fica a\xCD sozinh@, se acha melhor do que os outros?!"
   - Ei! Ta me ouvindo?!
-  - "*Voc\xCA levanta seu rosto e revela um rosto em l\xC1grimas.*"
+  - "*Voc\xCA levanta seu rosto e o revela em l\xC1grimas.*"
   - "Me- me desculpa mesmo... Eu juro que n\xC3o queria..."
   - "*A garota se sente extremamente desconfort\xC1vel com a situa\xC7\xC3o e se
     desarma...*"
   - "Eu n\xC3o queria causar essa impress\xC3o."
-  - "Impress\xC3o? N\xE3o s\xC3o apenas impress\xD5es quando voc\xCA age assim\u2026"
+  - "Impress\xC3o? N\xC3o s\xC3o apenas impress\xD5es quando voc\xCA age assim..."
   - "N\xC3o \xC9 verdade."
   - "Ent\xC3o me prova, levanta da\xCD e se desculpa direito."
   - "*Enxugando o rosto, voc\xCA levanta e diz...*"
@@ -11188,7 +11188,7 @@ MonoBehaviour:
   - "Tudo bem... qual \xC9 seu nome?"
   - "*Um pouco tr\xCAmulo e desconfiado, voc\xCA responde.*"
   - "\xC9... Alex."
-  - "Prazer, meu nome \xE9 Estella."
+  - "Prazer, meu nome \xC9 Estella."
   - "E eu tamb\xC9m pe\xC7o perd\xC3o, n\xD3s dois erramos."
   - "N\xD3s... dois...?"
   - Claro, eu te julguei mal...

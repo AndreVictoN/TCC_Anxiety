@@ -1,76 +1,149 @@
 # ClassDiagramGenerator
 
-A modern Unity Editor tool to **generate UML class diagrams from all C# scripts** in your `Assets/Scripts` folder.  
-Export PlantUML-compatible diagrams as files or shareable URLs. Fast, simple, and integrated into the Unity Editor.
+A modern Unity Editor tool to **generate PlantUML class diagrams** from your C# scripts.
+Pick any folder (or the whole project), select scripts, and export a `.puml` file or a shareable PlantUML URL — all from the Unity Editor.
 
 ---
 
-## How to Install
+## Installation
 
-This tool is provided as a **C# script** for the Unity Editor.
+This tool ships as Editor scripts.
 
-1. Copy the `ClassDiagramGenerator.cs` script into your project's `Assets/Editor` folder.
-2. Make sure you have your C# scripts to document in `Assets/Scripts`.
+1. Copy the following files into your project:
+
+* `Assets/ClassDiagramGenerator/Editor/ClassDiagramGenerator.cs`
+* `Assets/ClassDiagramGenerator/Editor/ScriptSelectionManager.cs`
+
+2. (Optional) Add a 160×160 logo at `Resources/Icon 160x160 - Diagram Generator.png` if you want the header icon.
+
+> Unity will compile them as Editor scripts automatically.
 
 ---
 
 ## Usage
 
-1. **Open the Tool**
+1. **Open the window**
+   `Tools → 🧬 Diagram Generator`
 
-   - In Unity, open the menu: `Tools > 🧬 Generate Class Diagram`.
+2. **Choose where to scan**
 
-2. **Select Export Format**
+   * Enter a folder path, click **Browse…**, or press **Whole project** to scan `Assets/`.
+   * You can also **drag & drop**:
 
-   - `📄 PlantUML File` : generates a `.puml` file in `Assets/Scripts/ClassDiagram.puml`.
-   - `🌐 PlantUML URL` : generates a direct link to view your diagram online.
+     * Drop a **folder** to set it as the scan root.
+     * Drop one or more **`.cs` files** to add them directly to the selection.
 
-3. **Generate the Diagram**
+3. **Scan & select scripts**
 
-   - Click **🛠️ Generate Diagram**.
+   * Click **🔍 Scan** to list scripts.
+   * Use **Search**, **All**, **None** to curate the list.
 
-4. **Visualize**
+4. **Options**
 
-   - If you selected URL, copy the generated link and open it in your browser to visualize the diagram.
+   * **Export format**: `📄 PlantUML File` or `🌐 PlantUML URL`.
+   * **Advanced**: *Include associations* (detects references between types via fields, properties, and parameters).
+   * **Output path**: pick where to save the `.puml` (when using file export).
+
+5. **Generate**
+
+   * Click **🛠️ Generate Diagram**.
+   * If you exported a file, you can **Reveal file**.
+   * If you generated a URL, **Copy URL** and open it in your browser.
+
+---
+
+## What it extracts
+
+* **Types**: classes, interfaces, structs, enums
+* **Namespaces** → rendered as **PlantUML packages**
+* **Members**:
+
+  * Fields, properties, methods, events
+  * Visibility: `+` public, `-` private, `#` protected, `~` internal
+  * Modifiers surfaced where stable in PlantUML (`{static}`, `{abstract}`)
+* **Relationships**:
+
+  * Inheritance & interface realization
+  * **Associations** from member/parameter types
+  * Generic & array hints (adds `*` multiplicity for collections like `List<T>`, arrays, etc.)
+
+> Inside a package block, type names are local (no dots).
+> All references (arrows) use fully qualified names to avoid PlantUML syntax issues.
 
 ---
 
 ## Features
 
-- User-friendly graphical interface in Unity (menu Tools).
-- Automatically scans all C# scripts in `Assets/Scripts`.
-- Export as PlantUML file or PlantUML Online URL.
-- Displays and supports easy copy of the generated URL.
-- Detects classes, fields, properties, methods, and inheritance relationships.
+* English UI, polished Editor window
+* Pick any folder to scan or **scan the whole project**
+* **Drag & drop** folders and `.cs` files
+* Script **search** and **bulk select**
+* Export as **`.puml` file** or **PlantUML URL**
+* One-click **Reveal file** / **Copy URL**
+* Persistent last scan root (via `EditorPrefs`)
+* Fast regex-based parsing with per-type scoping
 
 ---
 
-## Notes
+## Troubleshooting
 
-- Only analyzes scripts inside `Assets/Scripts`.
-- Only supports standard C# class syntax.
-- Diagram extraction is based on regular expressions.
-- No project files are modified or deleted.
+* **“Syntax Error (Assumed diagram type: class)” in PlantUML**
+  Usually caused by dotted names inside declarations. This tool emits **local names in packages** and **qualified names only in arrows**, which avoids that. If you copy/paste or edit the `.puml`, don’t put dots in class headers inside a `package`.
+
+* **Weird self-links**
+  The generator skips self-associations. If you see one after manual edits, remove the `X --> X` line.
+
+* **Nothing appears**
+  Ensure you scanned the right folder, at least one script is selected, and your scripts contain standard C# type declarations.
+
+---
+
+## Notes & Limits
+
+* Parsing is **regex-based**; it aims for practical coverage, not full C# semantics.
+* Shows `{static}` and `{abstract}` reliably. Other modifiers are detected but not all are rendered to keep PlantUML happy.
+* Accessor-level visibility (e.g., `get; private set;`) is not yet shown explicitly.
+* The URL export uses **deflate + PlantUML encoding** and targets the public PlantUML server.
 
 ---
 
 ## FAQ
 
-**Q: Does it delete files?**  
-A: No. The tool only generates a `.puml` file or URL, nothing is deleted.
+**Q: Do I have to keep scripts in `Assets/Scripts`?**
+A: No. You can scan **any folder** (or the **whole project**) and even drop individual `.cs` files.
 
-**Q: Can I use it outside `Assets/Scripts`?**  
-A: Only scripts inside `Assets/Scripts` are analyzed.
+**Q: Does it overwrite existing `.puml` files?**
+A: Yes, if you save to the same path.
 
-**Q: Will it overwrite existing diagrams?**  
-A: Yes, generating a new `.puml` file will overwrite any previous one.
+**Q: Does it modify my scripts?**
+A: No. It only reads `.cs` files and generates output.
+
+**Q: Can it export images (PNG/SVG) directly?**
+A: Not yet. Generate a `.puml` and render it via PlantUML (local or online). If you want built-in PNG/SVG export, open an issue—we can add it.
+
+---
+
+## Changelog (highlights)
+
+* **v1.4**
+
+  * English UI
+  * Folder picker, drag & drop folders/files
+  * Namespaces as packages; local names inside packages, fully qualified names in relationships
+  * Associations improved (generics/arrays, multiplicity)
+  * Self-link & double-qualification fixes
+  * Output path picker, Reveal file
+
+* **v1.3**
+
+  * First pass on folder selection & persistence, improved styling
 
 ---
 
 ## Support
 
-For questions, suggestions, or bug reports, please contact:  
-jules.gilli@live.fr
+Questions, suggestions, or bug reports:
+**[jules.gilli@live.fr](mailto:jules.gilli@live.fr)**
 
 ---
 
@@ -80,4 +153,4 @@ MIT License
 
 ---
 
-ClassDiagramGenerator © 2025
+ClassDiagramGenerator © 2025 JulesTools
