@@ -30,7 +30,7 @@ public abstract class PlayerController : Subject, IHealthManager
     public string testScene = "TestScene";
     public string firstFloor = "FirstFloorPrototype";
     public string battleScene = "BattleScene";
-    public string classroom = "Classroom";
+    public string classroom = "Class";
 
     protected string npcTag = "NPC";
     protected List<string> npcTags = new() { "Ezequiel", "Estella", "Yuri", "Rebecca" };
@@ -87,7 +87,7 @@ public abstract class PlayerController : Subject, IHealthManager
         {
             BattleSceneSettings();
         }
-        else if (SceneManager.GetActiveScene().name == classroom)
+        else if (SceneManager.GetActiveScene().name == "Classroom")
         {
             defaultPosition = new Vector3(-10.53f, 6f, 0);
             this.gameObject.transform.position = defaultPosition;
@@ -96,11 +96,11 @@ public abstract class PlayerController : Subject, IHealthManager
         {
             this.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
         }
-        else if (SceneManager.GetActiveScene().name == "Class")
+        else if (SceneManager.GetActiveScene().name.Equals("Class"))
         {
             this.gameObject.transform.localPosition = new Vector2(4.54f, 8.05f);
         }
-        else if (SceneManager.GetActiveScene().name == "Floor2" && PlayerPrefs.GetString("currentState").Equals("Start"))
+        else if (SceneManager.GetActiveScene().name == "Floor2" && (PlayerPrefs.GetString("currentState").Equals("Start") || PlayerPrefs.GetString("currentState").Equals("FirstLeaving")))
         {
             if (!PlayerPrefs.GetString("pastScene").Equals("BattleScene")) this.gameObject.transform.localPosition = new Vector2(-17.47f, 4.59f);
             else this.gameObject.transform.localPosition = new Vector2(23.46f, 14.32541f);
@@ -108,7 +108,13 @@ public abstract class PlayerController : Subject, IHealthManager
         else
         {
             _defaultAnimatorSpeed = animator.speed;
-            this.gameObject.transform.position = new Vector3(0, 0, 0);
+            if (SceneManager.GetActiveScene().name.Equals("Terreo") && PlayerPrefs.GetString("transitionType").Equals("frontTransition")) {
+                this.gameObject.transform.localPosition = new Vector2(25.73f, 68.27f);
+            }
+            else if (SceneManager.GetActiveScene().name.Equals("Terreo") && PlayerPrefs.GetString("transitionType").Equals("backTransition")) {
+                this.gameObject.transform.localPosition = new Vector2(17.88f, 111.86f);
+            }
+            else { this.gameObject.transform.position = new Vector3(0, 0, 0); }
         }
 
         if (rb == null && this.gameObject.GetComponent<Rigidbody2D>() != null)

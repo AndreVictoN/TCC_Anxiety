@@ -25,6 +25,6 @@ public abstract class Subject : Singleton<Subject>
 
     public void Notify(EventsEnum evt)
     {
-        _subscribers.ForEach((_observer) => {_observer.OnNotify(evt);});
+        _subscribers.ForEach((_observer) => { if(_observer != null) _observer.OnNotify(evt);});
     }
 }

@@ -235,7 +235,7 @@ public abstract class NPC : DialogueBox, IHealthManager
 
     public override void ResetText()
     {
-        if (_isBattling || PlayerPrefs.GetString("currentState").Equals("Start")) return;
+        if (_isBattling || PlayerPrefs.GetString("currentState").Equals("Start") || PlayerPrefs.GetString("currentState").Equals("FirstLeaving")) return;
 
         base.ResetText();
     }

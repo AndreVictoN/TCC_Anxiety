@@ -16,6 +16,7 @@ public class CutsceneManager : DialogueBox
     //public Image fullNPC;
 
     [SerializeField] private Image _transitionImage;
+    [SerializeField] private Image _transitionImage2;
     [SerializeField] private Image _background;
     private Color _transitionImageColor;
     private Color _newTransitionColor;
@@ -32,7 +33,7 @@ public class CutsceneManager : DialogueBox
         _transitionImageColor = _transitionImage.color;
         _newTransitionColor = new Vector4(_transitionImageColor.r, _transitionImageColor.g, _transitionImageColor.b, 1f);
 
-        _currentCoroutine = StartCoroutine(FadeTransition(_transitionImageColor, _newTransitionColor, 1f));
+        _currentCoroutine = StartCoroutine(FadeTransition(_transitionImageColor, _newTransitionColor, 1f, 1));
     }
 
     private IEnumerator StartAutomaticTalk()
@@ -75,10 +76,11 @@ public class CutsceneManager : DialogueBox
         {
             yield return new WaitForSeconds(7f);
             StartCoroutine(ChangeBackground(-5));
-            yield return new WaitForSeconds(1.7f);
-            _currentCoroutine = StartCoroutine(FadeTransition(_transitionImageColor, _newTransitionColor, 1f));
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
+            _currentCoroutine = StartCoroutine(FadeTransition(_transitionImageColor, _newTransitionColor, 1f, 2));
+            yield return new WaitForSeconds(2f);
             PlayerPrefs.SetString("pastScene", "Cutscene");
+            yield return new WaitForSeconds(1f);
             SceneManager.LoadScene("Terreo");
         }
     }
@@ -213,7 +215,7 @@ public class CutsceneManager : DialogueBox
         }
     }
 
-    private IEnumerator FadeTransition(Color old, Color color, float time)
+    private IEnumerator FadeTransition(Color old, Color color, float time, int number)
     {
         float elapsedTime = 0f;
 
@@ -222,7 +224,8 @@ public class CutsceneManager : DialogueBox
             elapsedTime += Time.deltaTime;
 
             float lerpAmount = Mathf.Clamp01(elapsedTime / time);
-            _transitionImage.color = Color.Lerp(old, color, lerpAmount);
+            if(number == 1) _transitionImage.color = Color.Lerp(old, color, lerpAmount);
+            else if (number == 2) _transitionImage2.color = Color.Lerp(old, color, lerpAmount);
 
             yield return null;
         }
