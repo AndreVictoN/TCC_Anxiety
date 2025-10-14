@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     public Sprite doorOpened;
     public Sprite doorClosed;
     public string identifier;
+    public GameObject myText;
 
     //Privates
     private bool _playerIsClose;
@@ -18,6 +19,7 @@ public class Door : MonoBehaviour
         _playerIsClose = false;
         _isClosed = true;
         player = GameObject.FindGameObjectWithTag("Player");
+        if(!myText) myText = transform.Find("Text").gameObject;
     }
 
     void Update()
@@ -85,6 +87,7 @@ public class Door : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             _playerIsClose = true;
+            if (myText) myText.SetActive(true);
         }
     }
 
@@ -93,6 +96,7 @@ public class Door : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             _playerIsClose = false;
+            if (myText) myText.SetActive(false);
         }
     }
 }

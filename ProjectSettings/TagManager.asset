@@ -59,6 +59,8 @@ TagManager:
   - Illustration
   - ArrivalManager
   - GameManager
+  - DaysManager
+  - DialoguePanel
   layers:
   - Default
   - TransparentFX

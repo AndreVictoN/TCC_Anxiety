@@ -8,6 +8,7 @@ public class NextDayButton : MonoBehaviour
         if (PlayerPrefs.GetString("currentState").Equals("FirstLeaving"))
         {
             PlayerPrefs.SetString("currentState", "StartDayTwo");
+            PlayerPrefs.SetString("pastScene", "Menu");
             SceneManager.LoadScene("Terreo");
         }
     }

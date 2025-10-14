@@ -21,8 +21,9 @@ public class GameManager : Singleton<GameManager>, IObserver
     public GameObject exitGame;
     public GameObject inventory;
 
-    [Header("Arrival")]
+    [Header("Days")]
     public ArrivalManager arrivalManager;
+    public DaysManager daysManager;
 
     [Header("Prototype")]
     [SerializeField] private GameObject _prototypeTeacher;
@@ -56,6 +57,10 @@ public class GameManager : Singleton<GameManager>, IObserver
         /*PlayerPrefs.SetString("pastScene", "Menu");
         PlayerPrefs.SetString("currentState", "Start");
         PlayerPrefs.SetString("transitionType", "");*/
+        if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo")) {
+            arrivalManager = GameObject.FindGameObjectWithTag("ArrivalManager").GetComponent<ArrivalManager>();
+            Destroy(arrivalManager);
+        }
         cinemachineCamera = GameObject.FindFirstObjectByType<CinemachineCamera>();
         PlayerManagement();
         _canSkip = false;
@@ -77,6 +82,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         else if (_currentScene.Equals("Terreo"))
         {
             if (PlayerPrefs.GetString("currentState").Equals("Start")) ArrivalConfig();
+            else if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo")) ArrivalSecondDayConfig();
             else { GroundFloorConfig(); }
         }
         else if (_currentScene.Equals("Class"))
@@ -102,14 +108,34 @@ public class GameManager : Singleton<GameManager>, IObserver
     {
         transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
         if (currentDay == null) { currentDay = GameObject.FindGameObjectWithTag("CurrentDay").GetComponent<TextMeshProUGUI>(); }
+        currentDay.text = "Dia 1";
         transitionImage.color = new Vector4(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, 1f);
         AnimateTransition(3f, true);
         if (currentDay != null) AnimateText(currentDay, 3f, true);
         arrivalManager = GameObject.FindGameObjectWithTag("ArrivalManager").GetComponent<ArrivalManager>();
-        arrivalManager.SetGameManager(this);
+        arrivalManager.gameObject.SetActive(false);
         if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Objective").GetComponent<TextMeshProUGUI>(); }
         if (instruction == null) instruction = GameObject.Find("Canvas").transform.Find("Instruction").GetComponent<TextMeshProUGUI>();
         StartCoroutine(arrivalManager.FirstLines());
+    }
+    
+    private void ArrivalSecondDayConfig()
+    {
+        if (!_stopTrigger) _stopTrigger = GameObject.FindGameObjectWithTag("StopTrigger");
+        _stopTrigger?.SetActive(false);
+        if (!_firstInteractionTrigger) _firstInteractionTrigger = GameObject.FindGameObjectWithTag("FirstInteractionTrigger");
+        _firstInteractionTrigger?.SetActive(false);
+        transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
+        if (currentDay == null) { currentDay = GameObject.FindGameObjectWithTag("CurrentDay").GetComponent<TextMeshProUGUI>(); }
+        currentDay.text = "Dia 2";
+        transitionImage.color = new Vector4(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, 1f);
+        AnimateTransition(3f, true);
+        if (currentDay != null) AnimateText(currentDay, 3f, true);
+        daysManager = GameObject.FindGameObjectWithTag("DaysManager").GetComponent<DaysManager>();
+        daysManager.SetGameManager(this);
+        if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Objective").GetComponent<TextMeshProUGUI>(); }
+        if (instruction == null) instruction = GameObject.Find("Canvas").transform.Find("Instruction").GetComponent<TextMeshProUGUI>();
+        StartCoroutine(daysManager.FirstLines());
     }
 
     private void GroundFloorConfig()
@@ -118,7 +144,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         _stopTrigger?.SetActive(false);
         if (!_firstInteractionTrigger) _firstInteractionTrigger = GameObject.FindGameObjectWithTag("FirstInteractionTrigger");
         _firstInteractionTrigger?.SetActive(false);
-        
+
         transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
         if (currentDay == null) { currentDay = GameObject.FindGameObjectWithTag("CurrentDay").GetComponent<TextMeshProUGUI>(); }
         transitionImage.color = new Vector4(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, 1f);
@@ -253,69 +279,73 @@ public class GameManager : Singleton<GameManager>, IObserver
         string identifier = toOtherScene.GetComponentInChildren<Door>().identifier;
 
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-        yield return null;
-
-        if (sceneName != _classroomScene && sceneName != "TestScene")
+        if (!sceneName.Equals("Floor2"))
         {
-            cinemachineCamera = GameObject.FindFirstObjectByType<CinemachineCamera>();
-            CinemachineFollow(player.GetComponent<Transform>());
-        }
+            yield return null;
 
-        Door door = null;
-
-        if (sceneName == _classroomScene)
-        {
-            player = GameObject.Instantiate(playerPFB);
-            door = GameObject.FindFirstObjectByType<Door>();
-            player.transform.localScale = new Vector3(1.7f, 1.7f, 1f);
-            player.GetComponent<PlayerController>().SetSpeed(8f);
-            door.SetIsClosed(true);
-        }
-        else if (sceneName == "TestScene")
-        {
-            doors.Clear();
-            doors.AddRange(GameObject.FindGameObjectsWithTag("Door"));
-            foreach (GameObject d in doors)
+            if (sceneName != _classroomScene && sceneName != "TestScene")
             {
-                if (d.GetComponent<Door>().identifier == identifier)
-                {
-                    door = d.GetComponent<Door>();
-                    door.SetIsClosed(true);
-                    break;
-                }
+                cinemachineCamera = GameObject.FindFirstObjectByType<CinemachineCamera>();
+                CinemachineFollow(player.GetComponent<Transform>());
             }
-            player = GameObject.FindGameObjectWithTag("Player");
-            player.transform.localScale = new Vector3(0.7f, 0.7f, 1f);
-            player.GetComponent<PlayerController>().SetSpeed(5f);
+
+            Door door = null;
+
+            if (sceneName == _classroomScene)
+            {
+                player = GameObject.Instantiate(playerPFB);
+                door = GameObject.FindFirstObjectByType<Door>();
+                player.transform.localScale = new Vector3(1.7f, 1.7f, 1f);
+                player.GetComponent<PlayerController>().SetSpeed(8f);
+                door.SetIsClosed(true);
+            }
+            else if (sceneName == "TestScene")
+            {
+                doors.Clear();
+                doors.AddRange(GameObject.FindGameObjectsWithTag("Door"));
+                foreach (GameObject d in doors)
+                {
+                    if (d.GetComponent<Door>().identifier == identifier)
+                    {
+                        door = d.GetComponent<Door>();
+                        door.SetIsClosed(true);
+                        break;
+                    }
+                }
+                player = GameObject.FindGameObjectWithTag("Player");
+                player.transform.localScale = new Vector3(0.7f, 0.7f, 1f);
+                player.GetComponent<PlayerController>().SetSpeed(5f);
+            }
+
+            if (door == null)
+            {
+                Debug.LogError("Door not found in the new scene. " + identifier);
+                yield break;
+            }
+            player.transform.position = new Vector3(door.transform.position.x, door.transform.position.y - 1f, door.transform.position.z);
+            player.gameObject.GetComponent<PlayerController>().SetSpriteDown();
+
+            door.ChangePlayer(player);
+            door.ChangeSprite("open");
+
+            transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
+            transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, 1f);
+
+            yield return new WaitForSeconds(0.1f);
+
+            AnimateTransition(0.5f, true);
+            yield return new WaitForSeconds(0.5f);
+
+            door.ChangeSprite("close");
+
+            door.IgnoreCollision(player, false);
+
+            player.GetComponent<PlayerController>().SetCanMove(true);
+            doors.Clear();
+
+            _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         }
-
-        if (door == null)
-        {
-            Debug.LogError("Door not found in the new scene. " + identifier);
-            yield break;
-        }
-        player.transform.position = new Vector3(door.transform.position.x, door.transform.position.y - 1f, door.transform.position.z);
-        player.gameObject.GetComponent<PlayerController>().SetSpriteDown();
-
-        door.ChangePlayer(player);
-        door.ChangeSprite("open");
-
-        transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
-        transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, 1f);
-
-        yield return new WaitForSeconds(0.1f);
-
-        AnimateTransition(0.5f, true);
-        yield return new WaitForSeconds(0.5f);
-
-        door.ChangeSprite("close");
-
-        door.IgnoreCollision(player, false);
-
-        player.GetComponent<PlayerController>().SetCanMove(true);
-        doors.Clear();
-
-        _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+            
     }
 
     public void AnimateTransition(float time, bool toTransparent)
@@ -334,20 +364,20 @@ public class GameManager : Singleton<GameManager>, IObserver
         }
     }
 
-    public IEnumerator BackTransition(float time)
+    public IEnumerator BackTransition(float time, string sceneToLoad)
     {
         AnimateTransition(time, false);
         yield return new WaitForSeconds(time);
         PlayerPrefs.SetString("transitionType", "backTransition");
-        SceneManager.LoadScene("Terreo");
+        SceneManager.LoadScene(sceneToLoad);
     }
 
-    public IEnumerator FrontTransition(float time)
+    public IEnumerator FrontTransition(float time, string sceneToLoad)
     {
         AnimateTransition(time, false);
         yield return new WaitForSeconds(time);
         PlayerPrefs.SetString("transitionType", "frontTransition");
-        SceneManager.LoadScene("Terreo");
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     void AnimateText(TextMeshProUGUI textToFade, float time, bool toTransparent)

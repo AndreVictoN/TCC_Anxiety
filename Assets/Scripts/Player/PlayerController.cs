@@ -104,11 +104,23 @@ public abstract class PlayerController : Subject, IHealthManager
         {
             if (!PlayerPrefs.GetString("pastScene").Equals("BattleScene")) this.gameObject.transform.localPosition = new Vector2(-17.47f, 4.59f);
             else this.gameObject.transform.localPosition = new Vector2(23.46f, 14.32541f);
+        }else if(SceneManager.GetActiveScene().name.Equals("Floor2") && PlayerPrefs.GetString("currentState").Equals("StartDayTwo"))
+        {
+            if (PlayerPrefs.GetString("transitionType").Equals("frontTransition"))
+            {
+                this.gameObject.transform.localPosition = new Vector2(-41.82f, 10.24f);
+            }else if (PlayerPrefs.GetString("transitionType").Equals("backTransition"))
+            {
+                this.gameObject.transform.localPosition = new Vector2(33.75f, 10.03f);
+            }
         }
         else
         {
             _defaultAnimatorSpeed = animator.speed;
-            if (SceneManager.GetActiveScene().name.Equals("Terreo") && PlayerPrefs.GetString("transitionType").Equals("frontTransition")) {
+            if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo"))
+            {
+                this.gameObject.transform.localPosition = new Vector2(-2.26f, 72.24f);
+            }else if (SceneManager.GetActiveScene().name.Equals("Terreo") && PlayerPrefs.GetString("transitionType").Equals("frontTransition")) {
                 this.gameObject.transform.localPosition = new Vector2(25.73f, 68.27f);
             }
             else if (SceneManager.GetActiveScene().name.Equals("Terreo") && PlayerPrefs.GetString("transitionType").Equals("backTransition")) {
@@ -245,6 +257,7 @@ public abstract class PlayerController : Subject, IHealthManager
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //Debug.Log("Collided with: " + collision.gameObject.tag);
         if (collision.gameObject.CompareTag(npcTag) || collision.gameObject.CompareTag(doorTag) || npcTags.Contains(collision.gameObject.tag) || collision.gameObject.CompareTag(collisionTag))
         {
             rb.linearVelocity = Vector2.zero;
@@ -254,6 +267,14 @@ public abstract class PlayerController : Subject, IHealthManager
             if (SceneManager.GetActiveScene().name == testScene) StartCoroutine(LoadFloor(firstFloor));
             else if (SceneManager.GetActiveScene().name == firstFloor) StartCoroutine(LoadFloor(testScene));
 
+            _canMove = false;
+        }else if(collision.gameObject.CompareTag("ToOtherFloor"))
+        {
+            if (SceneManager.GetActiveScene().name.Equals("Terreo"))
+            {
+                PlayerPrefs.SetString("transitionType", "backTransition");
+                gameManager.StartLoadNewScene("Floor2", this.gameObject, collision.gameObject);
+            }
             _canMove = false;
         }
         else if (collision.gameObject.CompareTag(changeSceneTag))
