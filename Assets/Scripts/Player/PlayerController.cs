@@ -122,7 +122,7 @@ public abstract class PlayerController : Subject, IHealthManager
         else
         {
             _defaultAnimatorSpeed = animator.speed;
-            if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo"))
+            if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo") && !GameManager.Instance.GetDayConfigured())
             {
                 this.gameObject.transform.localPosition = new Vector2(-2.26f, 72.24f);
             }else if (SceneManager.GetActiveScene().name.Equals("Terreo") && PlayerPrefs.GetString("transitionType").Equals("frontTransition")) {

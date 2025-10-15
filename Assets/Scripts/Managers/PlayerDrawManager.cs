@@ -39,51 +39,92 @@ public class PlayerDrawManager : MonoBehaviour
         if (!_playerIsSet) return;
         if (SceneManager.GetActiveScene().name == "Class" && _playerIsSet)
         {
-            if (player.transform.localPosition.y > 5.08f)
-            {
-                playerSR.sortingOrder = 0;
-            }
-            else if (player.transform.localPosition.y > 1.35f && player.transform.localPosition.y < 5.08f)
-            {
-                playerSR.sortingOrder = 1;
-            }
-            else if (player.transform.localPosition.y > -1.56f && player.transform.localPosition.y < 1.35f)
-            {
-                playerSR.sortingOrder = 2;
-            }
-            else if (player.transform.localPosition.y > -4.58f && player.transform.localPosition.y < -1.56f)
-            {
-                playerSR.sortingOrder = 3;
-            }
-            else if (player.transform.localPosition.y > -7.6f && player.transform.localPosition.y < -4.58f)
-            {
-                playerSR.sortingOrder = 4;
-            }else if(player.transform.localPosition.y < -7.6f){ playerSR.sortingOrder = 5; }
+            ClassDraw();
+        }
+        else if (SceneManager.GetActiveScene().name == "Terreo")
+        {
+            TerreoDraw();
         }
         else if (SceneManager.GetActiveScene().name == "PrototypeScene")
         {
-            if (player.transform.position.x >= 0.68f && player.transform.position.x <= 9.11f)
-            {
-                if ((player.transform.position.y >= 80f && player.transform.position.y <= 82f) || (player.transform.position.y <= 86.25f && player.transform.position.y >= 85.25f))
-                {
-                    playerSR.sortingOrder = -1;
-                }
-            }
-            else if (player.transform.position.x >= 15f && player.transform.position.x <= 23f)
-            {
-                if (player.transform.position.y >= 81.3f && player.transform.position.y <= 82.3f)
-                {
-                    playerSR.sortingOrder = -1;
-                }
-            }
-            else if (player.transform.position.x >= 27.5f && player.transform.position.x <= 35.28f)
-            {
-                if (player.transform.position.y >= 83.3f && player.transform.position.y <= 84.3f)
-                {
-                    playerSR.sortingOrder = -1;
-                }
-            }
-            else { playerSR.sortingOrder = 1; }
+            PrototypeDraw();
         }
+    }
+
+    private void ClassDraw()
+    {
+        if (player.transform.localPosition.y > 5.08f)
+        {
+            playerSR.sortingOrder = 0;
+        }
+        else if (player.transform.localPosition.y > 1.35f && player.transform.localPosition.y < 5.08f)
+        {
+            playerSR.sortingOrder = 1;
+        }
+        else if (player.transform.localPosition.y > -1.56f && player.transform.localPosition.y < 1.35f)
+        {
+            playerSR.sortingOrder = 2;
+        }
+        else if (player.transform.localPosition.y > -4.58f && player.transform.localPosition.y < -1.56f)
+        {
+            playerSR.sortingOrder = 3;
+        }
+        else if (player.transform.localPosition.y > -7.6f && player.transform.localPosition.y < -4.58f)
+        {
+            playerSR.sortingOrder = 4;
+        }
+        else if (player.transform.localPosition.y < -7.6f) { playerSR.sortingOrder = 5; }
+    }
+
+    private void TerreoDraw()
+    {
+        if (player.transform.position.x >= 15.37f && player.transform.position.x <= 23.49f)
+        {
+            if (player.transform.position.y >= 81.22f && player.transform.position.y <= 82.07f)
+            {
+                playerSR.sortingOrder = -1;
+            }
+        }
+        else if (player.transform.position.x >= 27.5f && player.transform.position.x <= 35.28f)
+        {
+            if (player.transform.position.y >= 83.3f && player.transform.position.y <= 84.1f)
+            {
+                playerSR.sortingOrder = -1;
+            }
+        }
+        else if (player.transform.position.x >= 1 && player.transform.position.x <= 8.9f)
+        {
+            if ((player.transform.position.y >= 85.3f && player.transform.position.y <= 86.1f) || (player.transform.position.y >= 80.36f && player.transform.position.y <= 81.17f))
+            {
+                playerSR.sortingOrder = -1;
+            }
+        }
+        else { playerSR.sortingOrder = 1; }
+    }
+    
+    private void PrototypeDraw()
+    {
+        if (player.transform.position.x >= 0.68f && player.transform.position.x <= 9.11f)
+        {
+            if ((player.transform.position.y >= 80f && player.transform.position.y <= 82f) || (player.transform.position.y <= 86.25f && player.transform.position.y >= 85.25f))
+            {
+                playerSR.sortingOrder = -1;
+            }
+        }
+        else if (player.transform.position.x >= 15f && player.transform.position.x <= 23f)
+        {
+            if (player.transform.position.y >= 81.3f && player.transform.position.y <= 82.3f)
+            {
+                playerSR.sortingOrder = -1;
+            }
+        }
+        else if (player.transform.position.x >= 27.5f && player.transform.position.x <= 35.28f)
+        {
+            if (player.transform.position.y >= 83.3f && player.transform.position.y <= 84.3f)
+            {
+                playerSR.sortingOrder = -1;
+            }
+        }
+        else { playerSR.sortingOrder = 1; }
     }
 }

@@ -65,6 +65,7 @@ public class DaysManager : DialogueBox
 
     public IEnumerator FirstLines()
     {
+        GameManager.Instance.SetDayConfigured(true);
         BasicPlayerCutsceneConfig();
         if (_toOtherFloors.Count > 0) foreach (GameObject toOtherFloor in _toOtherFloors) toOtherFloor.SetActive(true);
 

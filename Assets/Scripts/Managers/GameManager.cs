@@ -46,6 +46,7 @@ public class GameManager : Singleton<GameManager>, IObserver
     [SerializeField] private Ezequiel _ezequiel;
     private string _classroomScene = "Classroom";
     private string _currentScene;
+    private bool _dayConfigured = false;
     private bool _isTyping;
     private bool _skipped;
     private bool _canSkip;
@@ -89,7 +90,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         else if (_currentScene.Equals("Terreo"))
         {
             if (PlayerPrefs.GetString("currentState").Equals("Start")) ArrivalConfig();
-            else if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo")) ArrivalSecondDayConfig();
+            else if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo") && !_dayConfigured) ArrivalSecondDayConfig();
             else { GroundFloorConfig(); }
         }
         else if (_currentScene.Equals("Class"))
@@ -126,7 +127,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         if (currentDay != null) AnimateText(currentDay, 3f, true);
         arrivalManager = GameObject.FindGameObjectWithTag("ArrivalManager").GetComponent<ArrivalManager>();
         arrivalManager.gameObject.SetActive(true);
-        if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Objective").GetComponent<TextMeshProUGUI>(); }
+        if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Inventory").transform.Find("Inventory").transform.Find("Objective").GetComponent<TextMeshProUGUI>(); }
         if (instruction == null) instruction = GameObject.Find("Canvas").transform.Find("Instruction").GetComponent<TextMeshProUGUI>();
         StartCoroutine(arrivalManager.FirstLines());
     }
@@ -148,7 +149,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         if (currentDay != null) AnimateText(currentDay, 3f, true);
         daysManager = GameObject.FindGameObjectWithTag("DaysManager").GetComponent<DaysManager>();
         daysManager.SetGameManager(this);
-        if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Objective").GetComponent<TextMeshProUGUI>(); }
+        if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Inventory").transform.Find("Inventory").transform.Find("Objective").GetComponent<TextMeshProUGUI>(); }
         if (instruction == null) instruction = GameObject.Find("Canvas").transform.Find("Instruction").GetComponent<TextMeshProUGUI>();
         StartCoroutine(daysManager.FirstLines());
     }
@@ -166,8 +167,8 @@ public class GameManager : Singleton<GameManager>, IObserver
         AnimateTransition(1f, true);
         if (currentDay != null) currentDay.gameObject.SetActive(false);
         arrivalManager = GameObject.FindGameObjectWithTag("ArrivalManager").GetComponent<ArrivalManager>();
-        arrivalManager.SetGameManager(this);
-        if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Objective").GetComponent<TextMeshProUGUI>(); }
+        arrivalManager?.SetGameManager(this);
+        if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Inventory").transform.Find("Inventory").transform.Find("Objective").GetComponent<TextMeshProUGUI>(); }
         if (instruction == null) instruction = GameObject.Find("Canvas").transform.Find("Instruction").GetComponent<TextMeshProUGUI>();
     }
 
@@ -889,6 +890,8 @@ public class GameManager : Singleton<GameManager>, IObserver
         }
         SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
     }
-    
-    public PlayerController GetPlayerController(){ return _playerController; }
+
+    public PlayerController GetPlayerController() { return _playerController; }
+    public void SetDayConfigured(bool configured) { _dayConfigured = configured; }
+    public bool GetDayConfigured() { return _dayConfigured; }
 }
