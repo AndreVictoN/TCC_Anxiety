@@ -77,9 +77,14 @@ public class MenuManager : MonoBehaviour
         yield return new WaitForSeconds(secondsToWait);
 
         background.sprite = reversedBackground;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
 
         background.sprite = normalBackground;
         _currentBackgroundCoroutine = null;
+    }
+    public void SairDoJogo()
+    {
+        Debug.Log("SAIR");
+        Application.Quit();
     }
 }
