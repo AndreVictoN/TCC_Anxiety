@@ -63,6 +63,7 @@ TagManager:
   - DialoguePanel
   - ItemImage
   - PauseMenu
+  - BaseGrid
   layers:
   - Default
   - TransparentFX

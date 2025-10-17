@@ -23695,7 +23695,7 @@ GameObject:
   - component: {fileID: 1054584371}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: BaseGrid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57128,20 +57128,18 @@ MonoBehaviour:
   - "-Voc\xCA n\xC3o \xC9 capaz!-"
   - "-N\xC3o passa de um peso...-"
   - "-I n \xDA t i l !-"
-  - '*E entre outras palavras, essas compunham o ataque do monstro contra nossos
-    protagonistas.*'
-  - "*Nesse momento voc\xCA cria al\xCD uma forma de combater esse medo de frente,*"
+  - '*Depois de se acalmar...*'
+  - "*Voc\xCA consegue criar uma forma de combater esse medo...*"
   - "*uma maneira eficiente de lidar com essas situa\xE7\xF5es que antes representavam
     seu maior medo.*"
-  - "*Voc\xCA com seus dons art\xCDsticos para criar uma m\xE1scara, algo perfeito
-    para aquele momento, Alex criou a M\xE1scara da Confian\xE7a.*"
-  - "*Ainda tremendo, sentiu uma fa\xCDsca de coragem.*"
-  - "*Ent\xC3o ergueu as m\xC3os e lan\xE7ou seu ataque diretamente contra o monstro,
-    mostrando assim que n\xE3o tinha desistido.*"
-  - "*Ao final da batalha, o monstro se desfez em part\xEDculas de luz.*"
-  - "*Voc\xCA piscou e se viu novamente na carteira, com Ezequiel e Estella olhando
-    para ele com sorrisos encorajadores.*"
-  - "Voc\xEA conseguiu, Alex!"
+  - "*Voc\xCA usa seus dons art\xCDsticos para criar uma m\xE1scara, algo perfeito
+    para aquele momento, algo que escondia seus medos.*"
+  - "*Ainda tremendo, sentiu uma fa\xCDsca de coragem, mesmo que fingindo algo irreal.*"
+  - '*Agora acreditava que conseguiria apresentar.*'
+  - "*Voc\u1EBC volta \xC0 realidade e...*"
+  - "*Se v\xCA novamente na carteira, com Ezequiel e Estella olhando em sua dire\xC7\xC3o
+    com sorrisos encorajadores.*"
+  - "Voc\xCA consegue, Alex!"
   - "*Estella acenou com a cabe\xE7a, seus olhos transmitindo uma cumplicidade silenciosa.*"
   - "*A apresenta\xE7\xE3o \xE9 conclu\xEDda, mesmo que com dificuldade, Alex consegue,
     mais ainda Alex se v\xEA muito feliz,*"

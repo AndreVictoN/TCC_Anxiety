@@ -119,6 +119,24 @@ public class DaysManager : DialogueBox
         gameManager.currentObjective.text = "Objetivo: VÁ para sua sala.";
     }
 
+    public IEnumerator PostBattleClass()
+    {
+        BasicPlayerCutsceneConfig();
+        GroupClassSettings();
+        _currentDialogueState = "SecondDayDialogue";
+        dialogue.Clear();
+        for (int i = 0; i <= 69; i++) dialogue.Add(secondDayDialogue[i]);
+
+        yield return null;
+
+        _canSkip = true;
+        _isAutomatic = false;
+        StartDialogue(54);
+
+        /*while (!_isClosed) { yield return null; }
+        _playercontroller.SetCanMove(true); */
+    }
+
     public IEnumerator GroupClass()
     {
         BasicPlayerCutsceneConfig();
@@ -254,18 +272,35 @@ public class DaysManager : DialogueBox
         npcs[7].SetActive(true);
         npcs[8].SetActive(true);
 
-        npcs[7].GetComponent<SpriteRenderer>().sortingOrder = 1;
-        npcs[7].transform.localPosition = new Vector2(3.96f, -7.64f);
-        npcs[7].GetComponent<Animator>().Play("Idle_U");
-        npcs[8].GetComponent<SpriteRenderer>().sortingOrder = -1;
-        //npcs[8].transform.localPosition = new Vector2(6, -5.62f);
-        npcs[8].transform.localPosition = new Vector2(-6.18f, 2.77f);
-        npcs[8].GetComponent<Animator>().Play("H_IdleR");
+        if (!PlayerPrefs.GetString("pastScene").Equals("BattleScene"))
+        {
+            npcs[7].GetComponent<SpriteRenderer>().sortingOrder = 1;
+            npcs[7].transform.localPosition = new Vector2(3.96f, -7.64f);
+            npcs[7].GetComponent<Animator>().Play("Idle_U");
+            npcs[8].GetComponent<SpriteRenderer>().sortingOrder = -1;
+            //npcs[8].transform.localPosition = new Vector2(6, -5.62f);
+            npcs[8].transform.localPosition = new Vector2(-6.18f, 2.77f);
+            npcs[8].GetComponent<Animator>().Play("H_IdleR");
 
-        _playercontroller.gameObject.transform.localPosition = new Vector2(6f, -7.58f);
-        _playercontroller.gameObject.GetComponent<Animator>().Play("H_IdleUp");
+            _playercontroller.gameObject.transform.localPosition = new Vector2(6f, -7.58f);
+            _playercontroller.gameObject.GetComponent<Animator>().Play("H_IdleUp");
 
-        allClassView.SetActive(true);
+            allClassView.SetActive(true);
+        }else
+        {
+            npcs[0].SetActive(false);
+            npcs[7].GetComponent<SpriteRenderer>().sortingOrder = 1;
+            npcs[7].transform.localPosition = new Vector2(1.63f, 7.02f);
+            npcs[7].GetComponent<Animator>().Play("Idle_D");
+
+            npcs[8].GetComponent<SpriteRenderer>().sortingOrder = 1;
+            //npcs[8].transform.localPosition = new Vector2(6, -5.62f);
+            npcs[8].transform.localPosition = new Vector2(-2.16f, 7.02f);
+            npcs[8].GetComponent<Animator>().Play("H_IdleD");
+
+            _playercontroller.gameObject.transform.localPosition = new Vector2(0, 7.27f);
+            _playercontroller.gameObject.GetComponent<Animator>().Play("H_Idle");
+        }
     }
     
     private void SetNpcParts(int npcIndex)
@@ -348,7 +383,7 @@ public class DaysManager : DialogueBox
             if(i == 0) playerName.GetComponent<TextMeshProUGUI>().text = "Alex";
 
             if (i < 4) { DialoguePanelSettings(1, 0.5f, 0, 0, TextAlignmentOptions.Center, FontStyles.Normal); }
-            else if ((i >= 4 && i < 8) || (i >= 42 && i <= 45) || (i >= 47 && i <= 50)) { DialoguePanelSettings(0, 0, 0, 0, TextAlignmentOptions.Center, FontStyles.Normal); }
+            else if ((i >= 4 && i < 8) || (i >= 42 && i <= 45) || (i >= 47 && i <= 50)|| (i >= 54 && i <= 61)) { DialoguePanelSettings(0, 0, 0, 0, TextAlignmentOptions.Center, FontStyles.Normal); }
             else if (i >= 51 && i <= 53) { DialoguePanelSettings(1, 1f, 0, 0, TextAlignmentOptions.Center, FontStyles.Italic); }
             else
             {

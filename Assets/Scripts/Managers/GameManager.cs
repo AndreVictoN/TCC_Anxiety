@@ -201,7 +201,12 @@ public class GameManager : Singleton<GameManager>, IObserver
     
     private void PostBattleClassConfig()
     {
-        
+        transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
+        transitionImage.color = new Vector4(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, 1f);
+        daysManager = GameObject.FindGameObjectWithTag("DaysManager").GetComponent<DaysManager>();
+        daysManager.SetGameManager(this);
+
+        StartCoroutine(daysManager.PostBattleClass());
     }
 
     private void SecondClassConfig()
