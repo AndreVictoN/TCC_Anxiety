@@ -19,5 +19,6 @@ public enum EventsEnum
     Battle,
     Menu,
     Lose,
-    EzequielCalling
+    EzequielCalling,
+    EndDayOne
 }

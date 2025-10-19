@@ -65,6 +65,7 @@ TagManager:
   - PauseMenu
   - BaseGrid
   - EzequielCallingTrigger
+  - EndDay1Trigger
   layers:
   - Default
   - TransparentFX

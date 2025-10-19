@@ -35,6 +35,7 @@ public class GameManager : Singleton<GameManager>, IObserver
     [SerializeField] private GameObject _firstInteractionTrigger;
     [SerializeField] private GameObject _stopTrigger;
     [SerializeField] private GameObject _ezequielCallingTrigger;
+    [SerializeField] private GameObject _endDayOneTrigger;
     public string stopDialogue;
 
     [Header("Texts")]
@@ -102,10 +103,6 @@ public class GameManager : Singleton<GameManager>, IObserver
         }
         else if (_currentScene.Equals("Class"))
         {
-            Debug.Log(PlayerPrefs.GetString("pastScene") + " " + PlayerPrefs.GetString("currentState"));
-
-            if (PlayerPrefs.GetString("pastScene").Equals("BattleScene")) Debug.Log("aaa");
-
             if (PlayerPrefs.GetString("currentState").Equals("Start") && PlayerPrefs.GetString("pastScene").Equals("Floor2")) { SecondClassConfig(); }
             else if (PlayerPrefs.GetString("currentState").Equals("Start")) { FirstClassConfig(); }
             else if (PlayerPrefs.GetString("currentState").Equals("GroupClass") && PlayerPrefs.GetString("pastScene").Equals("BattleScene")) { PostBattleClassConfig(); }
@@ -114,7 +111,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         }
         else if (_currentScene.Equals("Floor2"))
         {
-            if (PlayerPrefs.GetString("currentState").Equals("Start")) { PlayerPrefs.SetString("isMasked", "false"); TransitionConfig(); }
+            if (PlayerPrefs.GetString("currentState").Equals("Start")) { PlayerPrefs.SetString("isMasked", "false"); SecondFloorConfig(PlayerPrefs.GetString("currentState")); }
             else if (PlayerPrefs.GetString("currentState").Equals("FirstLeaving")) SecondFloorConfig(PlayerPrefs.GetString("currentState"));
             else if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo")) SecondFloorConfig(PlayerPrefs.GetString("currentState"));
             else if (PlayerPrefs.GetString("currentState").Equals("LeavingSecondDay")) SecondFloorConfig(PlayerPrefs.GetString("currentState"));
@@ -125,7 +122,7 @@ public class GameManager : Singleton<GameManager>, IObserver
     {
         transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
         transitionImage.color = new Vector4(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, 1f);
-        if(transitionImage != null) AnimateTransition(3f, true);
+        if (transitionImage != null) AnimateTransition(3f, true);
     }
 
     private void ArrivalConfig()
@@ -133,8 +130,10 @@ public class GameManager : Singleton<GameManager>, IObserver
         PlayerPrefs.SetString("isMasked", "false");
         PlayerPrefs.SetInt("itemsNumber", 0);
         PlayerPrefs.SetString("currentItem", "");
-        if (!_ezequielCallingTrigger) _ezequielCallingTrigger = GameObject.FindGameObjectWithTag("EzequielCallingTrigger");
-        _ezequielCallingTrigger?.SetActive(false);
+        if (_ezequielCallingTrigger == null) _ezequielCallingTrigger = GameObject.FindGameObjectWithTag("EzequielCallingTrigger");
+        _ezequielCallingTrigger.GetComponent<EdgeCollider2D>().enabled = false;
+        if(_endDayOneTrigger == null) _endDayOneTrigger = GameObject.FindGameObjectWithTag("EndDay1Trigger");
+        _endDayOneTrigger.GetComponent<EdgeCollider2D>().enabled = false;
         transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
         if (currentDay == null) { currentDay = GameObject.FindGameObjectWithTag("CurrentDay").GetComponent<TextMeshProUGUI>(); }
         currentDay.text = "Dia 1";
@@ -155,8 +154,10 @@ public class GameManager : Singleton<GameManager>, IObserver
         PlayerPrefs.SetString("currentItem", "");
         if (!_stopTrigger) _stopTrigger = GameObject.FindGameObjectWithTag("StopTrigger");
         _stopTrigger?.SetActive(false);
-        if (!_ezequielCallingTrigger) _ezequielCallingTrigger = GameObject.FindGameObjectWithTag("EzequielCallingTrigger");
-        _ezequielCallingTrigger?.SetActive(false);
+        if (_ezequielCallingTrigger == null) _ezequielCallingTrigger = GameObject.FindGameObjectWithTag("EzequielCallingTrigger");
+        _ezequielCallingTrigger.GetComponent<EdgeCollider2D>().enabled = false;
+        if(_endDayOneTrigger == null) _endDayOneTrigger = GameObject.FindGameObjectWithTag("EndDay1Trigger");
+        _endDayOneTrigger.GetComponent<EdgeCollider2D>().enabled = false;
         if (!_firstInteractionTrigger) _firstInteractionTrigger = GameObject.FindGameObjectWithTag("FirstInteractionTrigger");
         _firstInteractionTrigger?.SetActive(false);
         transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
@@ -194,13 +195,24 @@ public class GameManager : Singleton<GameManager>, IObserver
             if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Inventory").transform.Find("Inventory").transform.Find("Objective").GetComponent<TextMeshProUGUI>(); }
             currentObjective.text = "Objetivo: Saia da Escola.";
 
-            if (!_ezequielCallingTrigger) _ezequielCallingTrigger = GameObject.FindGameObjectWithTag("EzequielCallingTrigger");
-            _ezequielCallingTrigger?.SetActive(true);
+            if (_ezequielCallingTrigger == null) _ezequielCallingTrigger = GameObject.FindGameObjectWithTag("EzequielCallingTrigger");
+            _ezequielCallingTrigger.GetComponent<EdgeCollider2D>().enabled = true;
         }
         else
         {
-            if (!_ezequielCallingTrigger) _ezequielCallingTrigger = GameObject.FindGameObjectWithTag("EzequielCallingTrigger");
-            _ezequielCallingTrigger?.SetActive(false);
+            if (_ezequielCallingTrigger == null) _ezequielCallingTrigger = GameObject.FindGameObjectWithTag("EzequielCallingTrigger");
+            _ezequielCallingTrigger.GetComponent<EdgeCollider2D>().enabled = false;
+        }
+
+        if (PlayerPrefs.GetString("currentState").Equals("FirstLeaving"))
+        {
+            if (_endDayOneTrigger == null) _endDayOneTrigger = GameObject.FindGameObjectWithTag("EndDay1Trigger");
+            _endDayOneTrigger.GetComponent<EdgeCollider2D>().enabled = true;
+        }
+        else
+        {
+            if (_endDayOneTrigger == null) _endDayOneTrigger = GameObject.FindGameObjectWithTag("EndDay1Trigger");
+            _endDayOneTrigger.GetComponent<EdgeCollider2D>().enabled = false;
         }
     }
 
@@ -251,26 +263,46 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     private void SecondFloorConfig(String state)
     {
-        GameObject.FindGameObjectWithTag("FirstConflictTrigger")?.SetActive(false);
+        if (!state.Equals("Start")) GameObject.FindGameObjectWithTag("FirstConflictTrigger")?.SetActive(false);
         transitionImage = GameObject.FindGameObjectWithTag("TransitionImage").GetComponent<Image>();
         transitionImage.color = new Vector4(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, 1f);
         AnimateTransition(3f, true);
         if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Inventory").transform.Find("Inventory").transform.Find("Objective").GetComponent<TextMeshProUGUI>(); }
         if (instruction == null) instruction = GameObject.Find("Canvas").transform.Find("Instruction").GetComponent<TextMeshProUGUI>();
 
-        if (state.Equals("FirstLeaving"))
+        if (state.Equals("Start"))
         {
+            DisableSecondFloorStairs();
+
+            GameObject.FindGameObjectWithTag("ToOtherScene").transform.Find("Door").gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+        }
+        else if (state.Equals("FirstLeaving"))
+        {
+            GameObject.FindGameObjectWithTag("ToOtherScene").transform.Find("Door").gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             PlayerPrefs.SetString("isMasked", "false");
             PlayerPrefs.SetInt("itemsNumber", 0);
             PlayerPrefs.SetString("currentItem", "");
             arrivalManager = GameObject.FindGameObjectWithTag("ArrivalManager").GetComponent<ArrivalManager>();
             arrivalManager.SetGameManager(this);
             StartCoroutine(arrivalManager.FirstLeavingConfig());
-        }else if (state.Equals("StartDayTwo") || state.Equals("LeavingSecondDay"))
+        }
+        else if (state.Equals("StartDayTwo") || state.Equals("LeavingSecondDay"))
         {
+            if(state.Equals("StartDayTwo")) { DisableSecondFloorStairs(); }
             daysManager = GameObject.FindGameObjectWithTag("DaysManager").GetComponent<DaysManager>();
             daysManager.SetGameManager(this);
             daysManager.SecondDayFloor2Config();
+        }
+    }
+
+    private void DisableSecondFloorStairs()
+    {
+        List<GameObject> doors = new();
+        doors.AddRange(GameObject.FindGameObjectsWithTag("ToOtherFloor"));
+
+        foreach (GameObject go in doors)
+        {
+            go.GetComponent<CircleCollider2D>().enabled = false;
         }
     }
 
@@ -595,6 +627,14 @@ public class GameManager : Singleton<GameManager>, IObserver
             }
             else { StartCoroutine(OutSchool()); }
         }
+        else if (evt == EventsEnum.EndDayOne)
+        {
+            if (PlayerPrefs.GetString("currentState").Equals("FirstLeaving"))
+            {
+                if (!arrivalManager.gameObject.activeSelf) arrivalManager.gameObject.SetActive(true);
+                StartCoroutine(arrivalManager.ExitFirstDay());
+            }
+        }
         else if (evt == EventsEnum.ExitGame)
         {
             StartCoroutine(LeaveSchool());
@@ -628,7 +668,8 @@ public class GameManager : Singleton<GameManager>, IObserver
         {
             if (PlayerPrefs.GetString("currentState").Equals("Start")) StartCoroutine(LoadBattleScene("Floor2"));
             else if (PlayerPrefs.GetString("currentState").Equals("GroupClass")) StartCoroutine(LoadBattleScene("Class"));
-        }else if(evt == EventsEnum.EzequielCalling)
+        }
+        else if (evt == EventsEnum.EzequielCalling)
         {
             if (daysManager == null) daysManager = GameObject.FindGameObjectWithTag("DaysManager").GetComponent<DaysManager>();
             daysManager.SetGameManager(this);
@@ -703,6 +744,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         AnimateTransition(1f, false);
         yield return new WaitForSeconds(1);
 
+        if (_playerController == null) _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         _playerController.SetCanMove(true);
         _playerController.gameObject.transform.localPosition = new Vector2(8.8f, 7.1f);
         currentObjective.text = "";
@@ -903,9 +945,9 @@ public class GameManager : Singleton<GameManager>, IObserver
 
     void Update()
     {
+        if(!SceneManager.GetActiveScene().name.Equals(_currentScene)){ SceneManagement(); }
         if (SceneManager.GetActiveScene().name.Equals("BattleScene")) return;
 
-        if(!SceneManager.GetActiveScene().name.Equals(_currentScene)){ SceneManagement(); }
         if (!arrivalManager || !arrivalManager.gameObject.activeSelf)
         {
             if (_canSkip && Input.GetKeyDown(KeyCode.Return) && _isTyping)
@@ -932,14 +974,14 @@ public class GameManager : Singleton<GameManager>, IObserver
         yield return new WaitForSeconds(1f);
 
         PlayerPrefs.SetString("pastScene", pastScene);
-        if (!PlayerPrefs.GetString("currentState").Equals("Start"))
+        if (!PlayerPrefs.GetString("currentState").Equals("Start") && !PlayerPrefs.GetString("currentState").Equals("GroupClass"))
         {
             if (_stopTrigger != null) Destroy(_stopTrigger);
             if (_battleTrigger != null) Destroy(_battleTrigger);
             if (exitGame != null) exitGame.SetActive(true);
         }
-        
-        if(SceneManager.GetActiveScene().name.Equals("Class") && PlayerPrefs.GetString("currentState").Equals("GroupClass"))
+
+        if (SceneManager.GetActiveScene().name.Equals("Class") && PlayerPrefs.GetString("currentState").Equals("GroupClass"))
         {
             PlayerPrefs.SetString("pastScene", "Class");
         }

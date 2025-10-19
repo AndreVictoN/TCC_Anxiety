@@ -448,6 +448,11 @@ public abstract class PlayerController : Subject, IHealthManager
         {
             Notify(EventsEnum.EzequielCalling);
         }
+        else if (collision.gameObject.CompareTag("EndDay1Trigger"))
+        {
+            _canMove = false;
+            Notify(EventsEnum.EndDayOne);
+        }
     }
 
     public void SetAnimation(string animation, float animationSpeed)

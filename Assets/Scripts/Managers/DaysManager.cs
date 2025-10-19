@@ -142,6 +142,9 @@ public class DaysManager : DialogueBox
     {
         BasicPlayerCutsceneConfig();
         GroupClassSettings();
+        if (classroomDoor == null) classroomDoor = GameObject.FindGameObjectWithTag("Door").GetComponent<Door>();
+        classroomDoor.gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+
         _currentDialogueState = "SecondDayDialogue";
         dialogue.Clear();
         for (int i = 0; i <= 63; i++) dialogue.Add(secondDayDialogue[i]);

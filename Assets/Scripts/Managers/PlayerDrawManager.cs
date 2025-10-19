@@ -78,32 +78,21 @@ public class PlayerDrawManager : MonoBehaviour
 
     private void TerreoDraw()
     {
-        if (player.transform.position.x >= 15.37f && player.transform.position.x <= 23.49f)
+        if (player.transform.position.x >= 15.37f && player.transform.position.x <= 23.49f && player.transform.position.y >= 81.22f && player.transform.position.y <= 82.07f)
         {
-            if (player.transform.position.y >= 81.22f && player.transform.position.y <= 82.07f)
-            {
-                playerSR.sortingOrder = -1;
-            }
+            playerSR.sortingOrder = -1;
         }
-        else if (player.transform.position.x >= 27.5f && player.transform.position.x <= 35.28f)
+        else if (player.transform.position.x >= 27.5f && player.transform.position.x <= 35.28f && player.transform.position.y >= 83.15f && player.transform.position.y <= 84.1f)
         {
-            if (player.transform.position.y >= 83.3f && player.transform.position.y <= 84.1f)
-            {
-                playerSR.sortingOrder = -1;
-            }
+            playerSR.sortingOrder = -1;
         }
-        else if (player.transform.position.x >= 1 && player.transform.position.x <= 8.9f && player.transform.position.y >= 77.42691f && player.transform.position.y <= 86.1f)
+        else if (player.transform.position.x >= 1 && player.transform.position.x <= 8.9f && player.transform.position.y >= 77.42691f && player.transform.position.y <= 86.1f &&
+        ((player.transform.position.y >= 85.3f && player.transform.position.y <= 86.1f) || (player.transform.position.y >= 80.36f && player.transform.position.y <= 81.17f)))
         {
-            if ((player.transform.position.y >= 85.3f && player.transform.position.y <= 86.1f) || (player.transform.position.y >= 80.36f && player.transform.position.y <= 81.17f))
-            {
-                playerSR.sortingOrder = -1;
-            }else { playerSR.sortingOrder = 1; }
-        }else if(player.transform.position.x >= -4 && player.transform.position.x <= 4.9)
+            playerSR.sortingOrder = -1;
+        }else if(player.transform.position.x >= -4 && player.transform.position.x <= 4.9 && player.transform.position.y >= 76.60f && player.transform.position.y <= 77.62f)
         {
-            if(player.transform.position.y >= 76.60f && player.transform.position.y <= 77.62f)
-            {
-                playerSR.sortingOrder = -1;
-            }
+            playerSR.sortingOrder = -1;
         }
         else { playerSR.sortingOrder = 1; }
     }

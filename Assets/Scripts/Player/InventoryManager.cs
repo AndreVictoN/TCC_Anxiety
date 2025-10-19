@@ -41,7 +41,7 @@ public class InventoryManager : MonoBehaviour, IObserver
         ColorUtility.TryParseHtmlString("#EF776F", out _defaultSlotColor);
         _selectedSlot = 1;
 
-        if (currentMask.sprite == null) { alexImage.sprite = _alexNoMask; }
+        if (!currentMask.gameObject.activeSelf) { alexImage.sprite = _alexNoMask; }
         else
         {
             foreach (Sprite itemSprite in itemsSprites)

@@ -374,6 +374,8 @@ public class ArrivalManager : DialogueBox
     public IEnumerator FirstClass()
     {
         BasicPlayerCutsceneConfig();
+        if (classroomDoor == null) classroomDoor = GameObject.FindGameObjectWithTag("Door").GetComponent<Door>();
+        classroomDoor.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
 
         for (int i = 0; i <= 19/*11*/; i++) dialogue.Add(arrivalDialogue[i]);
         _playercontroller.gameObject.SetActive(false);

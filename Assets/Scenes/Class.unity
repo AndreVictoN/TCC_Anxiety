@@ -73157,6 +73157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2002391757}
   - component: {fileID: 2002391758}
+  - component: {fileID: 2002391759}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -73212,6 +73213,7 @@ MonoBehaviour:
   _firstInteractionTrigger: {fileID: 0}
   _stopTrigger: {fileID: 0}
   _ezequielCallingTrigger: {fileID: 0}
+  _endDayOneTrigger: {fileID: 0}
   stopDialogue: 
   dialoguePanel: {fileID: 732227930}
   dialogueText: {fileID: 732227929}
@@ -73219,6 +73221,18 @@ MonoBehaviour:
   wordSpeed: 0.6
   _playerController: {fileID: 0}
   _ezequiel: {fileID: 0}
+--- !u!114 &2002391759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002391756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e0d3ce8fea1b845bac6cc5fd1aae7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroy
 --- !u!1 &2006421260
 GameObject:
   m_ObjectHideFlags: 0
