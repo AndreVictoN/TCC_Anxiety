@@ -36,6 +36,7 @@ public class DaysManager : DialogueBox
     [SerializeField] private Door toOtherFloorDoor;
     [SerializeField] private GameObject playerName;
     [SerializeField] private GameObject npcName;
+    [SerializeField] private Door toLibraryDoor;
     [SerializeField] private Door classroomDoor;
     [SerializeField] private Image illustration;
     [SerializeField] private Image playerImage;
@@ -122,6 +123,8 @@ public class DaysManager : DialogueBox
         _playercontroller.gameObject.GetComponent<Animator>().SetFloat("LastVertical", 1);
         _playercontroller.gameObject.GetComponent<SpriteRenderer>().sprite = _playercontroller.idleUp;
         if (_toOtherFloors.Count > 0) foreach (GameObject toOtherFloor in _toOtherFloors) toOtherFloor.SetActive(true);
+        npcs[1].SetActive(true);
+        npcs[2].SetActive(true);
 
         _playercontroller.SetCanMove(false);
         _canSkip = true;
@@ -134,7 +137,47 @@ public class DaysManager : DialogueBox
         StartDialogue(0);
 
         while (!_isClosed) { yield return null; }
-        _playercontroller.SetCanMove(true);
+
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingUp");
+        StartCoroutine(_playercontroller.GoTo(0.5f, new Vector2(_playercontroller.transform.position.x, _playercontroller.transform.position.y + 1), 'y', false));
+        yield return new WaitForSeconds(0.5f);
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingR");
+        StartCoroutine(_playercontroller.GoTo(0.5f, new Vector2(_playercontroller.transform.position.x + 1, _playercontroller.transform.position.y), 'x', false));
+        yield return new WaitForSeconds(0.5f);
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingUp");
+        _playercontroller.SetSpeed(2.5f);
+        StartCoroutine(_playercontroller.GoTo(3f, new Vector2(_playercontroller.transform.position.x, 109.91f), 'y', false));
+        yield return new WaitForSeconds(3f);
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingR");
+        StartCoroutine(_playercontroller.GoTo(2f, new Vector2(18.03f, _playercontroller.transform.position.y), 'x', false));
+        yield return new WaitForSeconds(2f);
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingUp");
+        _playercontroller.SetSpeed(1);
+        StartCoroutine(_playercontroller.GoTo(1f, new Vector2(_playercontroller.transform.position.x, 111f), 'y', false));
+        yield return new WaitForSeconds(1f);
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_IdleUp");
+        toLibraryDoor.ChangeState(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        _playercontroller.SetCanAct(false);
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingUp");
+        StartCoroutine(_playercontroller.GoTo(1f, new Vector2(_playercontroller.gameObject.transform.localPosition.x, 112.9f), 'y', false));
+        yield return new WaitForSeconds(1f);
+
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_IdleUp");
+        yield return new WaitForSeconds(0.5f);
+
+        _playercontroller.gameObject.SetActive(false);
+        toLibraryDoor.GetComponent<BoxCollider2D>().enabled = false;
+        toLibraryDoor.ChangeState(false);
+
+        _playercontroller.SetCanAct(true);
+        gameManager.AnimateTransition(1f, false);
+        yield return new WaitForSeconds(1f);
+        PlayerPrefs.SetString("pastScene", "Terreo");
+        SceneManager.LoadScene("Library");
+        //_playercontroller.SetCanMove(true);
     }
 
     public void SecondDayFloor2Config()
@@ -595,15 +638,20 @@ public class DaysManager : DialogueBox
     {
         if (_fourthDayDialogueNarrator.Contains(i))
         {
-            DialoguePanelSettings(1, 0.5f, 1, 0.5f, TextAlignmentOptions.Center, FontStyles.Normal);
+            if(i < 9) { DialoguePanelSettings(1f, 0.5f, 0f, 0f, TextAlignmentOptions.Center, FontStyles.Normal); }
+            else { DialoguePanelSettings(1f, 0.5f, 1f, 0.5f, TextAlignmentOptions.Center, FontStyles.Normal); }
         }
         else if (_fourthDayNPC.Contains(i))
         {
-            DialoguePanelSettings(1f, 0.5f, 1, 1, TextAlignmentOptions.Left, FontStyles.Normal);
+            if(i == 8) { npcImage.sprite = npcImages[9]; npcName.GetComponent<TextMeshProUGUI>().text = "Rebecca"; }
+            else if(i == 9) { npcImage.sprite = npcImages[8]; npcName.GetComponent<TextMeshProUGUI>().text = "Yuri"; }
+
+            DialoguePanelSettings(1f, 0.5f, 1f, 1f, TextAlignmentOptions.Left, FontStyles.Normal);
         }
         else if (_fourthDayPlayer.Contains(i))
         {
-            DialoguePanelSettings(1, 1f, 0, 0, TextAlignmentOptions.Right, FontStyles.Normal);
+            if(i < 9) { DialoguePanelSettings(1f, 1f, 0f, 0f, TextAlignmentOptions.Center, FontStyles.Normal); }
+            else { DialoguePanelSettings(1f, 1f, 1f, 0.5f, TextAlignmentOptions.Right, FontStyles.Normal); }
         }
     }
 

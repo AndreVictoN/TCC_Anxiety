@@ -123,6 +123,9 @@ public abstract class PlayerController : Subject, IHealthManager
             {
                 this.gameObject.transform.localPosition = new Vector2(-17.47f, 4.59f);
             }
+        } else if (SceneManager.GetActiveScene().name.Equals("Library"))
+        {
+            this.gameObject.transform.localPosition = new Vector2(-13.7f, -5.7f);
         }
         else
         {

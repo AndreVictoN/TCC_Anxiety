@@ -26,6 +26,8 @@ public class Door : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && _playerIsClose)
         {
+            if(PlayerPrefs.GetString("currentState").Equals("FourthDay") && !player.GetComponent<PlayerController>().GetCanAct()) return;
+            
             if (_isClosed)
             {
                 ChangeState(true);

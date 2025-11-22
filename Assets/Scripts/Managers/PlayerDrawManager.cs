@@ -48,6 +48,9 @@ public class PlayerDrawManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "PrototypeScene")
         {
             PrototypeDraw();
+        }else if (SceneManager.GetActiveScene().name.Equals("Library"))
+        {
+            LibraryDraw();
         }
     }
 
@@ -119,6 +122,21 @@ public class PlayerDrawManager : MonoBehaviour
             {
                 playerSR.sortingOrder = -1;
             }
+        }
+        else { playerSR.sortingOrder = 1; }
+    }
+
+    private void LibraryDraw()
+    {
+        if(player.transform.position.x >= -12.21302f && player.transform.position.x <= -2.663363f)
+        {
+            if((player.transform.position.y >= 4.59f) || (player.transform.position.y >= -1.4f && player.transform.position.y <= 1.407647f)) { playerSR.sortingOrder = -1; }
+            else { playerSR.sortingOrder = 1; }
+        }
+        else if(player.transform.position.x >= -2.212888f && player.transform.position.x <= 7.298708f)
+        {
+            if((player.transform.position.y >= 4.911463f) || (player.transform.position.y >= -0.08881515f && player.transform.position.y <= 0.9605718f)) { playerSR.sortingOrder = -1; }
+            else { playerSR.sortingOrder = 1; }
         }
         else { playerSR.sortingOrder = 1; }
     }
