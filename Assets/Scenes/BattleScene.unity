@@ -7308,6 +7308,7 @@ MonoBehaviour:
   battleAnimator: {fileID: 1207260433}
   idleDown: {fileID: 0}
   idleLeft: {fileID: 0}
+  idleUp: {fileID: 0}
   testScene: TestScene
   firstFloor: FirstFloorPrototype
   battleScene: BattleScene

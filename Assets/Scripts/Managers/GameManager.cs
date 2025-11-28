@@ -101,7 +101,7 @@ public class GameManager : Singleton<GameManager>, IObserver
         {
             if (PlayerPrefs.GetString("currentState").Equals("Start")) ArrivalConfig();
             else if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo") && !_dayConfigured) ArrivalSecondDayConfig();
-            else if (PlayerPrefs.GetString("currentState").Equals("FourthDay") && !_dayConfigured) ArrivalFourthDayConfig();
+            else if (PlayerPrefs.GetString("currentState").Equals("FourthDay")) ArrivalFourthDayConfig();
             else { GroundFloorConfig(); }
         }
         else if (_currentScene.Equals("Class"))
@@ -118,6 +118,9 @@ public class GameManager : Singleton<GameManager>, IObserver
             else if (PlayerPrefs.GetString("currentState").Equals("FirstLeaving")) SecondFloorConfig(PlayerPrefs.GetString("currentState"));
             else if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo")) SecondFloorConfig(PlayerPrefs.GetString("currentState"));
             else if (PlayerPrefs.GetString("currentState").Equals("LeavingSecondDay")) SecondFloorConfig(PlayerPrefs.GetString("currentState"));
+        }else if (_currentScene.Equals("Library"))
+        {
+            if(PlayerPrefs.GetString("currentState").Equals("FourthDay")) { LibraryFourthDayConfig(); }
         }
     }
 
@@ -183,6 +186,14 @@ public class GameManager : Singleton<GameManager>, IObserver
         if (currentObjective == null) { currentObjective = GameObject.FindGameObjectWithTag("Inventory").transform.Find("Inventory").transform.Find("Objective").GetComponent<TextMeshProUGUI>(); }
         if (instruction == null) instruction = GameObject.Find("Canvas").transform.Find("Instruction").GetComponent<TextMeshProUGUI>();
         StartCoroutine(daysManager.FourthDayInitialLines());
+    }
+
+    private void LibraryFourthDayConfig()
+    {
+        daysManager = GameObject.FindGameObjectWithTag("DaysManager").GetComponent<DaysManager>();
+        daysManager.SetGameManager(this);
+        TransitionConfig();
+        StartCoroutine(daysManager.FourthDayLibrary());
     }
     
     private void RemoveTriggers()

@@ -133,7 +133,7 @@ public abstract class PlayerController : Subject, IHealthManager
             if (PlayerPrefs.GetString("currentState").Equals("StartDayTwo") && !GameManager.Instance.GetDayConfigured())
             {
                 this.gameObject.transform.localPosition = new Vector2(-2.26f, 72.24f);
-            }else if (PlayerPrefs.GetString("currentState").Equals("FourthDay") && !GameManager.Instance.GetDayConfigured()){
+            }else if (PlayerPrefs.GetString("currentState").Equals("FourthDay")){
                 this.gameObject.transform.localPosition = new Vector2(4.89f, 84.8793f);
             }else if (SceneManager.GetActiveScene().name.Equals("Terreo") && PlayerPrefs.GetString("transitionType").Equals("frontTransition")){
                 this.gameObject.transform.localPosition = new Vector2(25.73f, 68.27f);

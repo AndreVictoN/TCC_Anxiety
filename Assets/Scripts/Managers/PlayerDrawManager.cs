@@ -137,6 +137,9 @@ public class PlayerDrawManager : MonoBehaviour
         {
             if((player.transform.position.y >= 4.911463f) || (player.transform.position.y >= -0.08881515f && player.transform.position.y <= 0.9605718f)) { playerSR.sortingOrder = -1; }
             else { playerSR.sortingOrder = 1; }
+        }else if(player.transform.localPosition.y >= 5.3f && player.transform.localPosition.x > 27.89f)
+        {
+            playerSR.sortingOrder = -1;
         }
         else { playerSR.sortingOrder = 1; }
     }

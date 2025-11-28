@@ -78,11 +78,6 @@ public class DaysManager : DialogueBox
         if (battleTrigger != null) battleTrigger.SetActive(false);
     }
 
-    void Start()
-    {
-
-    }
-
     public void SetGameManager(GameManager gm)
     {
         gameManager = gm;
@@ -178,6 +173,62 @@ public class DaysManager : DialogueBox
         PlayerPrefs.SetString("pastScene", "Terreo");
         SceneManager.LoadScene("Library");
         //_playercontroller.SetCanMove(true);
+    }
+
+    public IEnumerator FourthDayLibrary()
+    {
+        GameManager.Instance.SetDayConfigured(true);
+        BasicPlayerCutsceneConfig();
+        _playercontroller.gameObject.GetComponent<Animator>().SetFloat("LastVertical", 1);
+        _playercontroller.SetCanMove(false);
+        _playercontroller.SetCanAct(false);
+        _canSkip = true;
+        _currentDialogueState = "FourthDayDialogue";
+        
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingUp");
+        StartCoroutine(_playercontroller.GoTo(1f, new Vector2(_playercontroller.transform.position.x, -4.525993f), 'y', false));
+        yield return new WaitForSeconds(1f);
+
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingR");
+        StartCoroutine(_playercontroller.GoTo(10f, new Vector2(22.7f, _playercontroller.transform.position.y), 'x', false));
+        yield return new WaitForSeconds(10f);
+
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingUp");
+        StartCoroutine(_playercontroller.GoTo(5f, new Vector2(_playercontroller.transform.position.x, 3.8f), 'y', false));
+        yield return new WaitForSeconds(5f);
+
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingR");
+        StartCoroutine(_playercontroller.GoTo(3f, new Vector2(27.48f, _playercontroller.transform.position.y), 'x', false));
+        yield return new WaitForSeconds(3f);
+
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingUp");
+        StartCoroutine(_playercontroller.GoTo(1f, new Vector2(_playercontroller.transform.position.x, 5.33f), 'y', false));
+        yield return new WaitForSeconds(1f);
+
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_WalkingR");
+        StartCoroutine(_playercontroller.GoTo(1f, new Vector2(28.97f, _playercontroller.transform.position.y), 'x', false));
+        yield return new WaitForSeconds(1f);
+
+        _playercontroller.gameObject.GetComponent<Animator>().Play("H_IdleUp");
+
+        dialogue.Clear();
+        for (int iterator = 0; iterator < 17; iterator++) { dialogue.Add(fourthDayDialogue[iterator]); }
+        StartDialogue(14);
+
+        while(!_isClosed) yield return null;
+
+        background.GetComponent<Image>().sprite = cutsceneImages[0];
+        background.SetActive(true);
+
+        dialogue.Clear();
+        for (int iterator = 0; iterator < 28; iterator++) { dialogue.Add(fourthDayDialogue[iterator]); }
+        StartDialogue(17);
+
+        while(_i != 19) yield return null;
+
+        background.GetComponent<Animator>().Play("BgTransition");
+        yield return new WaitForSeconds(0.5f);
+        background.GetComponent<Image>().sprite = cutsceneImages[1];
     }
 
     public void SecondDayFloor2Config()
@@ -507,6 +558,7 @@ public class DaysManager : DialogueBox
         yield return new WaitForSeconds(4.5f);
         gameManager.AnimateTransition(1, false);
         yield return new WaitForSeconds(1.5f);
+        PlayerPrefs.SetString("currentState", "LeavingSecondDay");
         SceneManager.LoadScene("GoToNextDay");
     }
     
@@ -638,14 +690,17 @@ public class DaysManager : DialogueBox
     {
         if (_fourthDayDialogueNarrator.Contains(i))
         {
-            if(i < 9) { DialoguePanelSettings(1f, 0.5f, 0f, 0f, TextAlignmentOptions.Center, FontStyles.Normal); }
+            if(i < 9 || (i >= 14 && i <= 16)) { DialoguePanelSettings(1f, 0.5f, 0f, 0f, TextAlignmentOptions.Center, FontStyles.Normal); }
             else { DialoguePanelSettings(1f, 0.5f, 1f, 0.5f, TextAlignmentOptions.Center, FontStyles.Normal); }
+
+            if(i == 15) { _secondsToReturn = 2.5f; }
+            else if(i == 16) { _secondsToReturn = 1.5f; }
         }
         else if (_fourthDayNPC.Contains(i))
         {
             if(i == 8) { npcImage.sprite = npcImages[9]; npcName.GetComponent<TextMeshProUGUI>().text = "Rebecca"; }
-            else if(i == 9) { npcImage.sprite = npcImages[8]; npcName.GetComponent<TextMeshProUGUI>().text = "Yuri"; }
-
+            else if (i == 9) { npcImage.sprite = npcImages[8]; npcName.GetComponent<TextMeshProUGUI>().text = "Yuri"; }
+            else if (i == 17) { npcImage.sprite = npcImages[10]; npcName.GetComponent<TextMeshProUGUI>().text = "Estella"; }
             DialoguePanelSettings(1f, 0.5f, 1f, 1f, TextAlignmentOptions.Left, FontStyles.Normal);
         }
         else if (_fourthDayPlayer.Contains(i))
