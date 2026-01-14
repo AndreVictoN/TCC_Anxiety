@@ -34,12 +34,12 @@ The game’s narrative and interaction focus, combined with the opportunity to e
 - Visual Novel
 
 #### ✨ Main Inspirations:
-- Undertale (Toby Fox, 2015)
 - Earthbound (Nintendo, 1994)
-- Omori (OMOCAT, 2020)
 - Gris (Nomada Studio, 2018)
 - Life is Strange (Don't Nod Entertainment, 2015)
+- Omori (OMOCAT, 2020)
 - Sally Face (Portable Moose, 2016)
+- Undertale (Toby Fox, 2015)
 
 ### ⚙️ Technologies Used
 > **Engine:** Unity <br>
