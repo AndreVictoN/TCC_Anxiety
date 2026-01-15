@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="/Assets/Images/MenuBackground.png" />
+</p>
+
+- - -
+
 # ANXIETY: Problematization of High School Students’ Social Interactions Through a Digital Game
 
 Developed as an Undergraduate Final Project at CEFET-MG.
