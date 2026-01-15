@@ -54,4 +54,4 @@ This research project investigates how emotional disorders, such as anxiety and 
 
 
 
-Keywords: school environment; video games; psychological traumas.
+> **Keywords:** school environment; video games; psychological traumas.
